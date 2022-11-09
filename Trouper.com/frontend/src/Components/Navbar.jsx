@@ -1,3 +1,4 @@
+
 import React from 'react';
 import "./navbar.css";
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
@@ -15,7 +16,7 @@ export const Navbar = () => {
        <div className='other'>
          <FavoriteBorderIcon />
        </div>
-       <div className='log'></div>
+       <div className='log'></di
     </div>
   )
 }
