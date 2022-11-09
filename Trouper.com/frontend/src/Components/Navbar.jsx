@@ -16,7 +16,7 @@ export const Navbar = () => {
        <div className='other'>
          <FavoriteBorderIcon />
        </div>
-       <div className='log'></di
+       <div className='log'></div>
     </div>
   )
 }
