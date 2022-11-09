@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../SinglePage/Overview.module.css";
+import styles from "../../Page/SinglePro/Overview.module.css";
 import {
   Tabs,
   TabList,

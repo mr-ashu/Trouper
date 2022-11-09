@@ -6,11 +6,19 @@ import SingleProductPage from './Page/SingleProductPage';
 
 function App() {
   return (
-    <div className="App">
-       {/* <Navbar/>
-       <AllRoutes/> */}
-       {/* <SingleProductPage/> */}
-    </div>
+    <></>
+  // HEAD
+    // <div className="App">
+    //    {/* <Navbar/>
+    //    <AllRoutes/> */}
+    //    {/* <SingleProductPage/> */}
+ 
+    // <div className="App"
+    //    <Navbar/>
+    //    <AllRoutes/>
+
+ 
+    // </div>
   );
 }
 

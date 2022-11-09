@@ -1,5 +1,6 @@
 import React from 'react'
-import styles from "../SinglePage/Nav.module.css"
+// import styles from "../SinglePage/Nav.module.css"
+import styles from "../../Page/SinglePro/Nav.module.css"
 function Navigation() {
   return (
     <>
