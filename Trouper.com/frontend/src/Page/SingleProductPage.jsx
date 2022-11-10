@@ -1,8 +1,9 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import Navigation from "./SinglePro/Nav";
+import Nav from "./SinglePro/Nav";
 import OverviewSlid from "./SinglePro/Overview"
 import AboutTheSeller from "./SinglePro/AboutTheSeller"
+import Reviews from "./SinglePro/Reviews";
 const getData = (url) => {
   return fetch(url).then((res) => res.json());
 };
@@ -20,16 +21,19 @@ const SingleProductPage = () => {
   // console.log(userDetails);
   return (
     <>
-      <Navigation/>
+      <Nav/>
       <div>
-        <div>
+        <div style={{marginTop:"20px"}} >
           <OverviewSlid />
         </div>
-        <div>
+        <div style={{marginTop:"20px"}} >
           <AboutTheSeller />
         </div>
-      </div>
-      <Link to="">GO BACK</Link>
+        <div style={{marginTop:"20px"}} >
+          <Reviews />
+        </div>
+      </div> 
+      {/* <Link to="">GO BACK</Link> */}
     </>
   );
 };
