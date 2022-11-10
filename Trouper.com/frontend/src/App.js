@@ -4,7 +4,7 @@ import  Navbar2  from './Components/Navbar2';
 import { Cart } from './Page/Cart';
 import { Home } from './Page/Home';
  
-import { Login } from './Page/Login';
+import Login from './Page/Login';
 import SignUp from './Page/SignUp';
 import SingleProductPage from './Page/SingleProductPage';
 import { AllRoutes } from './Routes/AllRoutes';
@@ -17,7 +17,7 @@ function App() {
      <Home/>
        <SignUp/>
        <Cart/>
-       <Login/>
+       <Login />
        <SingleProductPage/>
  
 
