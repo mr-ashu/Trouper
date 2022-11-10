@@ -8,7 +8,7 @@ const productSchema = new mongoose.Schema({
     profilePic:{
         type:String,
         data:Buffer
-        
+ 
     },
     about:{
       type:String,

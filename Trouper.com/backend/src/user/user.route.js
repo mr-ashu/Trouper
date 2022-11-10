@@ -60,7 +60,13 @@ app.delete("/:id", async (req, res) => {
     }
 })
 
- 
+app.get("/:id",async(req,res)=>{
+    let {id}=req.params;
+    let user=await User.findOne({_id:id})
+     res.send(user)
+     
+     
+   })
 
 
 module.exports = app;
