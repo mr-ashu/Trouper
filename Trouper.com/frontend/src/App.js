@@ -1,6 +1,7 @@
  
 import './App.css';
 import { Navbar } from './Components/Navbar';
+import SignUp from './Page/SignUp';
 import { AllRoutes } from './Routes/AllRoutes';
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
     <div className="App">
        <Navbar/>
        <AllRoutes/>
-
+      <SignUp />
     </div>
   );
 }
