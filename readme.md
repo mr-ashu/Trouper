@@ -7,8 +7,7 @@ Pravin
 Darshan
 
 ## API
-<P>http://localhost:9500/user</p>
-
+<P>http://localhost:9500/users</p>
   <p> /login </p>
   <p>/signup</p>
 <br/>
