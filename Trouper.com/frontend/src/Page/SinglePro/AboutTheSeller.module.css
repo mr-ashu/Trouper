@@ -1,0 +1,19 @@
+.aboutMainCont{
+  display: flex;
+  border: 2px solid blue;
+  gap: 3%;
+}
+
+.Avatar{
+  border-radius: 50%;
+  width: 100px;
+}
+
+.serviceInfo{
+  display: flex;
+  gap: 3%;
+}
+
+.dis{
+  color: black;
+}

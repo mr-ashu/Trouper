@@ -1,0 +1,27 @@
+.nav{
+  display: flex;
+  border: 1px solid red;
+  justify-content: space-between;
+  
+}
+
+.sec1{
+  display: flex;
+  border: 1px solid rgb(81, 255, 0);
+  width: 45%;
+  justify-content: space-evenly;
+ justify-items: flex-start;
+ color:grey;
+}
+
+.sec2{
+  display: flex;
+  border: 1px solid teal;
+  width: 20%;
+  justify-content: space-around;
+  color:grey;
+}
+
+.sec2:hover{
+  color : black;
+}
