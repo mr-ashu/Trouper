@@ -1,12 +1,12 @@
  
 import './App.css';
-import { Navbar } from './Components/Navbar';
+import  Navbar2  from './Components/Navbar2';
 import { AllRoutes } from './Routes/AllRoutes';
 
 function App() {
   return (
     <div className="App">
-       <Navbar/>
+       <Navbar2/>
        <AllRoutes/>
 
     </div>

@@ -1,0 +1,15 @@
+.navbar {
+    margin: auto;
+    display: flex;
+    gap: 30px
+}
+
+.navlogo > img{
+    width: 50px;
+}
+
+.Input {
+    width: 400px;
+    display: flex;
+}
+

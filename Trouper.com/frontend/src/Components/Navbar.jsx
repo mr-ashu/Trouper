@@ -1,22 +1,55 @@
 
-import React from 'react';
-import "./navbar.css";
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-export const Navbar = () => {
-  return (
-    <div className='navbar'>
-       <div className='logo'>
-          <h3>Trouper</h3>
-       </div>
-       <div className=''>
-          <input placeholder='What service you are looking for today?' />
-          <button></button>
-       </div>
-       <div className='other'>
-         <FavoriteBorderIcon />
-       </div>
-       <div className='log'></div>
-    </div>
-  )
-}
+import { useState } from "react";
+//import logo from "../anjali_Home_Image/logo.jpeg";
+import logo from "../Logo/Fiverr-Logo.png";
+import { Input,Button } from "@chakra-ui/react"
+import {Search2Icon} from "@chakra-ui/icons"
+import "./navbar.css"
+const Navbar = () => {
+
+    const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
+    const [menu_class, setMenuClass] = useState("menu hidden");
+    const [isMenuClicked, setIsMenuClicked] = useState(false);
+  
+    const updateMenu = () => {
+      if (!isMenuClicked) {
+        setBurgerClass("burger-bar clicked");
+        setMenuClass("menu visible");
+      } else {
+        setBurgerClass("burger-bar unclicked");
+        setMenuClass("menu hidden");
+      }
+  
+      setIsMenuClicked(!isMenuClicked);
+    };
+  
+  
+    return (
+      <>
+        
+        <div className="navbar">
+        <div className="navlogo">
+           <img src={logo} alt="logo" />
+        </div>
+
+        <div className="Input">
+           <Input variant='outline' placeholder='Outline' />
+           <Button  variant='outline' ><Search2Icon /></Button>
+        </div>
+
+        <div>
+            <div></div>
+        </div>
+        </div>
+       
+
+
+{/* ------------------------------------------------------------------------------------------- */}
+
+
+        
+      </>
+    );
+  }
+
+export {Navbar};
