@@ -2,7 +2,8 @@
 import './App.css';
 import  Navbar2  from './Components/Navbar2';
 import { Cart } from './Page/Cart';
-import { Home } from './Page/home';
+import { Home } from './Page/Home';
+ 
 import { Login } from './Page/Login';
 import SignUp from './Page/SignUp';
 import SingleProductPage from './Page/SingleProductPage';
@@ -13,7 +14,7 @@ function App() {
     <div className="App">
        <Navbar2/>
        <AllRoutes/>
-       <Home/>
+     <Home/>
        <SignUp/>
        <Cart/>
        <Login/>
