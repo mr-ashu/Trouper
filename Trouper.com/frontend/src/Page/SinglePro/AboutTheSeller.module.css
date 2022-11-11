@@ -1,19 +1,31 @@
 .aboutMainCont{
   display: flex;
-  border: 2px solid blue;
-  gap: 3%;
+  /* border: 2px solid blue; */
+  /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  gap: 15%;
+  padding: 10px;
 }
 
+.AmainCont{
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  
+}
 .Avatar{
   border-radius: 50%;
   width: 100px;
+
 }
 
 .serviceInfo{
   display: flex;
-  gap: 3%;
+  gap: 20%;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  
 }
 
 .dis{
   color: black;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
