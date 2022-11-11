@@ -1,13 +1,13 @@
 .nav{
   display: flex;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   justify-content: space-between;
   
 }
 
 .sec1{
   display: flex;
-  border: 1px solid rgb(81, 255, 0);
+  /* border: 1px solid rgb(81, 255, 0); */
   width: 45%;
   justify-content: space-evenly;
  justify-items: flex-start;
@@ -16,7 +16,7 @@
 
 .sec2{
   display: flex;
-  border: 1px solid teal;
+  /* border: 1px solid teal; */
   width: 20%;
   justify-content: space-around;
   color:grey;

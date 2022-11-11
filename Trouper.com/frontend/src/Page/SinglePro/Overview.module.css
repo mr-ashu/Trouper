@@ -3,15 +3,18 @@
 .mainCont {
   display: flex;
   justify-content: space-between;
-  padding: 30px;
+  padding: 20px;
+  /* margin-left: -60px; */
+  
+  /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px; */
 }
 
 .slideshow {
   margin: 0 auto;
   overflow: hidden;
-  max-width: 60%;
-
-  border: 2px solid #6a0dad;
+  
+/* 
+  border: 2px solid #6a0dad; */
 }
 
 .slideshowSlider {
@@ -26,7 +29,7 @@
   height: 570px;
   width: 100%;
   border-radius: 40px;
-  /* border: 2px solid #0ff560; */
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 }
 
 /*  slidShow button Buttons */
@@ -35,6 +38,7 @@
   text-align: center;
   /* margin-top: 200px; */
   /* border: 2px solid #0bbaf9; */
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 }
 
 .slideshowDot {
@@ -56,7 +60,7 @@
 
 .checkCard {
   width: 30%;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   /* position: z-index */
 }
 

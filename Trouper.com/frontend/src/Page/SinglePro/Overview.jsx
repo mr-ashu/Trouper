@@ -71,8 +71,8 @@ function OverviewSlid() {
 
   return (
     <>
-      <div className={styles.mainCont}>
-        <div className={styles.slideshow}>
+      <Box className={styles.mainCont} ml={{ base: '-10px', md: '-89px', lg: '-85px' , xl:"-52px" }}  id="overview" >
+        <Box className={styles.slideshow} w={{ base: '30%', md: '50%', lg: '55%' , xl:"61%" }} h={{ base: '200px', md: '300px', lg: '400px' , xl:"500px" }} >
           <div
             className={styles.slideshowSlider}
             style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
@@ -99,9 +99,9 @@ function OverviewSlid() {
               ></div>
             ))}
           </div>
-        </div>
+        </Box>
 
-        <div className={styles.checkCard}>
+        <Box className={styles.checkCard}   h={{ base: '200px', md: '300px', lg: '400px' , xl:"500px" }} >
           <Tabs>
             <TabList display="flex" justifyContent="space-evenly">
               <Tab>Basic</Tab>
@@ -224,8 +224,8 @@ function OverviewSlid() {
               </TabPanel>
             </TabPanels>
           </Tabs>
-        </div>
-      </div>
+        </Box>
+      </Box>
     </>
   );
 }
