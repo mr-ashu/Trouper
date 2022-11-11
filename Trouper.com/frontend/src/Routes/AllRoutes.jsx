@@ -1,13 +1,16 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom' 
+ 
+import { Route, Routes } from 'react-router-dom'
+import Payment from '../Page/Payment'
+ 
 import { AdminPage } from '../Page/admin/AdminPage'
 import { Cart } from '../Page/Cart'
 import { Home } from '../Page/Home'
 import { Login } from '../Page/Login'
 import SignUp from '../Page/SignUp'
 import SingleProductPage from '../Page/SingleProductPage'
-import Payment from '../Page/Payment'
-
+ 
+ 
 export const AllRoutes = () => {
   return (
 
@@ -18,8 +21,8 @@ export const AllRoutes = () => {
       <Route path="/cart" element={<Cart/>}/>
       <Route path="/admin" element={<AdminPage/>}/>
       <Route path="/product/:id" element={<SingleProductPage/>}/>
-      <Route to="/payment" element={<Payment/>}/>
-
+      <Route path="/payment" element={<Payment/>}/>
+   
     </Routes>
 
   )

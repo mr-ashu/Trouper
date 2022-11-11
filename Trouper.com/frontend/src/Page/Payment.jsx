@@ -4,10 +4,10 @@ import Payment_Nav from './Payment_Nav'
 
 const Payment = () => {
   return (
-    <Container>
+    <>
     <Payment_Nav/>
       
-    </Container>
+    </>
   )
 }
 
