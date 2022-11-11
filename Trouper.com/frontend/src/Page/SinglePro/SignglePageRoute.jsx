@@ -5,9 +5,7 @@ function SinglePageNavRoutes(){
   return(
     <>
      <Routes>
-        <Route path="" element={</>} />
-        <Route path="" element={</>} />
-        <Route path="" element={</>} />
+       
      </Routes>
     </>
   )
