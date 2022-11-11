@@ -7,7 +7,7 @@ function SinglePageNavRoutes(){
   return(
     <>
      <Routes>
- 
+
      </Routes>
     </>
   )
