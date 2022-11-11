@@ -9,10 +9,10 @@ import { ThemeProvider, CSSReset } from "@chakra-ui/core";
 function App() {
   return (
     <div className="App">
-       {/* <Navbar/> */}
-       {/* <AllRoutes/> */}
-       {/* <SingleProductPage/> */}
-       <Payment/>
+       <Navbar/> 
+        <SingleProductPage/>
+        <AllRoutes/> 
+       {/* <Payment/> */}
     </div>
  
   );
