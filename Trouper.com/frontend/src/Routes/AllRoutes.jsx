@@ -10,6 +10,7 @@ import Payment from '../Page/Payment'
 
 export const AllRoutes = () => {
   return (
+
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/login" element={<Login/>}/>
@@ -20,5 +21,6 @@ export const AllRoutes = () => {
       <Route to="/payment" element={<Payment/>}/>
 
     </Routes>
+
   )
 }
