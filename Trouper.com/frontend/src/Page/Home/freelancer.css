@@ -1,0 +1,65 @@
+.freelancer {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    gap: 50px;
+    padding: 40px;
+    margin-top: 50px;
+}
+
+.left2 {
+    text-align: left;
+}
+
+.second2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+.third2 {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.right2 > img{
+  width: 700px;
+  height: 500px;
+}
+
+@media all and (min-width: 551px) and (max-width: 950px){
+    .freelancer {
+        gap: 25px;
+        padding: 20px;
+        flex-wrap: wrap;
+        
+    }
+  
+    .second2 {
+        font-size: 30px;
+
+    }
+  
+    .right2 > img{
+        width: 500px;
+        height: 350px;
+      }
+      
+}
+
+@media all and (min-width: 280px) and (max-width: 550px){
+    .freelancer {
+        gap: 20px;
+        padding: 20px;
+        flex-direction: column;
+        
+    }
+   
+    .second2 {
+        font-size: 30px;
+
+    }
+  
+    .right2 > img{
+        width: 500px;
+        height: 350px;
+      }
+}

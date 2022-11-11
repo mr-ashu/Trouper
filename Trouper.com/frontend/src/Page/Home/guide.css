@@ -1,0 +1,44 @@
+.box {
+    width: 90%;
+    margin: auto;
+}
+.guide-head {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: left;
+}
+
+.gridbox {
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    gap: 30px;
+    padding: auto;
+    margin-top: 10px;
+    text-align: left;
+    line-height: 30px;
+}
+.gridbox > img {
+    width: 100%;
+}
+.p-bold {
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+@media all and (min-width: 551px) and (max-width: 950px){
+    .gridbox {
+        grid-template-columns: repeat(2, 1fr);
+     }
+
+}
+
+@media all and (min-width: 280px) and (max-width: 550px){
+
+    .gridbox {
+       grid-template-columns: repeat(1, 1fr);
+    }
+}
