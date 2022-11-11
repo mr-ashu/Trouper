@@ -8,7 +8,7 @@ import { Input } from '@chakra-ui/input'
  import "./navbar.css"
  import {SearchIcon  } from '@chakra-ui/icons'
 import { Button } from '@chakra-ui/button'
-import { Text } from '@chakra-ui/layout'
+import { Text } from "@chakra-ui/react"
 import LanguageIcon from '@mui/icons-material/Language';
 import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu'
 import { useState } from 'react'
