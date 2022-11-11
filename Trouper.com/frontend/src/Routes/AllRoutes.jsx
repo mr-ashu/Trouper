@@ -1,12 +1,17 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Payment from '../Page/Payment'
+export const AllRoutes = () => {
+  return (
+     <Routes>
+          <Route to="/payment" element={<Payment/>}/>
+     </Routes>
 import { AdminPage } from '../Page/admin/AdminPage'
 import { Cart } from '../Page/Cart'
 import { Home } from '../Page/Home'
 import { Login } from '../Page/Login'
 import SignUp from '../Page/SignUp'
 import SingleProductPage from '../Page/SingleProductPage'
-// 
 export const AllRoutes = () => {
   return (
     <Routes>
