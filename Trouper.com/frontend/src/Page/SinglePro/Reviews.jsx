@@ -29,7 +29,14 @@ function Reviews() {
         // border="2px solid red"
         w={{ base: "30%", md: "50%", lg: "55%", xl: "61%" }}
         ml="25px"
+        id="reviews"
       >
+        <Box textAlign="start">
+          <Heading as="h5" size="lg">
+            5,698 Reviews
+          </Heading>
+        </Box>
+
         <Table className={styles.mainContReview}>
           <Thead>
             <Tr>
@@ -101,8 +108,6 @@ function Reviews() {
             </Tr>
           </tbody>
         </Table>
-
-       
       </Box>
     </>
   );
