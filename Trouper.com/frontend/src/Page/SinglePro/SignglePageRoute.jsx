@@ -7,9 +7,7 @@ function SinglePageNavRoutes(){
   return(
     <>
      <Routes>
-        <Route path="./about" element={<AboutTheSeller/>} />
-        <Route path="./overview" element={<OverviewSlid/>} />
-        {/* <Route path="" element={</>} /> */}
+ 
      </Routes>
     </>
   )
