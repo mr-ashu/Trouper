@@ -18,7 +18,9 @@ app.post("/", async (req, res) => {
  
    try {
     
-    let pdt=await Product.create({...req.body})
+    let pdt=await Product.create({
+        ...req.body
+    })
     res.send(pdt)
    
    } catch (e) {

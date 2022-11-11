@@ -8,35 +8,22 @@ const productSchema = new mongoose.Schema({
     profilePic:{
         type:String,
         data:Buffer
-        
+ 
     },
     about:{
       type:String,
     },
+    searchTag:{
+        type:String
+    },
     language:{
         type:String
     },
-    occuption:{
+    occupation:{
         type:String
     },
-    pSkill:{
-        type:String
-    },
-    education:{
-        type:String
-    },
-    email:{
-        type:String,
-        uniqe:true,
-        required:true
-    },
-    phone:{
-        type:Number,
-        uniqe:true,
-        min:10
-       
-    }
-    ,
+   
+  
     title: {
         type : String,
         required: true
@@ -49,21 +36,11 @@ const productSchema = new mongoose.Schema({
     },
     subCategory: {
         type : String,
-        required: true
+       
     },
-    skill:{
-        type:String,
-        required:true
-    },
-    basePrice:{
-        type:Number,
-        required:true
-    },
-    standerdPrice:{
-        type:Number
-    },
-    premiumPrice:{
-        type:Number
+  
+    price:{
+        type:String
     },
     description:{
         type:String
@@ -75,15 +52,11 @@ const productSchema = new mongoose.Schema({
     rating:{
       type:Number
     },
-    Lavel:{
-        type:Number
-    },
-    country:{
+    lavel:{
         type:String
     },
-    sort:{
-        type:String
-    }
+   
+   
    
    
 
