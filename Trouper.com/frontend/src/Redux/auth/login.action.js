@@ -1,3 +1,15 @@
+ import axios from "axios";
+ import { LOGIN_ERROR, LOGIN_LOADING, LOGIN_SUCCESS } from "./login.types";
+ 
+ export const signup = (data) => async (dispatch) => {
+   dispatch({ type: LOGIN_LOADING });
+   try {
+     let response = await axios.post(`http://localhost:9500/users/signup`, data);
+     dispatch({ type: LOGIN_SUCCESS, payload: response.data });
+   } catch (error) {
+     dispatch({ type: LOGIN_ERROR });
+   }
+ };
  
 
 //  http://localhost:9500/users/signup
