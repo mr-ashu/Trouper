@@ -243,7 +243,7 @@
    
 }
 .extra p{
-    font-size: 12px;
+    font-size: 16px;
     line-height: 18px;
     
  
@@ -253,7 +253,7 @@
 .byertext p{
      
       margin: auto;
-      font: italic 12px/120% Georgia,'Times New Roman',serif;
+      font: italic 13px/100% Georgia,'Times New Roman',serif;
        
       font-weight: 500;
  
@@ -358,7 +358,7 @@
 .byertext p{
      
       margin: auto;
-      font: italic 10px/110% Georgia,'Times New Roman',serif;
+      font: italic 15px/110% Georgia,'Times New Roman',serif;
        font-weight: 600;
  
 }
