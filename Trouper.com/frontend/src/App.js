@@ -11,7 +11,7 @@ function App() {
  
       <Navbar />
       <AllRoutes />
-      <SingleProductPage />
+    
  
  
     </div>
