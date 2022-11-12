@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom"
+import AboutTheSeller from "./AboutTheSeller"
+import OverviewSlid from "./Overview"
 
 function SinglePageNavRoutes(){
  
   return(
     <>
      <Routes>
-        <Route path="" element={</>} />
-        <Route path="" element={</>} />
-        <Route path="" element={</>} />
+
      </Routes>
     </>
   )

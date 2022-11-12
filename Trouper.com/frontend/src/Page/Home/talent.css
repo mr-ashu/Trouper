@@ -1,0 +1,69 @@
+.talent {
+    width: 90%;
+    height: 400px;
+    margin: auto;
+    margin-top: 20px;
+    /* border: 1px solid red; */
+    text-align: left;
+    background: url("https://fiverr-res.cloudinary.com/q_auto,f_auto,w_1400,dpr_1.0/v1/attachments/generic_asset/asset/50218c41d277f7d85feeaf3efb4549bd-1599072608122/bg-signup-1400-x1.png")
+}
+.talent > div {
+    /* border: 1px solid green; */
+    padding: 20px;
+    margin-left: 40px;
+    padding-top: 70px;
+   
+}
+/* .talent > div:first-child {
+    margin-top: 80px;
+} */
+.talent > div > h1{
+   color: white;
+   font-weight: bold;
+   font-size: 40px;
+   
+}
+
+.btn {
+    width: 150px;
+    height: 40px;
+    color: white;
+    background-color: #1dbf73 ;
+    border-radius: 5px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media all and (min-width: 551px) and (max-width: 950px){
+    .talent {
+        width: 100%;
+        height: 350px;
+    }
+    .talent > div {
+        
+        padding: 10px;
+        margin-left: 20px;
+        padding-top: 50px;
+       
+    }
+    .talent > div > h1{
+        font-size: 30px;
+        
+     }
+     .btn {
+        width: 120px;
+        height: 35px;
+     }
+}
+
+@media all and (min-width: 280px) and (max-width: 550px){
+    .talent {
+        width: 100%;
+        height: 250px;
+    }
+    .talent > div > h1{
+        font-size: 20px;
+        
+     }
+}

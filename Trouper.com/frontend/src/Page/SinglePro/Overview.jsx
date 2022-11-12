@@ -14,6 +14,7 @@ import {
   OrderedList,
   UnorderedList
 } from "@chakra-ui/react";
+import TypeOfServiceTable from "./TypeOfServiceTable";
 const colors = [
   {
     id: 1,
@@ -71,8 +72,8 @@ function OverviewSlid() {
 
   return (
     <>
-      <div className={styles.mainCont}>
-        <div className={styles.slideshow}>
+      <Box className={styles.mainCont} ml={{ base: '-10px', md: '-89px', lg: '-85px' , xl:"-52px" }}  id="overview" >
+        <Box className={styles.slideshow} w={{ base:'100%' ,  md: '50%', lg: '55%' , xl:"61%" }} h={{ base: '300px', md: '400px', lg: '500px' , xl:"550px" }} >
           <div
             className={styles.slideshowSlider}
             style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
@@ -99,157 +100,16 @@ function OverviewSlid() {
               ></div>
             ))}
           </div>
-        </div>
+        </Box>
 
-        <div className={styles.checkCard}>
-          <Tabs>
-            <TabList display="flex" justifyContent="space-evenly">
-              <Tab>Basic</Tab>
-              <Tab>Standard</Tab>
-              <Tab>Premium</Tab>
-            </TabList>
-
-            <TabPanels>
-              <TabPanel>
-                {/* <p>₹857</p> */}
-
-                <div>
-                  <Box className={styles.row} mt={[2, 4, 6, 8]}>
-                    <h1>₹857</h1>
-                    <p>Save up to 15% with Subscribe to Save</p>
-                  </Box>
-
-                  <Box className={styles.row} mt={[2, 4, 6, 8]}>
-                    <p>
-                      Basic Package Basic Flyer, Poster, Banner Designs (only
-                      one side) JPG Printable files
-                    </p>
-                  </Box>
-
-                  <Box className={styles.rowThird} mt={[2, 4, 6, 8]}>
-                    <div>1 Day Delivery</div>
-                    <div>Unlimited Revisions</div>
-                  </Box>
-
-                  <Box className={styles.row} mt={[2, 4, 6, 8]}>
-                    <li>Files Ready for Print</li>
-                    <li>Include Source File</li>
-                    <li>Front & back design</li>
-                    <li>Social Media Design</li>
-                    <li>Commercial Use</li>
-                  </Box>
-
-                  <Button
-                    colorScheme="whatsapp"
-                    w={[90, 140, 200, 280]}
-                    mt={[2, 4, 6, 8]}
-                  >
-                    Continue
-                  </Button>
-                </div>
-              </TabPanel>
-              <TabPanel>
-                {/* <p>two!</p> */}
-                <div>
-                  <Box className={styles.row} mt={[2, 4, 6, 8]}>
-                    <h1>₹1,713</h1>
-                    <p>Save up to 15% with Subscribe to Save</p>
-                  </Box>
-
-                  <Box className={styles.row} mt={[2, 4, 6, 8]}>
-                    <p>
-                      Basic Package Basic Flyer, Poster, Banner Designs (only
-                      one side) JPG Printable files
-                    </p>
-                  </Box>
-
-                  <Box className={styles.rowThird} mt={[2, 4, 6, 8]}>
-                    <div>1 Day Delivery</div>
-                    <div>Unlimited Revisions</div>
-                  </Box>
-
-                  <Box className={styles.row} mt={[2, 4, 6, 8]}>
-                    <li>Files Ready for Print</li>
-                    <li>Include Source File</li>
-                    <li>Front & back design</li>
-                    <li>Social Media Design</li>
-                    <li>Commercial Use</li>
-                  </Box>
-
-                  <Button
-                    colorScheme="whatsapp"
-                    w={[90, 140, 200, 280]}
-                    mt={[2, 4, 6, 8]}
-                  >
-                    Continue
-                  </Button>
-                </div>
-              </TabPanel>
-              <TabPanel>
-                {/* <p>three!</p> */}
-                <div>
-                  <Box className={styles.row} mt={[2, 4, 6, 8]}>
-                    <h1>₹5,138</h1>
-                    <p>Save up to 15% with Subscribe to Save</p>
-                  </Box>
-
-                  <Box className={styles.row} mt={[2, 4, 6, 8]}>
-                    <p>
-                      Basic Package Basic Flyer, Poster, Banner Designs (only
-                      one side) JPG Printable files
-                    </p>
-                  </Box>
-
-                  <Box className={styles.rowThird} mt={[2, 4, 6, 8]}>
-                    <div>1 Day Delivery</div>
-                    <div>Unlimited Revisions</div>
-                  </Box>
-
-                  <Box className={styles.row} mt={[2, 4, 6, 8]}>
-                    <li>Files Ready for Print</li>
-                    <li>Include Source File</li>
-                    <li>Front & back design</li>
-                    <li>Social Media Design</li>
-                    <li>Commercial Use</li>
-                  </Box>
-
-                  <Button
-                    colorScheme="whatsapp"
-                    w={[90, 140, 200, 280]}
-                    mt={[2, 4, 6, 8]}
-                  >
-                    Continue
-                  </Button>
-                </div>
-              </TabPanel>
-            </TabPanels>
-          </Tabs>
-        </div>
-      </div>
+        <Box className={styles.checkCard}   h={{ base: '200px', md: '300px', lg: '400px' , xl:"500px" }} >
+          <TypeOfServiceTable/>
+        </Box>
+      </Box>
     </>
   );
 }
 
 export default OverviewSlid;
 
-/* list modification
-
-                   <List spacing={3}>
-  <ListItem>
-    <ListIcon as={MdCheckCircle} color='green.500' />
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit
-  </ListItem>
-  <ListItem>
-    <ListIcon as={MdCheckCircle} color='green.500' />
-    Assumenda, quia temporibus eveniet a libero incidunt suscipit
-  </ListItem>
-  <ListItem>
-    <ListIcon as={MdCheckCircle} color='green.500' />
-    Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
-  </ListItem>
-  {/* You can also use custom icons from react-icons */
-//   <ListItem>
-//     <ListIcon as={MdSettings} color='green.500' />
-//     Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
-//   </ListItem>
-// </List>
+ 
