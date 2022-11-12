@@ -8,7 +8,7 @@ import { Input } from '@chakra-ui/input'
  import "./navbar.css"
  import {SearchIcon  } from '@chakra-ui/icons'
 import { Button } from '@chakra-ui/button'
-import { Text } from "@chakra-ui/react"
+import { Text,Image } from "@chakra-ui/react"
 import LanguageIcon from '@mui/icons-material/Language';
 import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu'
 import { useState } from 'react'
@@ -23,7 +23,7 @@ import SwipeableTemporaryDrawer, { Snavbar }  from './snavbar';
      <div className='navBox'>
             <div className='snav'>
           <Snavbar/></div>
-           <h3>Logo</h3>
+          <Image src="https://miro.medium.com/max/608/1*83ea0-gKieSinthdD9vjFg.jpeg"  alt=""  w="150px" />
      
         
         <div className='leftNav'>

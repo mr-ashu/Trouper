@@ -28,10 +28,13 @@
     margin-bottom: 15px;
 }
 
-.btn {
+.btn5 {
     background-color: #29a745;
     color: white;
     width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: bold;
 }
 
 .right > img{
@@ -55,7 +58,7 @@
         font-size: 30px;
 
     }
-    .btn {
+    .btn5 {
         width: 250px;
     }
     .right > img{
@@ -81,7 +84,7 @@
         font-size: 30px;
 
     }
-    .btn {
+    .btn5 {
         width: 250px;
     }
     .right > img{
