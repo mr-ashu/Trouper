@@ -12,7 +12,7 @@ function AboutTheSeller() {
         id="about"
       >
         <Box textAlign="start">
-          <Heading as="h5" size="sm">
+          <Heading as="h5" size="lg">
             About The Seller
           </Heading>
         </Box>
@@ -68,7 +68,7 @@ function AboutTheSeller() {
           <Text fontSize="lg" textAlign="start" mt={[2, 4, 6, 8]} mb={[2, 4, 6, 8]}  >
             Hello!
           </Text>
-          <Text noOfLines={[4, 3, 3, 2]} textAlign="start"  >
+          <Text noOfLines={[4, 3, 3, 2]} textAlign="start"   >
             I am kasun, a Full Time Creative Graphic Designer with an experience
             of 12 years in logo, flyer design, poster design, brochure design,
             and graphic design of any kind.
