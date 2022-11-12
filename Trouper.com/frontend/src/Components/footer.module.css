@@ -1,0 +1,106 @@
+.gridBox {
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 30px;
+    text-align: left;
+    padding: 60px;
+}
+
+.gridBox > div {
+   line-height: 35px;
+}
+
+.gridBox > div > h1 {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.gridBox > div > p {
+    color: gray;
+    
+}
+
+.flexBox {
+    width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.flexBox > div:first-child > img {
+    width: 200px;
+    height: 40px;
+}
+
+.flexBox > div:last-child {
+    display: flex;
+    gap: 20px;
+    /* margin-top: 20px; */
+}
+.flexBox > div:last-child > img {
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
+@media all and (min-width: 401px) and (max-width: 750px){
+    .gridBox {
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+    }
+    .gridBox > div {
+        line-height: 25px;
+     }
+     
+     .gridBox > div > h1 {
+         font-size: 18px;
+     }
+     .flexBox {
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+    .flexBox > div:first-child > img {
+        width: 150px;
+        height: 30px;
+    }
+    
+    .flexBox > div:last-child {
+        gap: 15px;
+    }
+    .flexBox > div:last-child > img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+@media all and (min-width: 280px) and (max-width: 400px){
+    .gridBox {
+        display: none;
+    }
+    .flexBox {
+      margin: auto;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    .flexBox > div:first-child > img {
+        margin-left: 15px;
+        width: 200px;
+        height: 40px;
+    }
+    
+    .flexBox > div:last-child {
+        gap: 15px;
+    }
+    .flexBox > div:last-child > img {
+        width: 30px;
+        height: 30px;
+    }
+}
