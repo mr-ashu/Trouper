@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   VStack,
   Box,
@@ -11,11 +11,26 @@ import {
   Button,
   Stack,
   Checkbox,
+  AlertDialog,
+  AlertDialogBody,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogContent,
+  AlertDialogOverlay,
+  useDisclosure,
 } from "@chakra-ui/react";
 import NavPay from "./Payment.Nav";
 import Rating from "./Rating";
+import payImg from "../Components/image/Payment_Logo.png";
 
 const Payment = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const cancelRef = React.useRef();
+  const [count,setCount] = useState(0)
+const handleClick = () => {
+  setCount(count+1)
+  console.log(count,"Count")
+}
   return (
     <>
       <NavPay />
@@ -237,12 +252,12 @@ const Payment = () => {
           </Box>
 
           <Box>
-            <Box p="5" border="1px solid #DCE5DF" w="300px" h="350px">
+            <Box p="5" border="1px solid #DCE5DF" w="300px" h="340px">
               <Text fontSize="19px" fontWeight="bold" textAlign="left" mb="5">
                 Payment Price
               </Text>
               <Grid templateColumns="repeat(5, 1fr)" gap={4} textAlign="left">
-                <GridItem colSpan={3} h="10" color="#898A89" fontWeight="bold">
+                <GridItem colSpan={3} h="10" color="#898A89" fontWeight="500">
                   Subtotal
                 </GridItem>
                 <GridItem colStart={4} colEnd={6} h="10" textAlign="end">
@@ -250,7 +265,7 @@ const Payment = () => {
                 </GridItem>
               </Grid>
               <Grid templateColumns="repeat(5, 1fr)" gap={4} textAlign="left">
-                <GridItem colSpan={3} h="10" color="#898A89" fontWeight="bold">
+                <GridItem colSpan={3} h="10" color="#898A89" fontWeight="500">
                   Service Fee
                 </GridItem>
                 <GridItem colStart={4} colEnd={6} h="10" textAlign="end">
@@ -276,7 +291,7 @@ const Payment = () => {
                   colEnd={6}
                   h="10"
                   textAlign="end"
-                  fontWeight="600"
+                  fontWeight="500"
                   color="grey"
                 >
                   2 days
@@ -292,10 +307,44 @@ const Payment = () => {
                 fontSize="17px"
                 borderRadius="5px"
                 color="white"
+                onClick={onOpen}
               >
-                Contiune to Checkout
+                Contiune to Payment
               </Button>
+
+              <AlertDialog
+                isOpen={isOpen}
+                leastDestructiveRef={cancelRef}
+                onClose={onClose}
+              >
+                <AlertDialogOverlay>
+                  <AlertDialogContent>
+                    <AlertDialogHeader fontSize="lg" fontWeight="bold">
+                      Confirm Payment
+                    </AlertDialogHeader>
+
+                    <AlertDialogBody>
+                      Are you sure? You can Confirm your Payment.
+                    </AlertDialogBody>
+
+                    <AlertDialogFooter>
+                      <Button ref={cancelRef} onClick={onClose}>
+                        Cancel
+                      </Button>
+                      <Button  colorScheme="green" onClick={onClose} ml={3}>
+                        Confirm{" "}
+                      </Button>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialogOverlay>
+              </AlertDialog>
+              <Text color="grey">You won't be charged yet</Text>
             </Box>
+            <Image w="300px" src={payImg} />
+            <Text color="grey" pl="8" fontWeight="500" w="240px" fontSize="13px">
+              SSL SECURED PAYMENT Your information is protected by 256-bit SSL
+              encryption
+            </Text>
           </Box>
         </Flex>
       </VStack>
