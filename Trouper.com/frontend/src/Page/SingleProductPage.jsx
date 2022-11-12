@@ -13,7 +13,7 @@ const SingleProductPage = () => {
   const [productDetails, setProductDetails] = React.useState([]);
 
   React.useEffect(() => {
-    getData(`https://reqres.in/api/users/${user_id}`).then((res) =>
+    getData(`http://localhost:9500/products/${user_id}`).then((res) =>
       setProductDetails(res.data)
     );
   }, [user_id]);
