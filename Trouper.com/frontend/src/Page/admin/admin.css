@@ -1,0 +1,377 @@
+ 
+
+.autovideo{
+    position: fixed;
+
+    width: 100%;
+    height:auto;
+   
+    z-index: 0;
+}
+
+.smallbull{
+    position: absolute;
+    width: 100%;
+    left:0;
+    height: auto;
+    z-index: 100;
+    align-items: center;
+     
+}
+.videotext{
+   
+    
+  
+   text-align: center;
+   justify-content: center;
+   align-self: center;
+   color: #fff;
+
+
+   
+}
+.txtspan h1{
+    
+    font-family: macan,helvetica neue,Helvetica,Arial,sans-serif;
+    color: #fff;
+    font-size: 50px;
+    line-height: 110%;
+    max-width: 750px;
+    margin: 0 auto;
+}
+.txtspan p{
+    color: #fff;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    max-width: 750px;
+    margin: 5px auto 15px;
+}
+.txtspan{
+ 
+  
+    width: fit-content;
+    margin: auto;
+    margin-top: 14%;
+    margin-bottom: 14%;
+    
+}
+.videotext a{
+    background-color: #1dbf73;
+    font-size: 20px;
+    line-height: 16px;
+    font-weight: 700;
+    color: #fff;
+    border: 1px solid transparent;
+    padding: 17px 25px;
+    
+    display: inline-block;
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin-top: 13px;
+}
+.videotext a:hover{
+       border: none;
+  
+
+}
+.pgridbox{
+    background: white;
+    padding: 20px;
+    padding-bottom: 80px;
+    padding-top: 40px;
+}
+.pgrid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:20px;
+    width: 90%;
+    margin: auto;
+    color:black;
+    align-items: center;
+    
+}
+.pgrid div{
+    height: 300px;
+}
+.ltext a{
+    background-color: #1dbf73;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    color: #fff;
+    border: 1px solid transparent;
+    padding: 15px 35px;
+    margin: 0;
+    display: inline-block;
+    border-radius: 3px;
+    box-sizing: border-box;
+    transition: color .2s,background-color .2s,box-shadow .2s,border .2s;
+    margin-top: 20px!important;
+}
+.ltext h3{
+    font-size: 32px;
+    line-height: 34px;
+    font-weight: 400;
+    color: #555;
+    width: 50%;
+    margin: auto;
+}
+ 
+
+.pgrid img{
+   width: 100%;
+   height: 100%;
+}
+
+.haderh3{
+    
+    font-family: macan,helvetica neue,Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    text-transform: initial;
+    padding-bottom: 30px;
+    font-size: 32px;
+    line-height: 120%;
+    color: #222325;
+}
+.extrabox{
+    background: #f7f7f7;
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+.extra{
+    background: white;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 90%;
+    margin: auto;
+    gap: 20px;
+    background: #f7f7f7;
+    
+}
+.extrah2{
+    font: 400 32px "Macan","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #62646a;
+    padding: 32px;
+    font-weight: bold;
+}
+.extra h3{
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #555;
+}
+.extra p{
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 12px;
+ 
+}
+ 
+
+.byer{
+    background: white;
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+.gridByer{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 85%;
+    margin: auto;
+    align-items: center;
+    text-align: start;
+    background: #f7f7f7;;
+}
+.gridByer img{
+    width: 100%;
+  
+}
+.byertext{
+   background: #f7f7f7;;
+    color: #62646a;
+}
+.byertext p{
+     
+      margin: auto;
+      font: italic 14px/140% Georgia,'Times New Roman',serif;
+     
+      z-index: 2;
+      padding: 0 25px;
+      
+      box-sizing: border-box;
+     
+      font-weight: 550;
+      
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+       
+}
+.byerh2{
+    font: 400 32px "Macan","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #62646a;
+    padding: 32px;
+    font-weight: 700;
+}
+
+
+ 
+@media only screen and (max-width: 1050px){
+    .pgrid{
+         
+        grid-template-columns: repeat(3,1fr);
+        gap:25px;
+    }
+
+    .pgrid div{
+        height: 240px;
+    }
+    
+    .ltext h3{
+        font-size: 20px;
+        line-height: 34px;
+        font-weight: 500;
+       
+    }
+ 
+ 
+ 
+.extra h3{
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+   
+}
+.extra p{
+    font-size: 16px;
+    line-height: 18px;
+    
+ 
+}
+ 
+ 
+.byertext p{
+     
+      margin: auto;
+      font: italic 13px/100% Georgia,'Times New Roman',serif;
+       
+      font-weight: 500;
+ 
+}
+.byerh2{
+    font: 400 25px "Macan","Helvetica Neue",Helvetica,Arial,sans-serif;
+     font-weight: 600;
+   }
+
+}
+
+@media only screen and (max-width: 819px){
+    .txtspan h1{
+     
+        font-size: 25px;
+        
+    }
+    .txtspan p{
+        color: #fff;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        
+    }
+    .pgrid div{
+        height: 230px;
+    }
+    .videotext a{
+ 
+        font-size: 12px;
+        line-height: 16px;
+        color: #fff;
+        padding: 7px 15px;
+        margin-top: 7px;
+    }
+   
+    .pgrid{
+         
+        grid-template-columns: repeat(2,1fr);
+        width: 95%;
+        gap:15px;
+      
+    }
+ 
+    .ltext a{
+ 
+        font-size: 12px;
+        line-height: 12px;
+        font-weight: 500;
+        padding: 8px 15px;
+      
+    }
+    .ltext h3{
+        font-size: 15px;
+        line-height: 25px;
+        font-weight: 600;
+       
+    }
+
+
+    
+.haderh3{
+     font-weight: 600;
+     font-size: 15px;
+   
+}
+ 
+ 
+.extrah2{
+    font-size: 18px;
+   
+}
+.extra h3{
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+   
+}
+.extra p{
+    font-size: 12px;
+    line-height: 18px;
+    
+ 
+}
+.extra{
+    
+    
+    grid-template-columns: repeat(1,1fr);
+    width: 80%;
+    gap: 25px;
+  
+    
+}
+.gridByer{
+     
+    grid-template-columns: repeat(2,1fr);
+    gap:20px;
+    width: 85%;
+   
+}
+ 
+.byertext p{
+     
+      margin: auto;
+      font: italic 15px/110% Georgia,'Times New Roman',serif;
+       font-weight: 600;
+ 
+}
+.byerh2{
+    font: 400 18px "Macan","Helvetica Neue",Helvetica,Arial,sans-serif;
+     font-weight: 600;
+   }
+
+
+}
+
+
+
+ 
+ 
+ 
