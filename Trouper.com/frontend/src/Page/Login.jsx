@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link as ReactLink } from "react-router-dom";
+import { useDispatch } from 'react-redux'
 import axios from "axios";
 import {
   Modal,
@@ -22,6 +23,7 @@ import {
   Flex,
   Checkbox
 } from "@chakra-ui/react";
+import { login } from '../Redux/auth/login.action';
 
 const initialFormData = {
   email: "",
@@ -31,6 +33,7 @@ const initialFormData = {
 
 export default function Login() {
   const [formData, setFormData] = React.useState(initialFormData);
+  const dispatch = useDispatch()
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const initialRef = React.useRef(null);
@@ -41,22 +44,10 @@ export default function Login() {
     const inputValue = type === "checkbox" ? checked : value;
     setFormData({ ...formData, [name]: inputValue });
   };
-  console.log(formData);
+  // console.log(formData);
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post(`https://reqres.in/api/login`, {
-        ...formData
-      })
-      .then((res) => {
-        alert(`Hi! your token is ${res.data.token}`);
-      })
-      .catch((err) => {
-        alert(`Please sign up first
-                  or
-            check your user id and password
-      `);
-      });
+    dispatch(login(formData))
   };
   return (
     <>

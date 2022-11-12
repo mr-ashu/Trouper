@@ -9,6 +9,7 @@ import { Home } from '../Page/Home'
 import  Login  from '../Page/Login'
 import SignUp from '../Page/SignUp'
 import SingleProductPage from '../Page/SingleProductPage'
+import ProductPage  from '../Page/ProductPage'
  
  
 export const AllRoutes = () => {
@@ -22,7 +23,7 @@ export const AllRoutes = () => {
       <Route path="/admin" element={<AdminPage/>}/>
       <Route path="/product/:id" element={<SingleProductPage/>}/>
       <Route path="/payment" element={<Payment/>}/>
-   
+      <Route path='/product' element={<ProductPage/>}/>
     </Routes>
 
   )
