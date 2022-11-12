@@ -75,7 +75,7 @@ const Payment = () => {
                   w="620px"
                   pl="42px"
                   textAlign="start"
-                  fontWeight="600"
+                  fontWeight="400"
                   color="grey"
                 >
                   The seller will upload the content to pages on your website
@@ -84,17 +84,17 @@ const Payment = () => {
               </Box>
 
               <Box _hover={{ border: " 1px solid #0070f3" }} mb="10px">
-                <Stack p="5" mb="-18px" spacing="500px" direction="row">
+                <Stack p="5" mb="-18px" spacing="610px" direction="row">
                   <Checkbox colorScheme="green" fontWeight="600">
-                  Source file
+                    Source file
                   </Checkbox>
-                  <Text >₹5,344.12</Text>
+                  <Text>₹5,344.12</Text>
                 </Stack>
                 <Text
                   w="620px"
                   pl="42px"
                   textAlign="start"
-                  fontWeight="600"
+                  fontWeight="400"
                   color="grey"
                 >
                   The seller will include the source file as part of the
@@ -105,66 +105,139 @@ const Payment = () => {
               </Box>
 
               <Box _hover={{ border: " 1px solid #0070f3" }} mb="10px">
-                <Stack p="5" mb="-18px" spacing="500px" direction="row">
+                <Stack p="5" mb="-18px" spacing="540px" direction="row">
                   <Checkbox colorScheme="green" fontWeight="600">
-                    Content upload ( +1 day )
+                    Prototype.(+2 days)
                   </Checkbox>
-                  <Text>₹1,244.12</Text>
+                  <Text>₹4,274.12</Text>
                 </Stack>
                 <Text
                   w="620px"
                   pl="42px"
                   textAlign="start"
-                  fontWeight="600"
+                  fontWeight="400"
                   color="grey"
                 >
-                  The seller will upload the content to pages on your website
-                  (relevant only for Website Builders).
+                  The seller will create a demo that shows the design and user
+                  flow. This can be used for UI/UX testing and a reference for
+                  designers. This is different from coding the actual site/app.
+                </Text>
+              </Box>
+
+              <Box _hover={{ border: " 1px solid #0070f3" }} mb="10px">
+                <Stack p="5" mb="-18px" spacing="450px" direction="row">
+                  <Checkbox colorScheme="green" fontWeight="600">
+                    Convert to HTML/CSS.( +2 day )
+                  </Checkbox>
+                  <Text>₹4,227.52</Text>
+                </Stack>
+                <Text
+                  w="620px"
+                  pl="42px"
+                  textAlign="start"
+                  fontWeight="400"
+                  color="grey"
+                >
+                  The seller will convert the design into usable HTML/CSS code.
+                </Text>
+              </Box>
+
+              <Box _hover={{ border: " 1px solid #0070f3" }} mb="10px">
+                <Stack p="5" mb="-18px" spacing="425px" direction="row">
+                  <Checkbox colorScheme="green" fontWeight="600">
+                    0 additional custom asset.(+2 days)
+                  </Checkbox>
+                  <Text>₹2,254.12</Text>
+                </Stack>
+                <Text
+                  w="620px"
+                  pl="42px"
+                  textAlign="start"
+                  fontWeight="400"
+                  color="grey"
+                >
+                  The seller will add an additional custom design asset to your
+                  delivery.
+                </Text>
+              </Box>
+
+              <Box _hover={{ border: " 1px solid #0070f3" }} mb="10px">
+                <Stack p="5" mb="-18px" spacing="557px" direction="row">
+                  <Checkbox colorScheme="green" fontWeight="600">
+                    1 additional page
+                  </Checkbox>
+                  <Text>₹2,254.12</Text>
+                </Stack>
+                <Text
+                  w="620px"
+                  pl="42px"
+                  textAlign="start"
+                  fontWeight="400"
+                  color="grey"
+                >
+                  The seller will add an additional custom design asset to your
+                  delivery.
+                </Text>
+              </Box>
+
+              <Box _hover={{ border: " 1px solid #0070f3" }} mb="10px">
+                <Stack p="5" mb="-18px" spacing="554px" direction="row">
+                  <Checkbox colorScheme="green" fontWeight="600">
+                    Hosting.(+1 days)
+                  </Checkbox>
+                  <Text>₹2,254.12</Text>
+                </Stack>
+                <Text
+                  w="620px"
+                  pl="42px"
+                  textAlign="start"
+                  fontWeight="400"
+                  color="grey"
+                >
+                  I will provide secured hosting for 1 year
                 </Text>
               </Box>
 
               <Box _hover={{ border: " 1px solid #0070f3" }} mb="10px">
                 <Stack p="5" mb="-18px" spacing="500px" direction="row">
                   <Checkbox colorScheme="green" fontWeight="600">
-                    Content upload ( +1 day )
+                    Business Card ( +2 days )
                   </Checkbox>
-                  <Text>₹1,244.12</Text>
+                  <Text>₹1,254.12</Text>
                 </Stack>
                 <Text
                   w="620px"
                   pl="42px"
                   textAlign="start"
-                  fontWeight="600"
+                  fontWeight="400"
                   color="grey"
                 >
-                  The seller will upload the content to pages on your website
-                  (relevant only for Website Builders).
+                  I will provide you attractive business card Qty 1
                 </Text>
               </Box>
 
               <Box _hover={{ border: " 1px solid #0070f3" }} mb="10px">
-                <Stack p="5" mb="-18px" spacing="500px" direction="row">
+                <Stack p="5" mb="-18px" spacing="480px" direction="row">
                   <Checkbox colorScheme="green" fontWeight="600">
-                    Content upload ( +1 day )
+                    Company Profile ( +3 days )
                   </Checkbox>
-                  <Text>₹1,244.12</Text>
+                  <Text>₹2,254.12</Text>
                 </Stack>
                 <Text
                   w="620px"
                   pl="42px"
                   textAlign="start"
-                  fontWeight="600"
+                  fontWeight="400"
                   color="grey"
                 >
-                  The seller will upload the content to pages on your website
-                  (relevant only for Website Builders).
+                  I will guide you how to make changes to website
                 </Text>
               </Box>
             </Box>
           </Box>
 
           <Box>
-            <Box p="5" border="1px solid grey" w="300px" h="350px">
+            <Box p="5" border="1px solid #DCE5DF" w="300px" h="350px">
               <Text fontSize="19px" fontWeight="bold" textAlign="left" mb="5">
                 Payment Price
               </Text>
@@ -172,7 +245,7 @@ const Payment = () => {
                 <GridItem colSpan={3} h="10" color="#898A89" fontWeight="bold">
                   Subtotal
                 </GridItem>
-                <GridItem colStart={4} colEnd={6} h="10">
+                <GridItem colStart={4} colEnd={6} h="10" textAlign="end">
                   ₹5,918.60
                 </GridItem>
               </Grid>
