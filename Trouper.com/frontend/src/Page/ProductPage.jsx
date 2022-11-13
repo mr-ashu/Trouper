@@ -139,7 +139,7 @@ useEffect(()=>{
                               <span className={style.rating1}>{el.lavel}</span>
                         </div>
                   </div>
-                  <Link to={`/product/${el.id}`}>{el.title}</Link>
+                  <Link to={`/product/${el._id}`}>{el.title}</Link>
                   <span className={style.rating}>{el.rating}</span>
                    </div>
                  <hr />
