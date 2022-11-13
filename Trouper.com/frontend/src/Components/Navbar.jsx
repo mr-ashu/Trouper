@@ -14,6 +14,8 @@ import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import SwipeableTemporaryDrawer, { Snavbar }  from './snavbar';
+import { SubNavbar } from './SubNavbar';
+ 
  
  export const Navbar = () => {
   const [value,setValue]=useState("inr");
@@ -22,7 +24,8 @@ import SwipeableTemporaryDrawer, { Snavbar }  from './snavbar';
    <>
      <div className='navBox'>
             <div className='snav'>
-          <Snavbar/></div>
+          <Snavbar/>
+          </div>
            <h3>Logo</h3>
      
         
@@ -78,15 +81,8 @@ import SwipeableTemporaryDrawer, { Snavbar }  from './snavbar';
     
      </div>
      <hr />
-     <div className='subNavbar'>
-         <Link to="">Graphics & Design</Link>
-         <Link to="">Digital Marketing</Link>
-         <Link to="">Writing & Transition</Link>
-         <Link to="">Video & Animation</Link>
-         <Link to="">Music & Audio</Link>
-         <Link to="">Programming & Tech</Link>
-         <Link to="">Business</Link>
-     </div>
+    {/* ----------------------------- */}
+       <SubNavbar/>
    <hr />
 
    </>
