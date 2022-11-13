@@ -5,8 +5,8 @@
    dispatch({ type: LOGIN_LOADING });
    try {
      let response = await axios.post(`http://localhost:9500/users/login`, data);
-     console.log(response.data)
-     dispatch({ type: LOGIN_SUCCESS, payload: response.data });
+     console.log(response.data.token)
+     dispatch({ type: LOGIN_SUCCESS, payload: response.data.token });
    } catch (error) {
      dispatch({ type: LOGIN_ERROR });
    }

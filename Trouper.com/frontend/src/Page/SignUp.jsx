@@ -26,6 +26,9 @@ import {
 } from "@chakra-ui/react";
 import { signup } from "../Redux/auth/login.action";
 import axios from "axios";
+import FormLabel from "@chakra-ui/react";
+import axios from "axios";
+import { LOGIN_ERROR } from "../Redux/auth/login.types";
 
 const initialFormData = {
   email: "",
@@ -36,6 +39,7 @@ const initialFormData = {
 export default function SignUp() {
   const [formData, setFormData] = React.useState(initialFormData);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const initialRef = React.useRef(null);
@@ -179,6 +183,17 @@ export default function SignUp() {
                     value={formData.password}
                     onChange={handleChangeFormData}
                     placeholder="Inter your Password"
+                    size="lg"
+                  />
+                </FormControl>
+                <FormControl>
+                  <FormLabel>User Id</FormLabel>
+                  <Input
+                    type="text"
+                    name="userId"
+                    value={formData.userId}
+                    onChange={handleChangeFormData}
+                    placeholder="Inter your User Id"
                     size="lg"
                   />
                 </FormControl>

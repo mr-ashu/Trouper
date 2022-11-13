@@ -25,7 +25,7 @@ export const authReducer = (state = initialState, { type, payload }) => {
     case LOGIN_LOADING: {
       return {
         ...state,
-        loading: true
+        loading: true,
       }
     }
     case SIGN_OUT: {
@@ -41,6 +41,7 @@ export const authReducer = (state = initialState, { type, payload }) => {
     case LOGIN_ERROR: {
       return {
         ...state,
+        loading:false,
         error: true
       }
     }

@@ -24,7 +24,7 @@
    
 }
 
-.btn {
+.btn4 {
     width: 150px;
     height: 40px;
     color: white;
@@ -51,9 +51,11 @@
         font-size: 30px;
         
      }
-     .btn {
+     .btn4 {
+        margin-top: 20px;
         width: 120px;
         height: 35px;
+        font-size: 15px;
      }
 }
 
@@ -65,5 +67,15 @@
     .talent > div > h1{
         font-size: 20px;
         
+     }
+     .talent > div > h1{
+        font-size: 20px;
+        
+     }
+     .btn4 {
+        margin-top: 10px;
+        width: 100px;
+        height: 30px;
+        font-size: 10px;
      }
 }

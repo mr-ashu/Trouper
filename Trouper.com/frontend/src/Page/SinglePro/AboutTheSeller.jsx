@@ -7,11 +7,11 @@ function AboutTheSeller() {
       <Box
        // border="2px solid red"
        className={styles.AmainCont}
-        w={{ base: "30%", md: "50%", lg: "55%", xl: "61%" }}
-        ml="25px"
+        w={{   md: "50%", lg: "55%", xl: "61%" }}
+        ml={{md:"25px" , lg:"25px" ,xl: "25px" }}
         id="about"
       >
-        <Box textAlign="start">
+        <Box textAlign="start" className={styles.head} mb={4} >
           <Heading as="h5" size="lg">
             About The Seller
           </Heading>
@@ -65,7 +65,7 @@ function AboutTheSeller() {
               </Box>
             </Box>
           </Box>
-          <Text fontSize="lg" textAlign="start" mt={[2, 4, 6, 8]} mb={[2, 4, 6, 8]}  >
+          <Text fontSize="lg" textAlign="start" mt={[2, 4, 6, 8]} mb={[2, 4, 6, 8]} fontWeight="bold">
             Hello!
           </Text>
           <Text noOfLines={[4, 3, 3, 2]} textAlign="start"   >

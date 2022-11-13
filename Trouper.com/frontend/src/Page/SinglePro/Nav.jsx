@@ -21,7 +21,7 @@ function Navigation() {
 
   return (
     <>
-    <div className={styles.nav} w={{ base: '20%', md: '40%', lg: '50%' , xl:"61%" }}   >
+    <div className={styles.nav} w={{md: '40%', lg: '50%' , xl:"61%" }}   >
         <div className={styles.sec1}>
             <Link to="overview" >Overview</Link>
             <Link to="about" >About the seller</Link>
@@ -29,10 +29,10 @@ function Navigation() {
             <Link to="reviews" >Reviews</Link>
         </div>
         <div className={styles.sec2} >
-            <Button style={{border : "1px solid yellow"}} className={styles.menuIcon} ><MenuIcon/></Button>
+            <Button  className={styles.menuIcon} ><MenuIcon/></Button>
             <div className={styles.likeCountDiv} >
-            <button style={{border : "1px solid yellow"}} className={styles.likeIcon} onClick={handleLikeCount} > <AlertCom/>  </button>
-            <div style={{border : "1px solid yellow"}} ><div className={styles.countShowCont} >{likeCount}</div></div>
+            <button   className={styles.likeIcon} onClick={handleLikeCount} > <AlertCom/>  </button>
+            <div   ><div className={styles.countShowCont} >{likeCount}</div></div>
             </div>
             <Button className={styles.shareIcon} ><ShareIcon/></Button>
         </div>

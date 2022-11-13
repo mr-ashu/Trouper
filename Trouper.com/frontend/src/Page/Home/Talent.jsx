@@ -1,13 +1,14 @@
+
 import React from 'react'
-import "./talent.css";
+import style from "./talent.module.css";
 export const Talent = () => {
   return (
     <div>
-      <div className='talent'>
+      <div className={style.talent}>
         <div>
          <h1>Find the talent needed to</h1>
          <h1>get your business growing.</h1>
-         <button className='btn'>Get Started</button>
+         <button className={style.btn4}>Get Started</button>
          </div>
       </div>
     </div>
