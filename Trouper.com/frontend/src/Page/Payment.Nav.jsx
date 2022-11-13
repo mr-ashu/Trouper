@@ -2,12 +2,13 @@ import { Flex, Image, Box } from "@chakra-ui/react";
 import React from "react";
 // import Logo_F from "../Logo/Fiveer-Logo.png"
 const NavPay = () => {
-    return (
+  return (
     <Box justifyContent="left" textAlign="left">
-      <Flex fontSize="21px" gap="8px" p="8">
-        <Box boxSize="140px">
-          <Image
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Fiverr_Logo_09.2020.svg/1200px-Fiverr_Logo_09.2020.svg.png"
+      <Flex fontSize="21px" gap="8px" p="8" >
+        <Box boxSize="140px" >
+          <Image 
+          pt="3"
+            src="https://miro.medium.com/max/608/1*83ea0-gKieSinthdD9vjFg.jpeg "
             alt="fiverr_logo"
           />
         </Box>
@@ -22,9 +23,9 @@ const NavPay = () => {
           bg="#1dbf73"
           mr="-18px"
           textAlign="center"
-          color="white" 
+          color="white"
         >
-          1 
+          1
         </Box>
         <Box ml="5" mt="3">
           {" "}

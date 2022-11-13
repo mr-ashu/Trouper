@@ -1,15 +1,10 @@
- 
- 
- 
-import React, { useEffect, useState } from 'react'
-import { Link, resolvePath, useNavigate } from 'react-router-dom';
-import style from "./Product.module.css"
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import { grey } from '@mui/material/colors';
-import { GridItem } from '@chakra-ui/react';
-import axios from 'axios';
-import { display } from '@mui/system';
 
+import { grey } from "@mui/material/colors";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import style from "./Product.module.css"
+import FavoriteIcon from "@material-ui/icons/Favorite"
 const getApiData = () =>{
   return axios.get("http://localhost:9500/products") 
 }
@@ -109,7 +104,7 @@ useEffect(()=>{
      <>
      <h1 className={style.categorytitle}>{x}</h1>
      <div className={style.filter}>
-        <div className='slctdiv'>
+        <div className={style.slctdiv}>
         <select onChange={(e)=>setv(e.target.value)}  value={v} className={style.slct}>
           <option value="">Sort By Price</option>
           <option value="asc">ASC</option>
