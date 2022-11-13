@@ -4,7 +4,7 @@ import { Box } from "@mui/system"
 import React,{ useState } from "react"
 import { Link } from "react-router-dom"
 import { SubNavbar } from "./SubNavbar"
-
+import style from "./navbar.module.css"
 export const Snavbar=()=> {
   const { isOpen, onOpen, onClose } = useDisclosure()
  
@@ -31,18 +31,21 @@ export const Snavbar=()=> {
             <Link to="/admin">Become a Seller </Link>
           </Text>
            
-          <Text className='cart1' > 
+          <Text className={style.cart1}> 
            <Link to="/cart">Cart</Link>
           </Text>
 
-           <Text className='signin1'>
+           <Text className={style.signin1}>
             <Link to="/signin">Sign in</Link>
            </Text>
            <hr />
             <Box>
               <Text fontWeight="bold">CATEGORY</Text>
               <hr />
-              <SubNavbar/>
+
+              <div className={style.std} >
+                <SubNavbar/>
+              </div>
             </Box>
           </DrawerBody>
         </DrawerContent>
