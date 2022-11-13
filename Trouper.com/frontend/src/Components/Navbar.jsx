@@ -7,7 +7,7 @@ import { Input } from "@chakra-ui/input";
 import "./navbar.css";
 import { SearchIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/button";
-import { Text,Image } from "@chakra-ui/react";
+import { Text, Image } from "@chakra-ui/react";
 import LanguageIcon from "@mui/icons-material/Language";
 import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/menu";
 import { useState } from "react";
@@ -23,7 +23,12 @@ export const Navbar = () => {
         <div className="snav">
           <Snavbar />
         </div>
-        <h3><Image width="150px" src="https://miro.medium.com/max/608/1*83ea0-gKieSinthdD9vjFg.jpeg "  /></h3>
+        <h3>
+          <Image
+            width="150px"
+            src="https://miro.medium.com/max/608/1*83ea0-gKieSinthdD9vjFg.jpeg "
+          />
+        </h3>
 
         <div className="leftNav">
           <Input
