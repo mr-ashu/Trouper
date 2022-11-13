@@ -1,3 +1,4 @@
+ 
 import React from 'react'
  
 import { Route, Routes } from 'react-router-dom'
@@ -11,12 +12,12 @@ import SignUp from '../Page/SignUp'
 import SingleProductPage from '../Page/SingleProductPage'
 import ProductPage  from '../Page/ProductPage'
 import AdminForm from '../Page/admin/AdminForm'
- 
+import Sucess from "../Page/Sucess";
  
 export const AllRoutes = () => {
   return (
-
     <Routes>
+ 
       <Route path="/" element={<Home/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path="/signup" element={<SignUp/>}/>
@@ -26,7 +27,8 @@ export const AllRoutes = () => {
       <Route path="/payment" element={<Payment/>}/>
       <Route path='/product' element={<ProductPage/>}/>
       <Route path="/join" element={<AdminForm/>}/>
+      <Route path="/sucess" element={<Sucess />} />
+ 
     </Routes>
-
-  )
-}
+  );
+};

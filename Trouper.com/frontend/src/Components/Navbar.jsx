@@ -1,4 +1,3 @@
- 
 import React from 'react'
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import EuroIcon from '@mui/icons-material/Euro';
@@ -15,6 +14,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import SwipeableTemporaryDrawer, { Snavbar }  from './snavbar';
 import { SubNavbar } from './SubNavbar';
+import Login from '../Page/Login';
+import SignUp from '../Page/SignUp';
  
  
  export const Navbar = () => {
@@ -76,21 +77,21 @@ import { SubNavbar } from './SubNavbar';
             <Link to="/cart">Cart</Link>
           </Text>
            <Text className={style.signin}>
-            <Link to="/login">Sign in</Link>
+                 <Login/>
            </Text>
-          <Button background="none" color="#22C35E" border="1px solid green" fontSize="18px"  padding="7px 20px">
-            <Link color='#22C35E' to="signup"> Join</Link>
+          
+               <SignUp />
             
-          </Button>
+            
+           
        </div>
     
      </div>
      <hr />
-    {/* ----------------------------- */}
+ 
        <SubNavbar/>
    <hr />
 
-   </>
-   )
- }
- 
+   </>
+   )
+ }
