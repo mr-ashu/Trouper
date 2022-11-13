@@ -34,10 +34,7 @@ const productSchema = new mongoose.Schema({
         required: true
       
     },
-    subCategory: {
-        type : String,
-       
-    },
+  
   
     price:{
         type:String

@@ -21,7 +21,8 @@ import {
   Link,
   Flex,
   Checkbox,
-  FormLabel
+  FormLabel,
+  useToast
 } from "@chakra-ui/react";
 import { login } from '../Redux/auth/login.action';
 import { SIGN_OUT } from '../Redux/auth/login.types';
@@ -38,8 +39,7 @@ export default function Login() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate= useNavigate()
   const {isAuth, loading, error }=useSelector((store)=>store.auth);
-  console.log(isAuth, loading,error)
-
+  const toast = useToast()
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
 
@@ -52,18 +52,24 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(login(formData))
+    setFormData(initialFormData)
   };
-  if(isAuth){
-    navigate("/products")
-  }
+
 
 const handleLogOut = () =>{
   dispatch({ type:SIGN_OUT })
+  toast({
+    title: 'Log out successful.',
+    status: 'success',
+    duration: 5000,
+    position:"top",
+    isClosable: true,
+  })
 }
 
   return (
     <>
-      {isAuth?(<Button onClick={handleLogOut}>Log Out</Button>):(<Button onClick={onOpen}>Sign In</Button>)}
+      {isAuth?(<Button bg='none'  _hover={{ color: 'green.400' }}  _active={{ bg: 'none',}} onClick={handleLogOut}>Log Out</Button>):(<Button bg='none' _active={{ bg: 'none',}} _hover={{ color: 'green.400' }} onClick={onOpen}>Sign In</Button>)}
 
       <Modal
         initialFocusRef={initialRef}

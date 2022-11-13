@@ -7,7 +7,8 @@ import { Tabs,
   Button,
   Box,} from"@chakra-ui/react"
   import styles from "../../Page/SinglePro/TypeOfServiceTable.module.css";
-function TypeOfServiceTable() {
+import { Navigate } from 'react-router-dom';
+function TypeOfServiceTable({p , rtig ,occupation}) {
   return (
     <>
      <Tabs>
@@ -23,8 +24,8 @@ function TypeOfServiceTable() {
 
                 <div>
                   <Box className={styles.row} mt={[2, 4, 6, 8]}>
-                    <h1>₹857</h1>
-                    <p>Save up to 15% with Subscribe to Save</p>
+                    <h1>{p}</h1>
+                    <p>{`Save up to ${rtig}% with Subscribe to Save`}</p>
                   </Box>
 
                   <Box className={styles.row} mt={[2, 4, 6, 8]}>
@@ -40,7 +41,7 @@ function TypeOfServiceTable() {
                   </Box>
 
                   <Box className={styles.row} mt={[2, 4, 6, 8]}>
-                    <li>Files Ready for Print</li>
+                    <li>{occupation}</li>
                     <li>Include Source File</li>
                     <li>Front & back design</li>
                     <li>Social Media Design</li>
@@ -66,8 +67,8 @@ function TypeOfServiceTable() {
 
                   <Box className={styles.row} mt={[2, 4, 6, 8]}>
                     <p>
-                      Basic Package Basic Flyer, Poster, Banner Designs (only
-                      one side) JPG Printable files
+                     { `${occupation}Basic Package Basic Flyer, Poster, Banner Designs (only
+                      one side) JPG Printable files`}
                     </p>
                   </Box>
 
@@ -98,7 +99,7 @@ function TypeOfServiceTable() {
                 <div>
                   <Box className={styles.row} mt={[2, 4, 6, 8]}>
                     <h1>₹5,138</h1>
-                    <p>Save up to 15% with Subscribe to Save</p>
+                    <p>Save up to 18% with Subscribe to Save</p>
                   </Box>
 
                   <Box className={styles.row} mt={[2, 4, 6, 8]}>
@@ -121,7 +122,7 @@ function TypeOfServiceTable() {
                     <li>Commercial Use</li>
                   </Box>
 
-                  <Button
+                  <Button onClick={<Navigate to="/payment" />}
                     colorScheme="whatsapp"
                     w={[90, 140, 200, 280]}
                     mt={[2, 4, 6, 8]}
