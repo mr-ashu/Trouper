@@ -2,6 +2,8 @@ import { Box, Button, Container, Heading, Img, Text } from "@chakra-ui/react";
 //import styles from "../SinglePage/AboutTheSeller.module.css";
 import styles from "../SinglePro/AboutTheSeller.module.css";
 function AboutTheSeller() {
+
+  
   return (
     <>
       <Box

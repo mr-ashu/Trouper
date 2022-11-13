@@ -3,6 +3,7 @@ import { Button, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay,
 import { Box } from "@mui/system"
 import React,{ useState } from "react"
 import { Link } from "react-router-dom"
+import { SubNavbar } from "./SubNavbar"
 
 export const Snavbar=()=> {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -41,15 +42,7 @@ export const Snavbar=()=> {
             <Box>
               <Text fontWeight="bold">CATEGORY</Text>
               <hr />
-              <div className='subNavbar1'>
-                    <Link to="">Graphics & Design</Link>
-                    <Link to="">Digital Marketing</Link>
-                    <Link to="">Writing & Transition</Link>
-                    <Link to="">Video & Animation</Link>
-                    <Link to="">Music & Audio</Link>
-                    <Link to="">Programming & Tech</Link>
-                    <Link to="">Business</Link>
-              </div>
+              <SubNavbar/>
             </Box>
           </DrawerBody>
         </DrawerContent>
