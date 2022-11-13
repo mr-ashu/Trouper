@@ -12,7 +12,8 @@ import {
   ListItem,
   ListIcon,
   OrderedList,
-  UnorderedList
+  UnorderedList,
+  Heading
 } from "@chakra-ui/react";
 import TypeOfServiceTable from "./TypeOfServiceTable";
 const colors = [
@@ -72,8 +73,14 @@ function OverviewSlid() {
 
   return (
     <>
-      <Box className={styles.mainCont} ml={{ base: '-10px', md: '-89px', lg: '-85px' , xl:"-52px" }}  id="overview" >
-        <Box className={styles.slideshow} w={{ base:'100%' ,  md: '50%', lg: '55%' , xl:"61%" }} h={{ base: '300px', md: '400px', lg: '500px' , xl:"550px" }} >
+     <Box textAlign="start" className={styles.head} mb={4}  ml={{md:"25px" , lg:"25px" ,xl: "25px" }}>
+          <Heading as="h5" size="lg">
+            Overview
+          </Heading>
+        </Box>
+      <Box className={styles.mainCont} ml={{lg: '-85px' , xl:"-52px" }}  id="overview" >
+      
+        <Box className={styles.slideshow} w={{lg: '55%' , xl:"61%" }} h={{ base: '300px', md: '400px', lg: '500px' , xl:"550px" }} >
           <div
             className={styles.slideshowSlider}
             style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
@@ -102,7 +109,7 @@ function OverviewSlid() {
           </div>
         </Box>
 
-        <Box className={styles.checkCard}   h={{ base: '200px', md: '300px', lg: '400px' , xl:"500px" }} >
+        <Box className={styles.checkCard}   h={{md: '300px', lg: '400px' , xl:"500px" }} >
           <TypeOfServiceTable/>
         </Box>
       </Box>

@@ -27,11 +27,13 @@ function Reviews() {
     <>
       <Box
         // border="2px solid red"
-        w={{ base: "30%", md: "50%", lg: "55%", xl: "61%" }}
-        ml="25px"
+        w={{ md: "50%", lg: "55%", xl: "61%" }}
+        // ml="25px"
+        ml={{ md: "25px", lg: "25px", xl: "25px" }}
         id="reviews"
+        className={styles.rDiv}
       >
-        <Box textAlign="start">
+        <Box textAlign="start" mb={4}>
           <Heading as="h5" size="lg">
             5,698 Reviews
           </Heading>
