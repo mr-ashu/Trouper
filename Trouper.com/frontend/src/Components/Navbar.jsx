@@ -14,6 +14,8 @@ import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import SwipeableTemporaryDrawer, { Snavbar }  from './snavbar';
+import Login from '../Page/Login';
+import SignUp from '../Page/SignUp';
  
  export const Navbar = () => {
   const [value,setValue]=useState("inr");
@@ -67,13 +69,8 @@ import SwipeableTemporaryDrawer, { Snavbar }  from './snavbar';
 
             <Link to="/cart">Cart</Link>
           </Text>
-           <Text className='signin'>
-            <Link to="/login">Sign in</Link>
-           </Text>
-          <Button background="none" color="#22C35E" border="1px solid green" fontSize="18px"  padding="7px 20px">
-            <Link color='#22C35E' to="signup"> Join</Link>
-            
-          </Button>
+          <Login />
+         <SignUp />
        </div>
     
      </div>
