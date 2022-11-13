@@ -21,10 +21,8 @@ import {
   Text,
   Link,
   Flex,
-  Alert,
-  AlertIcon,
+  FormLabel,
 } from '@chakra-ui/react'
-import { signup } from '../Redux/auth/login.action';
 import axios from 'axios';
 
 const initialFormData = {
@@ -36,6 +34,7 @@ const initialFormData = {
 export default function SignUp() {
   const [formData, setFormData] = React.useState(initialFormData);
   const navigate = useNavigate()
+  const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   const initialRef = React.useRef(null)
@@ -51,18 +50,12 @@ export default function SignUp() {
     event.preventDefault()
     try {
       let response = await axios.post(`http://localhost:9500/users/signup`, formData)
-      if (!!response.token) {
+      if (!!response.data) {
+        localStorage.removeItem("token")
         navigate('/login')
-      } else {
-
-        <Alert status='error'>
-          <AlertIcon />
-          There was an error processing your request
-        </Alert>
       }
     } catch (error) {
-      console.log(error)
-
+      dispatch({ type: LOGIN_ERROR });
     }
     setFormData(initialFormData)
   }
@@ -70,9 +63,7 @@ export default function SignUp() {
   return (
     <>
       <Button onClick={onOpen}>Join</Button>
-
-
-      <Modal
+      <Modal 
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}
         isOpen={isOpen}
@@ -138,14 +129,21 @@ export default function SignUp() {
                     <Heading fontSize='md' as='h5'>OR</Heading>
                   </Center>
                 </FormControl>
-                <FormControl mt={4}>
+                <FormControl isRequired>
+                  <FormLabel>Email</FormLabel>
                   <Input type="email" name="email" value={formData.email} onChange={handleChangeFormData} placeholder='Inter your Email' size='lg' />
                 </FormControl>
-                <FormControl mt={4}>
+                <FormControl isRequired>
+                  <FormLabel>Name</FormLabel>
                   <Input type="text" name="name" value={formData.name} onChange={handleChangeFormData} placeholder='Inter your Name' size='lg' />
                 </FormControl>
-                <FormControl mt={4}>
+                <FormControl isRequired>
+                  <FormLabel>Password</FormLabel>
                   <Input type="password" name="password" value={formData.password} onChange={handleChangeFormData} placeholder='Inter your Password' size='lg' />
+                </FormControl>
+                <FormControl>
+                  <FormLabel>User Id</FormLabel>
+                  <Input type="text" name="userId" value={formData.userId} onChange={handleChangeFormData} placeholder='Inter your User Id' size='lg' />
                 </FormControl>
                 <FormControl mt={4}>
                   <Button type='submit' size='lg' width='100%' colorScheme='green'>

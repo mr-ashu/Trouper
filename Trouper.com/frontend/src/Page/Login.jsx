@@ -1,7 +1,6 @@
 import React from 'react'
-import { Link as ReactLink } from "react-router-dom";
-import { useDispatch } from 'react-redux'
-import axios from "axios";
+import { Link as ReactLink, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux'
 import {
   Modal,
   ModalOverlay,
@@ -21,7 +20,8 @@ import {
   Text,
   Link,
   Flex,
-  Checkbox
+  Checkbox,
+  FormLabel
 } from "@chakra-ui/react";
 import { login } from '../Redux/auth/login.action';
 
@@ -33,8 +33,11 @@ const initialFormData = {
 
 export default function Login() {
   const [formData, setFormData] = React.useState(initialFormData);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate= useNavigate()
+  const {isAuth, loading, error }=useSelector((store)=>store.auth);
+  console.log(isAuth, loading,error)
 
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
@@ -49,6 +52,9 @@ export default function Login() {
     e.preventDefault();
     dispatch(login(formData))
   };
+  if(isAuth){
+    navigate("/products")
+  }
   return (
     <>
       <Button onClick={onOpen}>Sign In</Button>
@@ -128,13 +134,14 @@ export default function Login() {
                 </FormControl>
                 <FormControl>
                   <Center>
-                    <Heading fontSize="md" as="h5">
+                    <Heading fontSize="sm" as="h5">
                       OR
                     </Heading>
                   </Center>
                 </FormControl>
 
-                <FormControl mt={4}>
+                <FormControl isRequired>
+                <FormLabel>Email</FormLabel>
                   <Input
                     type="email"
                     name="email"
@@ -144,7 +151,8 @@ export default function Login() {
                     size="lg"
                   />
                 </FormControl>
-                <FormControl mt={4}>
+                <FormControl isRequired>
+                <FormLabel>Password</FormLabel>
                   <Input
                     type="password"
                     name="password"
@@ -159,6 +167,8 @@ export default function Login() {
                     type="submit"
                     size="lg"
                     width="100%"
+                     
+                    // spinner={<BeatLoader size={8} color='white' />}
                     colorScheme="green"
                   >
                     Continue
