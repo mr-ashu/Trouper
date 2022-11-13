@@ -18,50 +18,6 @@ import SwipeableTemporaryDrawer, { Snavbar } from "./snavbar";
 export const Navbar = () => {
   const [value, setValue] = useState("inr");
 
-  return (
-    <>
-      <div className="navBox">
-        <div className="snav">
-          <Snavbar />
-        </div>
-        <h3>
-          <Image
-            width="150px"
-            src="https://miro.medium.com/max/608/1*83ea0-gKieSinthdD9vjFg.jpeg "
-          />
-        </h3>
-
-        <div className="leftNav">
-          <Input
-            padding="10px 2px 10px 16px"
-            placeholder="What service are you looking for today?"
-          />
-          <Button bg="#222325" color="white">
-            <SearchIcon />
-          </Button>
-        </div>
- 
-import React from 'react'
-import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
-import EuroIcon from '@mui/icons-material/Euro';
-import CurrencyPoundIcon from '@mui/icons-material/CurrencyPound';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import { Input } from '@chakra-ui/input'
-import style from "./navbar.module.css"
- import {SearchIcon  } from '@chakra-ui/icons'
-import { Button } from '@chakra-ui/button'
-import { Text,Image } from "@chakra-ui/react"
-import LanguageIcon from '@mui/icons-material/Language';
-import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu'
-import { useState } from 'react'
-import { Link } from 'react-router-dom';
-import SwipeableTemporaryDrawer, { Snavbar }  from './snavbar';
-import { SubNavbar } from './SubNavbar';
- 
- 
- export const Navbar = () => {
-  const [value,setValue]=useState("inr");
- 
    return (
    <>
      <div className={style.navBox}>
@@ -113,7 +69,7 @@ import { SubNavbar } from './SubNavbar';
             <Link to="/admin">Become a Seller </Link>
           </Text>
             </div>
-          <Text className={style.cart} > 
+          <Text className={style.cart} > </Text>
         <div className="rightNav">
           <div className="textBox">
             <Menu>
@@ -164,7 +120,7 @@ import { SubNavbar } from './SubNavbar';
           <Text className="cart">
             <Link to="/cart">Cart</Link>
           </Text>
-          <Text className="signin">
+          <Text className="signin"> </Text>
            <Text className={style.signin}>
             <Link to="/login">Sign in</Link>
           </Text>
@@ -194,17 +150,6 @@ import { SubNavbar } from './SubNavbar';
       </div>
       <hr />
     </>
-  );
-};
-       </div>
-    
-     </div>
-     <hr />
-    {/* ----------------------------- */}
-       <SubNavbar/>
-   <hr />
-
-   </>
-   )
- }
- 
+  </>
+  )
+}
