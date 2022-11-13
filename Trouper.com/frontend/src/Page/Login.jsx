@@ -24,6 +24,7 @@ import {
   FormLabel
 } from "@chakra-ui/react";
 import { login } from '../Redux/auth/login.action';
+import { SIGN_OUT } from '../Redux/auth/login.types';
 
 const initialFormData = {
   email: "",
@@ -55,9 +56,14 @@ export default function Login() {
   if(isAuth){
     navigate("/products")
   }
+
+const handleLogOut = () =>{
+  dispatch({ type:SIGN_OUT })
+}
+
   return (
     <>
-      <Button onClick={onOpen}>Sign In</Button>
+      {isAuth?(<Button onClick={handleLogOut}>Log Out</Button>):(<Button onClick={onOpen}>Sign In</Button>)}
 
       <Modal
         initialFocusRef={initialRef}
