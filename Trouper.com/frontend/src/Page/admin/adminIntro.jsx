@@ -22,7 +22,7 @@ export const AdminIntro = () => {
            <div className='txtspan'>
            <h1>Work Your Way</h1>
            <p>Your bring the skill. We'll make earning easy.</p>
-           <Link to="">Become a Seller</Link>
+           <Link to="/join">Become a Seller</Link>
            </div>
          </div>
         
@@ -40,7 +40,7 @@ export const AdminIntro = () => {
              <span className='ltext'> 
                  <FavoriteIcon fontSize='large' sx={{color:red[500]}}/>
                  <h3>What's Your Skill?</h3>
-                 <Link to="">Become a Seller</Link>
+                 <Link to="/join">Become a Seller</Link>
              </span>
         </div>
 

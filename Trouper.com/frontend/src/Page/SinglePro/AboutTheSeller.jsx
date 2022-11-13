@@ -1,17 +1,19 @@
 import { Box, Button, Container, Heading, Img, Text } from "@chakra-ui/react";
 //import styles from "../SinglePage/AboutTheSeller.module.css";
 import styles from "../SinglePro/AboutTheSeller.module.css";
-function AboutTheSeller() {
+function AboutTheSeller({profilePic , name , rating , description}) {
+
+  
   return (
     <>
       <Box
        // border="2px solid red"
        className={styles.AmainCont}
-        w={{ base: "30%", md: "50%", lg: "55%", xl: "61%" }}
-        ml="25px"
+        w={{   md: "50%", lg: "55%", xl: "61%" }}
+        ml={{md:"25px" , lg:"25px" ,xl: "25px" }}
         id="about"
       >
-        <Box textAlign="start">
+        <Box textAlign="start" className={styles.head} mb={4} >
           <Heading as="h5" size="lg">
             About The Seller
           </Heading>
@@ -20,14 +22,14 @@ function AboutTheSeller() {
           <Box>
             <Img
               className={styles.Avatar}
-              src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/ca87fd1f4523f84409582747332ff0f6-1585028299550/aa3dc23c-9409-464d-8782-8ce0c180e411.PNG"
+              src={profilePic}
               alt="profilePic"
             />
           </Box>
           <Box>
             {/* name */}
-            <h4>kasun_zte</h4>
-            <p>4.9 (6,096)</p>
+            <h4>{name}</h4>
+            <p>{rating} (6,096)</p>
             <Button
               w={[90, 140, 200, 280]}
              // border="1px solid black"
@@ -65,13 +67,11 @@ function AboutTheSeller() {
               </Box>
             </Box>
           </Box>
-          <Text fontSize="lg" textAlign="start" mt={[2, 4, 6, 8]} mb={[2, 4, 6, 8]}  >
+          <Text fontSize="lg" textAlign="start" mt={[2, 4, 6, 8]} mb={[2, 4, 6, 8]} fontWeight="bold">
             Hello!
           </Text>
           <Text noOfLines={[4, 3, 3, 2]} textAlign="start"   >
-            I am kasun, a Full Time Creative Graphic Designer with an experience
-            of 12 years in logo, flyer design, poster design, brochure design,
-            and graphic design of any kind.
+             {`I Am ${name} , ${description}`}
           </Text>
           <Text fontSize="lg" textAlign="start" mt={[2, 4, 6, 8]}  >
             Thank You.

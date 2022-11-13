@@ -22,16 +22,23 @@ import {
   Text,
 } from "@chakra-ui/react";
 import styles from "../SinglePro/Reviews.module.css";
-function Reviews() {
+function Reviews({rat}) {
+
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
   return (
     <>
       <Box
         // border="2px solid red"
-        w={{ base: "30%", md: "50%", lg: "55%", xl: "61%" }}
-        ml="25px"
+        w={{ md: "50%", lg: "55%", xl: "61%" }}
+        // ml="25px"
+        ml={{ md: "25px", lg: "25px", xl: "25px" }}
         id="reviews"
+        className={styles.rDiv}
       >
-        <Box textAlign="start">
+        <Box textAlign="start" mb={4}>
           <Heading as="h5" size="lg">
             5,698 Reviews
           </Heading>
@@ -50,61 +57,61 @@ function Reviews() {
               <Td>5 Stars</Td>
               <Td>
                 <Progress
-                  value={90}
+                  value={getRandomInt(200)}
                   h="15px"
                   borderRadius="10px"
                   colorScheme="yellow"
                 />
               </Td>
-              <Td>(5420)</Td>
+              <Td>{getRandomInt(200)}</Td>
             </Tr>
             <Tr class="hotel_b">
               <Td>4 Stars</Td>
               <Td>
                 <Progress
-                  value={70}
+                  value={getRandomInt(150)}
                   h="15px"
                   borderRadius="10px"
                   colorScheme="yellow"
                 />
               </Td>
-              <Td>(194)</Td>
+              <Td>{getRandomInt(150)}</Td>
             </Tr>
             <Tr class="hotel_c">
               <Td>3 Stars</Td>
               <Td>
                 <Progress
-                  value={50}
+                  value={getRandomInt(100)}
                   h="15px"
                   borderRadius="10px"
                   colorScheme="yellow"
                 />
               </Td>
-              <Td>(46)</Td>
+              <Td>{getRandomInt(100)}</Td>
             </Tr>
             <Tr class="hotel_d">
               <Td>2 Stars</Td>
               <Td>
                 <Progress
-                  value={15}
+                  value={getRandomInt(60)}
                   h="15px"
                   borderRadius="10px"
                   colorScheme="yellow"
                 />
               </Td>
-              <Td>(26)</Td>
+              <Td>{getRandomInt(60)}</Td>
             </Tr>
             <Tr class="hotel_e">
               <Td>1 Stars</Td>
               <Td>
                 <Progress
-                  value={10}
+                  value={getRandomInt(40)}
                   h="15px"
                   borderRadius="10px"
                   colorScheme="yellow"
                 />
               </Td>
-              <Td>(10)</Td>
+              <Td>{getRandomInt(40)}</Td>
             </Tr>
           </tbody>
         </Table>

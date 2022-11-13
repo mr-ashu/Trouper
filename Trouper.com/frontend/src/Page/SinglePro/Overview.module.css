@@ -3,9 +3,9 @@
 .mainCont {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  /* width: 100%; */
-  border: 2px solid royalblue;
+  padding: 10px;
+  /* width: 100%;  */
+  /* border: 2px solid royalblue; */
   /* margin-left: -60px; */
 
   /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px; */
@@ -77,71 +77,70 @@
 
 /* hide at small screen */
 
-@media (min-width: 290px) and (max-width: 417px){
+@media (min-width: 290px) and (max-width: 417px) {
+  .mainCont {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    margin-bottom: -20px;
+    /* height: auto; */
+  }
+
   .slideshow {
-   margin-left: auto;
-    
-    border: 5px solid rgb(229, 71, 171);
+    margin-left: auto;
+    width: 100%;
+    /* border: 5px solid rgb(229, 71, 171); */
     align-items: center;
   }
-}
 
-@media (min-width: 290px) and (max-width: 417px){
   .checkCard {
-    /* border: 5px solid rgb(246, 246, 13); */
-    width: 0%;
-    visibility: hidden;
+    /* border: 5px solid rgb(82, 49, 70); */
+    width: 100%;
   }
 }
-
 
 /* 417-820 */
 
- 
-@media (min-width: 417px) and (max-width: 480px){
-  .slideshow{
-      width: 90%;  
-    border: 5px solid rgb(59, 18, 240);
-   }
-}
+@media (min-width: 417px) and (max-width: 480px) {
+  .mainCont {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    /* margin-bottom: -20px; */
+    /* height: auto; */
+  }
 
-@media (min-width: 417px) and (max-width: 480px){
+  .slideshow {
+    margin-left: auto;
+    width: 100%;
+    /* border: 5px solid rgb(229, 71, 171); */
+    align-items: center;
+  }
+
   .checkCard {
-    /* border: 5px solid rgb(246, 246, 13); */
-    width: 0%;
-    visibility: hidden;
+    /* border: 5px solid rgb(82, 49, 70); */
+    width: 100%;
   }
 }
 
-@media (min-width: 480px) and (max-width: 803px){
-  .slideshow{
-    width: 90%;  
-  border: 5px solid rgb(59, 18, 240);
- }
-}
-@media (min-width: 480px) and (max-width: 803px){
+@media (min-width: 480px) and (max-width: 794px) {
+  .mainCont {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    /* margin-bottom: -20px; */
+    height: auto;
+  }
+
+  .slideshow {
+    margin-left: auto;
+    width: 100%;
+    /* border: 5px solid rgb(229, 71, 171); */
+    align-items: center;
+  }
+
   .checkCard {
-    /* border: 5px solid rgb(246, 246, 13); */
-    width: 0%;
-    visibility: hidden;
+    /* border: 5px solid rgb(82, 49, 70); */
+    width: 100%;
   }
 }
-
-/* 820-912 */
-
-/* @media (min-width: 820px) and (max-width: 912px){
-  .sec1 {
-      width: 60%;  
-    border: 5px solid rgb(59, 18, 240);
-    font-size: large;  
-    font-weight: 500;
-     
- }
-}
-@media (min-width: 820px) and (max-width: 912px){
-  .sec2 {
-    width: 40%;
-     
-    border: 5px solid rgb(11, 176, 222);
-  }
-}   */
