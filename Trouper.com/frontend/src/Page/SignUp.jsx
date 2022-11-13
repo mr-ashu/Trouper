@@ -24,6 +24,7 @@ import {
   FormLabel,
 } from '@chakra-ui/react'
 import axios from 'axios';
+import { LOGIN_ERROR } from '../Redux/auth/login.types';
 
 const initialFormData = {
   email: "",
