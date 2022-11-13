@@ -25,8 +25,7 @@ import {
   AlertIcon,
 } from "@chakra-ui/react";
 import { signup } from "../Redux/auth/login.action";
-import axios from "axios";
-import FormLabel from "@chakra-ui/react";
+import {FormLabel} from "@chakra-ui/react";
 import axios from "axios";
 import { LOGIN_ERROR } from "../Redux/auth/login.types";
 

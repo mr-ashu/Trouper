@@ -4,10 +4,6 @@ import Nav from "./SinglePro/Nav";
 import OverviewSlid from "./SinglePro/Overview";
 import AboutTheSeller from "./SinglePro/AboutTheSeller";
 import Reviews from "./SinglePro/Reviews";
-// const getData = (url) => {
-//   return fetch(url).then((res) => res.json());
-// };
-
 const SingleProductPage = () => {
   const { user_id } = useParams();
   const [p, setProductDetails] = React.useState([]);
@@ -17,8 +13,6 @@ const SingleProductPage = () => {
       setProductDetails(res)
     );
   }, [user_id]);
-
-  // console.log(userDetails);
   return (
     <>
       <Nav />
@@ -36,7 +30,7 @@ const SingleProductPage = () => {
           <Reviews />
         </div>
       </div>
-      {/* <Link to="">GO BACK</Link> */}
+      </div>
     </>
   );
 };
