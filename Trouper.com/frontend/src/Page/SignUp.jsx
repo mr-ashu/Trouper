@@ -155,7 +155,7 @@ export default function SignUp() {
                 <Divider />
                 <Flex fontSize='sm' mt='50px'>
                   <Text mr='10px'>Already a member?</Text>
-                  <Link as={ReactLink} color='green'>Sign In</Link>
+                  <Link to='/login' as={ReactLink} color='green'>Sign In</Link>
                 </Flex>
               </Stack>
             </form>

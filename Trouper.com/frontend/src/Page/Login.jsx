@@ -194,7 +194,7 @@ export default function Login() {
                 <Divider />
                 <Flex fontSize="sm" mt="50px">
                   <Text mr="10px">Not a member yet?</Text>
-                  <Link as={ReactLink} color="green">
+                  <Link to='/signup' as={ReactLink} color="green">
                     Join now
                   </Link>
                 </Flex>
