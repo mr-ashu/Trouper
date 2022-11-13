@@ -53,6 +53,7 @@ export default function Login() {
     e.preventDefault();
     dispatch(login(formData))
     setFormData(initialFormData)
+    alert("Login Success")
   };
 
 

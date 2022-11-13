@@ -30,9 +30,7 @@ import { LOGIN_ERROR } from '../Redux/auth/login.types';
  
 import { signup } from "../Redux/auth/login.action";
  
-import {FormLabel} from "@chakra-ui/react";
  
-import { LOGIN_ERROR } from "../Redux/auth/login.types";
  
 
 const initialFormData = {
