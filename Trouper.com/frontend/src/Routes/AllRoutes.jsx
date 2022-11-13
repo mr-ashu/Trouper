@@ -10,6 +10,7 @@ import  Login  from '../Page/Login'
 import SignUp from '../Page/SignUp'
 import SingleProductPage from '../Page/SingleProductPage'
 import ProductPage  from '../Page/ProductPage'
+import AdminForm from '../Page/admin/AdminForm'
  
  
 export const AllRoutes = () => {
@@ -24,6 +25,7 @@ export const AllRoutes = () => {
       <Route path="/product/:id" element={<SingleProductPage/>}/>
       <Route path="/payment" element={<Payment/>}/>
       <Route path='/product' element={<ProductPage/>}/>
+      <Route path="/join" element={<AdminForm/>}/>
     </Routes>
 
   )
