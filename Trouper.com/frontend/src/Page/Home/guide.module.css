@@ -1,8 +1,9 @@
 .box {
     width: 90%;
     margin: auto;
+    margin-top: 40px;
 }
-.guide-head {
+.guide_head {
     font-weight: bold;
     font-size: 30px;
     text-align: left;
@@ -13,7 +14,6 @@
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: auto;
     gap: 30px;
     padding: auto;
     margin-top: 10px;
@@ -23,7 +23,7 @@
 .gridbox > img {
     width: 100%;
 }
-.p-bold {
+.p_bold {
     margin-top: 5px;
     font-weight: bold;
     font-size: 18px;

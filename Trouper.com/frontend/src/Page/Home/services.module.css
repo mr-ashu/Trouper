@@ -1,0 +1,84 @@
+.service {
+    width: 95%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.service_head {
+    margin-left: 30px ;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: left;
+}
+
+
+.Home_carousel_item_Third1{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 2%;
+    padding: 3%;
+    height: auto;
+}
+
+.Home_carousel_item_Third1 img{
+    width: 100%;
+    margin: auto;
+}
+
+.Home_carousel_item_Third1 img:hover{
+    cursor: pointer;;
+}
+
+.shop_by_category_carousel1{
+    font-size: 30px;
+   font-weight: 500;
+   display: block;
+   text-align: left;
+   margin-left: 3%;
+   margin-top: 5%;
+   margin-bottom: 0px;
+}
+
+.Home_Featured_Brands_Item1 div:last-child{
+    position: absolute;
+    color: white;
+    top: 80px;
+    margin-left: 20px;
+    font-size: 100%;
+    display: block;
+    text-align: left;
+    font-weight: 700;
+}
+.Home_Featured_Brands_Item1 div:last-child > h1 {
+    font-size: 140%;
+}
+ 
+@media all and (min-width: 401px) and (max-width: 750px){
+    .Home_carousel_item_Third1{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 4%;
+    }
+    .Home_Featured_Brands_Item1 div:last-child{
+        position: relative;
+        font-size: 80%;
+    }
+
+    .Home_carousel_item_Third1{
+        margin-bottom: 10%;
+    }
+}
+
+
+@media all and (min-width: 280px) and (max-width: 400px){
+    .Home_carousel_item_Third1{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 4%;
+        padding-bottom: 5%;
+        margin-bottom: 8%;
+    }
+    .Home_Featured_Brands_Item1 div:last-child{
+        font-size: 50%;
+    }
+}

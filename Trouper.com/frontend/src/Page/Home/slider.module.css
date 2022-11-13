@@ -1,0 +1,40 @@
+.slider {
+   
+    margin: auto;
+    margin-top: 10px;
+
+}
+
+
+.text {
+    color: white;
+    position: absolute;
+    top: 250px;
+    left: 150px;
+}
+.first >div {
+    font-size: 40px;
+}
+
+.input {
+    margin-top: 20px;
+    
+}
+.input >Input {
+    background-color: white;
+    width: 380px;
+    height: 40px;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.input > button {
+   background-color: #29a745;
+   color: white;
+   height: 41px;
+   width: 100px;
+   border-bottom-right-radius: 5px;
+   border-top-right-radius: 5px;
+}
+
+

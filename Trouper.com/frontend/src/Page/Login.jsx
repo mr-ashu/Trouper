@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link as ReactLink } from "react-router-dom";
-import axios from "axios";
+import { Link as ReactLink, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux'
 import {
   Modal,
   ModalOverlay,
@@ -20,8 +20,11 @@ import {
   Text,
   Link,
   Flex,
-  Checkbox
+  Checkbox,
+  FormLabel
 } from "@chakra-ui/react";
+import { login } from '../Redux/auth/login.action';
+import { SIGN_OUT } from '../Redux/auth/login.types';
 
 const initialFormData = {
   email: "",
@@ -31,7 +34,11 @@ const initialFormData = {
 
 export default function Login() {
   const [formData, setFormData] = React.useState(initialFormData);
+  const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate= useNavigate()
+  const {isAuth, loading, error }=useSelector((store)=>store.auth);
+  console.log(isAuth, loading,error)
 
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
@@ -41,26 +48,22 @@ export default function Login() {
     const inputValue = type === "checkbox" ? checked : value;
     setFormData({ ...formData, [name]: inputValue });
   };
-  console.log(formData);
+  // console.log(formData);
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post(`https://reqres.in/api/login`, {
-        ...formData
-      })
-      .then((res) => {
-        alert(`Hi! your token is ${res.data.token}`);
-      })
-      .catch((err) => {
-        alert(`Please sign up first
-                  or
-            check your user id and password
-      `);
-      });
+    dispatch(login(formData))
   };
+  if(isAuth){
+    navigate("/products")
+  }
+
+const handleLogOut = () =>{
+  dispatch({ type:SIGN_OUT })
+}
+
   return (
     <>
-      <Button onClick={onOpen}>Sign In</Button>
+      {isAuth?(<Button onClick={handleLogOut}>Log Out</Button>):(<Button onClick={onOpen}>Sign In</Button>)}
 
       <Modal
         initialFocusRef={initialRef}
@@ -137,13 +140,14 @@ export default function Login() {
                 </FormControl>
                 <FormControl>
                   <Center>
-                    <Heading fontSize="md" as="h5">
+                    <Heading fontSize="sm" as="h5">
                       OR
                     </Heading>
                   </Center>
                 </FormControl>
 
-                <FormControl mt={4}>
+                <FormControl isRequired>
+                <FormLabel>Email</FormLabel>
                   <Input
                     type="email"
                     name="email"
@@ -153,7 +157,8 @@ export default function Login() {
                     size="lg"
                   />
                 </FormControl>
-                <FormControl mt={4}>
+                <FormControl isRequired>
+                <FormLabel>Password</FormLabel>
                   <Input
                     type="password"
                     name="password"
@@ -168,6 +173,8 @@ export default function Login() {
                     type="submit"
                     size="lg"
                     width="100%"
+                     
+                    // spinner={<BeatLoader size={8} color='white' />}
                     colorScheme="green"
                   >
                     Continue
@@ -193,7 +200,7 @@ export default function Login() {
                 <Divider />
                 <Flex fontSize="sm" mt="50px">
                   <Text mr="10px">Not a member yet?</Text>
-                  <Link as={ReactLink} color="green">
+                  <Link to='/signup' as={ReactLink} color="green">
                     Join now
                   </Link>
                 </Flex>

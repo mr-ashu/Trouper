@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import {
   Box,
   Container,
@@ -37,8 +37,8 @@ function ProductPage() {
         ml="320px"
         mt="-400px"
       >
-        {showData &&
-          showData.map((elem, index) => (
+        {foundation &&
+          foundation.map((elem, index) => (
             <Stack textAlign="center" key={index}>
               <Box>
                 <Img src={elem.image} />
@@ -63,13 +63,3 @@ function ProductPage() {
 }
 
 export default ProductPage;
-
-// const getApiData = (url) =>{
-//     return fetch(url).then((res)=> res.json())
-//   }
-
-// const[showData , setShowData] = useState([])
-// useEffect(()=>{
-//   getApiData(`http://localhost:9500/products`).then((res)=>{
-//     setShowData(res.data)
-//   },[])
