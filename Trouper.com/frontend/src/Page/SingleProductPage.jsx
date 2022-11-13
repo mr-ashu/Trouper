@@ -4,17 +4,17 @@ import Nav from "./SinglePro/Nav";
 import OverviewSlid from "./SinglePro/Overview";
 import AboutTheSeller from "./SinglePro/AboutTheSeller";
 import Reviews from "./SinglePro/Reviews";
-const getData = (url) => {
-  return fetch(url).then((res) => res.json());
-};
+// const getData = (url) => {
+//   return fetch(url).then((res) => res.json());
+// };
 
 const SingleProductPage = () => {
   const { user_id } = useParams();
-  const [productDetails, setProductDetails] = React.useState([]);
+  const [p, setProductDetails] = React.useState([]);
 
   React.useEffect(() => {
-    getData(`http://localhost:9500/products/${user_id}`).then((res) =>
-      setProductDetails(res.data)
+    fetch(`http://localhost:9500/products/${user_id}`).then((res)=>res.json()).then((res) =>
+      setProductDetails(res)
     );
   }, [user_id]);
 
@@ -28,6 +28,9 @@ const SingleProductPage = () => {
         </div>
         <div style={{ marginTop: "20px" }}>
           <AboutTheSeller />
+        <div style={{marginTop:"20px"}} >
+         
+          {p.title}
         </div>
         <div style={{ marginTop: "20px" }}>
           <Reviews />

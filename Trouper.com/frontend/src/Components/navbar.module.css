@@ -1,0 +1,124 @@
+ 
+.navBox{
+    display: flex;
+    height: 80px;
+ 
+    justify-content: space-between;
+    padding:0px 32px;
+    align-items: center;
+    color: #62646a;
+    font: 400 16px Macan,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+}
+.snav{
+    display: none;
+}
+.leftNav{
+    display: flex;
+   
+   width: 45%;
+  
+ 
+}
+.logo:hover{
+   border: none;
+}
+.rightNav{
+    display: flex;
+    align-items: center;
+    gap:20px
+}
+ 
+.textBox{
+    display: flex;
+    align-items: center;
+  
+    gap:20px
+
+}
+.subNavbar{
+    display: flex;
+    justify-content: space-evenly;
+   padding:0px 32px;
+     
+}
+
+a{
+    color: #62646a;
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px 0;
+    position: relative;
+    text-decoration: none;
+}
+a:hover{
+ 
+    border-bottom: 3px solid #1dbf73;
+}
+.rightNav a:hover{
+   color: #1dbf73;
+   border: none;
+}
+
+
+
+/* mobile..... */
+
+@media only screen and (max-width: 650px){
+    .textBox{
+        display: none;
+    }
+    .subNavbar{
+        display: none;
+    }
+
+    .leftNav{
+        display: none;
+    }
+    .cart{
+        display: none;
+        
+    }
+    .signin{
+        display: none;
+    }
+    .snav{
+        display: block;
+    }
+}
+ 
+
+@media only screen and (max-width: 1070px) {
+   
+    .textBox{
+        display: none;
+    }
+    .subNavbar{
+        display: none;
+    }
+
+    .leftNav{
+        width: 50%;
+    }
+   
+  
+    .cart{
+        display: none;
+        
+    }
+    .snav{
+        display: block;
+    }
+
+    .subNavbar1{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+ 
+@media only screen and (min-width: 992px) {
+
+}
+
+ 
