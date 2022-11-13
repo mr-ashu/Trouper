@@ -46,7 +46,7 @@ const colors = [
 ];
 const delay = 2500;
 
-function OverviewSlid() {
+function OverviewSlid({title , price , rtig , occupation }) {
   const [index, setIndex] = React.useState(0);
   const timeoutRef = React.useRef(null);
 
@@ -75,7 +75,7 @@ function OverviewSlid() {
     <>
      <Box textAlign="start" className={styles.head} mb={4}  ml={{md:"25px" , lg:"25px" ,xl: "25px" }}>
           <Heading as="h5" size="lg">
-            Overview
+            {title}
           </Heading>
         </Box>
       <Box className={styles.mainCont} ml={{lg: '-85px' , xl:"-52px" }}  id="overview" >
@@ -110,7 +110,7 @@ function OverviewSlid() {
         </Box>
 
         <Box className={styles.checkCard}   h={{md: '300px', lg: '400px' , xl:"500px" }} >
-          <TypeOfServiceTable/>
+          <TypeOfServiceTable p={price} rtig={rtig} occupation={occupation} />
         </Box>
       </Box>
     </>

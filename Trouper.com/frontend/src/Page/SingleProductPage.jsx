@@ -4,34 +4,35 @@ import Nav from "./SinglePro/Nav";
 import OverviewSlid from "./SinglePro/Overview"
 import AboutTheSeller from "./SinglePro/AboutTheSeller"
 import Reviews from "./SinglePro/Reviews";
-// const getData = (url) => {
-//   return fetch(url).then((res) => res.json());
-// };
+const getData = (url) => {
+  return fetch(url).then((res) => res.json());
+};
 
 const SingleProductPage = () => {
-  const { user_id } = useParams();
-  const [p, setProductDetails] = React.useState([]);
+  const {id} = useParams();
+  console.log(id)
+  const [productData, setProductDetails] = React.useState([]);
 
   React.useEffect(() => {
-    fetch(`http://localhost:9500/products/${user_id}`).then((res)=>res.json()).then((res) =>
-      setProductDetails(res)
+    getData(`http://localhost:9500/products/${id}`).then((res) =>
+    setProductDetails(res)
     );
-  }, [user_id]);
+  }, [id]);
 
-  // console.log(userDetails);
+  console.log(productData);
   return (
     <>
       <Nav/>
       <div>
         <div style={{marginTop:"20px"}} >
-          <OverviewSlid />
+          <OverviewSlid title={productData.title}  price={productData.price} rtig={productData.rating} occupation={productData.occupation} />
         </div>
         <div style={{marginTop:"20px"}} >
-         
-          {p.title}
+         <AboutTheSeller profilePic={productData.profilePic} name={productData.name} rating={productData.rating} description={productData.description} />
+          {/* {p.title} */}
         </div>
         <div style={{marginTop:"20px"}} >
-          <Reviews />
+          <Reviews rat={productData.rating}  />
         </div>
       </div> 
       {/* <Link to="">GO BACK</Link> */}
