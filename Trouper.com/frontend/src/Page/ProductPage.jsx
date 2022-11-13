@@ -9,24 +9,42 @@ import { GridItem } from '@chakra-ui/react';
 import axios from 'axios';
 import { display } from '@mui/system';
 
-
-
-function ProductPage({x,l,t}) {
-
-  console.log(x);
-     const [v, setv]=useState("")
-  const navigate=useNavigate()
-
-if(l==0){
-    navigate("/")
-    
+const getApiData = () =>{
+  return axios.get("http://localhost:9500/products") 
 }
+ 
+function ProductPage() {
+   
+    const [data,setdata]=useState([]);
+  
+  const [v, setv]=useState("")
+  const navigate=useNavigate()
+  
+  let x=localStorage.getItem("pdata")
+ 
+ 
+
+ 
+useEffect(()=>{
+    getApiData().then((res)=>{
+    setdata(res.data)
+     })
+  
+
+   
+   },[])
+
+ 
+// if(l==0){
+//     navigate("/")
+    
+// }
  
    
 
  
   if(v==="inc" ){
-    x.sort(function(a,b){
+    data.sort(function(a,b){
       var x=a.rating;
       var y=b.rating;
       if(x>y){
@@ -41,7 +59,7 @@ if(l==0){
   }
 
   if(v==="dic"){
-    x.sort(function(a,b){
+    data.sort(function(a,b){
       var x=a.rating;
       var y=b.rating;
       if(x>y){
@@ -56,7 +74,7 @@ if(l==0){
   }
   
   if(v==="asc" ){
-    x.sort(function(a,b){
+    data.sort(function(a,b){
       var x=a.price;
       var y=b.price;
       if(x>y){
@@ -71,7 +89,7 @@ if(l==0){
   }
 
   if(v==="des"){
-    x.sort(function(a,b){
+    data.sort(function(a,b){
       var x=a.price;
       var y=b.price;
       if(x>y){
@@ -88,7 +106,7 @@ if(l==0){
 
  return (
      <>
-     <h1 className={style.categorytitle}>{t}</h1>
+     <h1 className={style.categorytitle}>{x}</h1>
      <div className={style.filter}>
         <div className='slctdiv'>
         <select onChange={(e)=>setv(e.target.value)}  value={v} className={style.slct}>
@@ -103,7 +121,7 @@ if(l==0){
           </select>
         </div>
 
-        <div>{l} services available</div>
+        <div>18 services available</div>
      
      </div>
   
@@ -112,7 +130,7 @@ if(l==0){
      
          <div className={style.productdiv}>
            {
-            x?.map((el)=>(
+            data?.filter((el)=>el.category==x).map((el)=>(
 
               <div key={el.id} className={style.divbox}>
                   

@@ -5,10 +5,10 @@ import EuroIcon from '@mui/icons-material/Euro';
 import CurrencyPoundIcon from '@mui/icons-material/CurrencyPound';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import { Input } from '@chakra-ui/input'
- import "./navbar.css"
+import style from "./navbar.module.css"
  import {SearchIcon  } from '@chakra-ui/icons'
 import { Button } from '@chakra-ui/button'
-import { Text } from "@chakra-ui/react"
+import { Text,Image } from "@chakra-ui/react"
 import LanguageIcon from '@mui/icons-material/Language';
 import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu'
 import { useState } from 'react'
@@ -22,21 +22,26 @@ import { SubNavbar } from './SubNavbar';
  
    return (
    <>
-     <div className='navBox'>
-            <div className='snav'>
-          <Snavbar/>
-          </div>
-           <h3>Logo</h3>
+     <div className={style.navBox}>
+            <div className={style.snav}>
+ 
+ 
+          <Snavbar/></div>
+          <Link className={style.logo} to="/">
+          <Image  src="https://miro.medium.com/max/608/1*83ea0-gKieSinthdD9vjFg.jpeg"  alt=""  w="150px" />
+          </Link>
+         
+ 
      
         
-        <div className='leftNav'>
+        <div className={style.leftNav}>
        
           <Input  padding="10px 2px 10px 16px" placeholder='What service are you looking for today?'/>
           <Button    bg="#222325" color="white" ><SearchIcon/></Button>
         </div>
        
-       <div className='rightNav'>
-           <div className='textBox'>
+       <div className={style.rightNav}>
+           <div className={style.textBox}>
          <Menu >
         <MenuButton font="400 16px Macan,Helvetica Neue,Helvetica,Arial,sans-serif" fontWeight="600"><LanguageIcon fontSize=''/> English</MenuButton>
           <MenuList>
@@ -66,11 +71,11 @@ import { SubNavbar } from './SubNavbar';
             <Link to="/admin">Become a Seller </Link>
           </Text>
             </div>
-          <Text className='cart' > 
+          <Text className={style.cart} > 
 
             <Link to="/cart">Cart</Link>
           </Text>
-           <Text className='signin'>
+           <Text className={style.signin}>
             <Link to="/login">Sign in</Link>
            </Text>
           <Button background="none" color="#22C35E" border="1px solid green" fontSize="18px"  padding="7px 20px">
