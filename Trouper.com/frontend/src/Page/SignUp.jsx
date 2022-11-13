@@ -21,14 +21,19 @@ import {
   Text,
   Link,
   Flex,
-  Alert,
-  AlertIcon,
-} from "@chakra-ui/react";
+ 
+  FormLabel,
+  useToast,
+} from '@chakra-ui/react'
+import axios from 'axios';
+import { LOGIN_ERROR } from '../Redux/auth/login.types';
+ 
 import { signup } from "../Redux/auth/login.action";
-import axios from "axios";
+ 
 import {FormLabel} from "@chakra-ui/react";
  
 import { LOGIN_ERROR } from "../Redux/auth/login.types";
+ 
 
 const initialFormData = {
   email: "",
@@ -38,7 +43,10 @@ const initialFormData = {
 
 export default function SignUp() {
   const [formData, setFormData] = React.useState(initialFormData);
-  const navigate = useNavigate();
+ 
+  const navigate = useNavigate()
+  const toast = useToast()
+ 
   const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -49,34 +57,46 @@ export default function SignUp() {
     const { value, name } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  console.log(formData);
+ 
+ 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      let response = await axios.post(
-        `http://localhost:9500/users/signup`,
-        formData
-      );
-      if (!!response.token) {
-        navigate("/login");
-      } else {
-        <Alert status="error">
-          <AlertIcon />
-          There was an error processing your request
-        </Alert>;
+ 
+      let response = await axios.post(`http://localhost:9500/users/signup`, formData)
+      navigate('/login')
+      setFormData(initialFormData)
+      toast({
+        title: 'Account created successfully.',
+        status: 'success',
+        duration: 5000,
+        position:"top",
+        isClosable: true,
+      })
+      if (!!response.data) {
+        localStorage.removeItem("token")
       }
     } catch (error) {
-      console.log(error);
+      toast({
+        title: 'User already exist.',
+        description:"Please use another email and user id",
+        status: 'error',
+        duration: 5000,
+        position:"top",
+        isClosable: true,})
+      dispatch({ type: LOGIN_ERROR });
     }
-    setFormData(initialFormData);
-  };
+   
+  }
 
   return (
     <>
-      <Button onClick={onOpen}>Join</Button>
-
-      <Modal
+      <Button background="none" color="#22C35E" border="1px solid green" fontSize="18px"  padding="7px 20px" onClick={onOpen}>Join</Button>
+      <Modal 
+  
+ 
+ 
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}
         isOpen={isOpen}

@@ -13,9 +13,11 @@ import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import SwipeableTemporaryDrawer, { Snavbar }  from './snavbar';
+ 
 import { SubNavbar } from './SubNavbar';
 import Login from '../Page/Login';
 import SignUp from '../Page/SignUp';
+ 
  
  
  export const Navbar = () => {
@@ -76,6 +78,7 @@ import SignUp from '../Page/SignUp';
 
             <Link to="/cart">Cart</Link>
           </Text>
+  
            <Text className={style.signin}>
                  <Login/>
            </Text>
@@ -83,7 +86,7 @@ import SignUp from '../Page/SignUp';
                <SignUp />
             
             
-           
+ 
        </div>
     
      </div>
