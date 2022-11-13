@@ -1,3 +1,28 @@
 .mainContReview{
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 }
+
+.pro{
+ 
+  color-scheme:#ffb33e ;
+  color: rgb(253, 179, 59);
+}
+
+@media (min-width: 290px) and (max-width: 417px){
+
+  .rDiv{
+    width: 100%;
+    /* border: 5px solid rgb(237, 9, 9); */
+  }
+
+  /* .aboutMainCont{
+    border: 5px solid rgb(229, 71, 171);
+    align-items: center;
+  }
+
+  .head{
+    text-align: center;
+    border: 5px solid rgb(224, 235, 16);
+    width: 200px;
+  } */
+}

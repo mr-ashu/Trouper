@@ -6,12 +6,12 @@ import { Tabs,
   TabPanel,
   Button,
   Box,} from"@chakra-ui/react"
-  import styles from "../../Page/SinglePro/Overview.module.css";
+  import styles from "../../Page/SinglePro/TypeOfServiceTable.module.css";
 function TypeOfServiceTable() {
   return (
     <>
      <Tabs>
-            <TabList display="flex" justifyContent="space-evenly">
+            <TabList display="flex" justifyContent="space-evenly" className={styles.navServiceTable}  >
               <Tab>Basic</Tab>
               <Tab>Standard</Tab>
               <Tab>Premium</Tab>

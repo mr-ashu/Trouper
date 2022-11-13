@@ -1,5 +1,6 @@
  
  
+ 
 import React, { useEffect, useState } from 'react'
 import { Link, resolvePath, useNavigate } from 'react-router-dom';
 import style from "./Product.module.css"
@@ -159,14 +160,16 @@ useEffect(()=>{
            }
 
          </div>
-     </>
  
+     </>
   )
 }
 
+ 
   export default ProductPage
 
 
 
+ 
  
  

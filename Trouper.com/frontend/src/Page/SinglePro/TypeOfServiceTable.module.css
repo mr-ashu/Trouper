@@ -1,0 +1,78 @@
+/* slid Show com */
+
+.mainCont {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    /* width: 100%; */
+    border: 2px solid royalblue;
+    /* margin-left: -60px; */
+  
+    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px; */
+  }
+  
+  .slideshow {
+    margin: 0 auto;
+    overflow: hidden;
+  
+    /* 
+    border: 2px solid #6a0dad; */
+  }
+  
+  .slideshowSlider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+  
+    /* border: 2px solid #df7708;   */
+  }
+  
+  .slide {
+    display: inline-block;
+    height: 570px;
+    width: 100%;
+    border-radius: 40px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  }
+  
+  /*  slidShow button Buttons */
+  
+  .slideshowDots {
+    text-align: center;
+    /* margin-top: 200px; */
+    /* border: 2px solid #0bbaf9; */
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  }
+  
+  .slideshowDot {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    /* border: 2px solid #8f03f3; */
+  
+    cursor: pointer;
+    margin: 15px 7px 0px;
+  
+    background-color: #c4c4c4;
+  }
+  
+  .slideshowDot.active {
+    background-color: #6a0dad;
+  }
+  
+  .checkCard {
+    width: 30%;
+    /* border: 1px solid blue; */
+    /* position: z-index */
+  }
+  
+  .row {
+    text-align: start;
+  }
+  
+  .rowThird {
+    display: flex;
+    gap: 10px;
+  }
+  
+ 
