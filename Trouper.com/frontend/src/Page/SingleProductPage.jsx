@@ -39,7 +39,6 @@ const SingleProductPage = () => {
         </div>
      
       </div>
-  
     </>
  
  )

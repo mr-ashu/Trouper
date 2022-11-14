@@ -30,6 +30,7 @@ import { LOGIN_ERROR } from '../Redux/auth/login.types';
  
 import { signup } from "../Redux/auth/login.action";
  
+ 
 
 const initialFormData = {
   email: "",
@@ -97,8 +98,7 @@ export default function SignUp() {
         <ModalContent>
          
             <ModalHeader>
-              <Center>
-              <Heading as="h6" size="lg">
+                <Heading   as="h6" size="">
                 Join Trouper
               </Heading>
               </Center>
