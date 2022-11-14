@@ -1,16 +1,13 @@
 # Team Mates
 
 Ashutosh
+<br/>
 Anjali
+<br/>
 Abdus Salam
+<br/>
 Pravin Mohite
+<br/>
 Darshan
 
-## API
-<P>http://localhost:9500/users</p>
-  <p> /login </p>
-  <p>/signup</p>
-<br/>
-<P>http://localhost:9500/products</p>
-<br/>
-<P>http://localhost:9500/carts</p>
+ 
