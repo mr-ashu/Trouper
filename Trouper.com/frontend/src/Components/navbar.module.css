@@ -70,8 +70,13 @@ a:hover{
         display: none;
     }
     .subNavbar{
-        display: none;
+        display: block;
+        border: 1px solid #1dbf73;
+        /* display: block;
+        color: black; */
     }
+
+    
 
     .leftNav{
         display: none;
@@ -95,6 +100,10 @@ a:hover{
         display: none;
     }
     .subNavbar{
+        display: block;
+        
+    }
+    .mer{
         display: none;
     }
 

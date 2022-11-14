@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 import Login from "../Page/Login"
 import SignUp from "../Page/SignUp"
 import { SubNavbar } from "./SubNavbar"
-
+import style from "./navbar.module.css"
 export const Snavbar=()=> {
   const { user, isAuth }=useSelector((store)=>store.auth);
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -32,20 +32,23 @@ export const Snavbar=()=> {
             <Link to="/admin">Become a Seller </Link>
           </Text>
            
-          <Text className='cart1' > 
+          <Text className={style.cart1}> 
            <Link to="/cart">Cart</Link>
           </Text>
 
+
            <Text className='signin1'>
            <Login />
+
            </Text>
            <hr />
             <Box>
               <Text fontWeight="bold">CATEGORY</Text>
               <hr />
 
-              <div>
-              <SubNavbar/>
+
+              <div className={style.std} >
+                <SubNavbar/>
               </div>
             </Box>
           </DrawerBody>

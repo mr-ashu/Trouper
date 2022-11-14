@@ -27,6 +27,10 @@ import {
 import axios from 'axios';
 import { LOGIN_ERROR } from '../Redux/auth/login.types';
 
+ 
+import { signup } from "../Redux/auth/login.action";
+ 
+
 const initialFormData = {
   email: "",
   password: "",
