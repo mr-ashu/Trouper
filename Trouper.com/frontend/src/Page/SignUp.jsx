@@ -30,10 +30,7 @@ import { LOGIN_ERROR } from '../Redux/auth/login.types';
  
 import { signup } from "../Redux/auth/login.action";
  
-import {FormLabel} from "@chakra-ui/react";
- 
-import { LOGIN_ERROR } from "../Redux/auth/login.types";
- 
+  
 
 const initialFormData = {
   email: "",
@@ -106,7 +103,7 @@ export default function SignUp() {
         <ModalContent>
           <Center>
             <ModalHeader>
-              <Heading as="h6" size="md">
+              <Heading   as="h6" size="">
                 Join Trouper
               </Heading>
             </ModalHeader>
