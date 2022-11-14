@@ -1,11 +1,15 @@
 import { HamburgerIcon } from "@chakra-ui/icons"
-import { Button, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Text, useDisclosure } from "@chakra-ui/react"
+import { Avatar, Button, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Text, useDisclosure } from "@chakra-ui/react"
 import { Box } from "@mui/system"
 import React,{ useState } from "react"
+import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
+import Login from "../Page/Login"
+import SignUp from "../Page/SignUp"
 import { SubNavbar } from "./SubNavbar"
 import style from "./navbar.module.css"
 export const Snavbar=()=> {
+  const { user, isAuth }=useSelector((store)=>store.auth);
   const { isOpen, onOpen, onClose } = useDisclosure()
  
 
@@ -19,10 +23,7 @@ export const Snavbar=()=> {
         <DrawerOverlay />
         <DrawerContent >
           <DrawerHeader borderBottomWidth='1px'>
-          <Button background="none" color="#22C35E" border="1px solid green" fontSize="18px"  padding="7px 20px">
-            <Link color='#22C35E' to="signup"> Join Trouper</Link>
-            
-          </Button>
+          {isAuth===true? <Avatar name={user.name}/>:<SignUp />}
           </DrawerHeader>
           <DrawerBody>
             <Text fontWeight="bold">GENERAL</Text>
@@ -35,13 +36,16 @@ export const Snavbar=()=> {
            <Link to="/cart">Cart</Link>
           </Text>
 
-           <Text className={style.signin1}>
-            <Link to="/signin">Sign in</Link>
+
+           <Text className='signin1'>
+           <Login />
+
            </Text>
            <hr />
             <Box>
               <Text fontWeight="bold">CATEGORY</Text>
               <hr />
+
 
               <div className={style.std} >
                 <SubNavbar/>

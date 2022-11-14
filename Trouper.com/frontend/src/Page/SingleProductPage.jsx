@@ -28,7 +28,7 @@ const SingleProductPage = () => {
         <div style={{marginTop:"20px"}} >
           <OverviewSlid title={productData.title}  price={productData.price} rtig={productData.rating} occupation={productData.occupation} />
         </div>
-         
+
         <div style={{marginTop:"20px"}} >
          <AboutTheSeller profilePic={productData.profilePic} name={productData.name} rating={productData.rating} description={productData.description} />
           
@@ -39,8 +39,7 @@ const SingleProductPage = () => {
         </div>
      
       </div>
-     
-      
+  
     </>
  
  )
