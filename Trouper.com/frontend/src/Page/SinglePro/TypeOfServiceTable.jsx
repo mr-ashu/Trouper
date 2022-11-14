@@ -7,7 +7,7 @@ import { Tabs,
   Button,
   Box,} from"@chakra-ui/react"
   import styles from "../../Page/SinglePro/TypeOfServiceTable.module.css";
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 function TypeOfServiceTable({p , rtig ,occupation}) {
   return (
     <>
@@ -47,14 +47,14 @@ function TypeOfServiceTable({p , rtig ,occupation}) {
                     <li>Social Media Design</li>
                     <li>Commercial Use</li>
                   </Box>
-
+                   <Link to="/payment">
                   <Button
                     colorScheme="whatsapp"
                     w={[90, 140, 200, 280]}
                     mt={[2, 4, 6, 8]}
                   >
                     Continue
-                  </Button>
+                  </Button></Link>
                 </div>
               </TabPanel>
               <TabPanel>

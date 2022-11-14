@@ -1,11 +1,12 @@
 .talent {
-    width: 90%;
-    height: 400px;
+    width: 100%;
+    
     margin: auto;
-    margin-top: 20px;
+    margin-top: 0px;
     /* border: 1px solid red; */
     text-align: left;
-    background: url("https://fiverr-res.cloudinary.com/q_auto,f_auto,w_1400,dpr_1.0/v1/attachments/generic_asset/asset/50218c41d277f7d85feeaf3efb4549bd-1599072608122/bg-signup-1400-x1.png")
+    background: url("https://fiverr-res.cloudinary.com/q_auto,f_auto,w_1400,dpr_1.0/v1/attachments/generic_asset/asset/50218c41d277f7d85feeaf3efb4549bd-1599072608122/bg-signup-1400-x1.png");
+    height: 400px
 }
 .talent > div {
     /* border: 1px solid green; */
@@ -25,14 +26,29 @@
 }
 
 .btn4 {
-    width: 150px;
-    height: 40px;
+    
     color: white;
     background-color: #1dbf73 ;
     border-radius: 5px;
     margin-top: 30px;
     font-size: 20px;
     font-weight: bold;
+    align-items: center;
+    padding: 10px 20px;
+  
+}
+.btn4:hover{
+    color: tomato;
+    background: white;
+}
+ a{
+    border: none;
+   
+
+}
+ a:hover{
+    border: none;
+    
 }
 
 @media all and (min-width: 551px) and (max-width: 950px){
@@ -53,9 +69,10 @@
      }
      .btn4 {
         margin-top: 20px;
-        width: 120px;
-        height: 35px;
+        
         font-size: 15px;
+        padding: 10px 20px;
+
      }
 }
 
@@ -74,8 +91,8 @@
      }
      .btn4 {
         margin-top: 10px;
-        width: 100px;
-        height: 30px;
-        font-size: 10px;
+        
+        font-size: 14px;
+        padding: 7px 15px;
      }
 }

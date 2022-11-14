@@ -13,6 +13,7 @@ import SingleProductPage from '../Page/SingleProductPage'
 import ProductPage  from '../Page/ProductPage'
 import AdminForm from '../Page/admin/AdminForm'
 import Sucess from "../Page/Sucess";
+import { AdminDashoard } from '../Page/admin/AdminDashoard'
  
 export const AllRoutes = () => {
   return (
@@ -28,7 +29,7 @@ export const AllRoutes = () => {
       <Route path='/product' element={<ProductPage/>}/>
       <Route path="/join" element={<AdminForm/>}/>
       <Route path="/sucess" element={<Sucess />} />
- 
+       <Route path="/dashboard" element={<AdminDashoard/>}/>
     </Routes>
   );
 };

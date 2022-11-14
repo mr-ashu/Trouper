@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { Link } from 'react-router-dom';
 import style from "./talent.module.css";
 export const Talent = () => {
   return (
@@ -8,7 +9,7 @@ export const Talent = () => {
         <div>
          <h1>Find the talent needed to</h1>
          <h1>get your business growing.</h1>
-         <button className={style.btn4}>Get Started</button>
+         <Link to="/admin"><button className={style.btn4}>Get Started</button></Link>
          </div>
       </div>
     </div>

@@ -98,6 +98,7 @@ export default function SignUp() {
         <ModalContent>
          
             <ModalHeader>
+              <Center> 
                 <Heading   as="h6" size="">
                 Join Trouper
               </Heading>

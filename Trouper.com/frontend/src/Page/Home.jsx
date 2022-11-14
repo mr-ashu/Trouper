@@ -11,16 +11,17 @@ import { Services } from './Home/Services';
 export const Home = () => {
   return (
     <div>
-
-       <Slider />
+       
+      <Talent />
+     
        <Viewed />
        <Services />
        <Freelancer />
-      <MarketPlace /> 
+       <MarketPlace /> 
        <Business />
        <LogoMaker />
        <Guide />
-       <Talent />
+      
     </div>
   )
 }

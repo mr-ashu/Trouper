@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import style from  "../Home/viewed.module.css";
 import { StarIcon } from "@chakra-ui/icons";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { Link } from "react-router-dom";
 
 const getData = () => {
    return axios.get("http://localhost:9500/products")
@@ -50,7 +51,7 @@ export const Viewed = () => {
                             </div>
                         </div>
                         <div className={style.font}>
-                           {ele.title}
+                          <Link to={`/product/${ele._id}`}> {ele.title}</Link>
                         </div>
                         <div className={style.star} >
                           <StarIcon /> {ele.rating}

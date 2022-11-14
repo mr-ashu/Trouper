@@ -1,5 +1,6 @@
 import { Flex, Image, Box } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
 // import Logo_F from "../Logo/Fiveer-Logo.png"
 const NavPay = () => {
   return (
@@ -60,7 +61,7 @@ const NavPay = () => {
           3
         </Box>
 
-        <Box mt="3" color="grey">{`Submit Requirements >`}</Box>
+         <Box mt="3" color="grey">{`Submit Requirements >`}</Box> 
       </Flex>
       {/* <Box><span style={{color:"#000",borderRadius:"50%", background:"#fff",width:"36px",height:"36px" ,padding:"10px" , border:"3px solid #000",textAlign:"center",font:"32px Arial,sans-serif"}}>1</span></Box> */}
     </Box>

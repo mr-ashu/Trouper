@@ -11,7 +11,7 @@ const images = [
 
 export const Slider = () => {
   return (
-  <>{/*
+  <>
     <div className={style.slider}>
     <SimpleImageSlider
     max-width={1500}
@@ -32,7 +32,7 @@ export const Slider = () => {
          <button>Search</button>
          </div>
          </div>
-  </div> */}
+  </div> 
     </>
   )
 }

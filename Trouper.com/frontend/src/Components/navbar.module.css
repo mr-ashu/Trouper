@@ -51,14 +51,18 @@ a{
     padding: 8px 0;
     position: relative;
     text-decoration: none;
+    color: #1dbf73;
 }
-a:hover{
- 
+.subNavbar a:hover{
+    color:#1dbf73;
     border-bottom: 3px solid #1dbf73;
 }
 .rightNav a:hover{
-   color: #1dbf73;
-   border: none;
+    border:none
+}
+ a:hover{
+    color: #1dbf73;
+   border: 3px solid #1dbf73;
 }
 
 
@@ -71,11 +75,14 @@ a:hover{
     }
     .subNavbar{
         display: block;
-        border: 1px solid #1dbf73;
-        /* display: block;
-        color: black; */
+        
+        
     }
-
+    .subNavbar a:hover{
+         color: #1dbf73;
+         border:none;
+        
+    }
     
 
     .leftNav{
@@ -103,6 +110,7 @@ a:hover{
         display: block;
         
     }
+ 
     .mer{
         display: none;
     }

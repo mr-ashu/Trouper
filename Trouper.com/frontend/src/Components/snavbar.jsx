@@ -33,7 +33,7 @@ export const Snavbar=()=> {
           </Text>
            
           <Text className={style.cart1}> 
-           <Link to="/cart">Cart</Link>
+           <Link to="/cart">Order</Link>
           </Text>
 
 

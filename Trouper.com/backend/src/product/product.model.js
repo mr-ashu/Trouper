@@ -52,7 +52,9 @@ const productSchema = new mongoose.Schema({
     lavel:{
         type:String
     },
-   
+   email:{
+    type:String
+   }
    
    
    

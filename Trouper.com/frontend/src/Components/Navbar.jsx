@@ -97,7 +97,7 @@ import { useSelector } from 'react-redux';
             </Text>
           </div>
           <Text className={style.cart}>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">Order</Link>
           </Text>
 
   

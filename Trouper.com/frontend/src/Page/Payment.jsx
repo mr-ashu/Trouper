@@ -22,6 +22,7 @@ import {
 import NavPay from "./Payment.Nav";
 import Rating from "./Rating";
 import payImg from "../Components/image/Payment_Logo.png";
+import { Link } from "react-router-dom";
 
 const Payment = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -331,9 +332,9 @@ const handleClick = () => {
                       <Button ref={cancelRef} onClick={onClose}>
                         Cancel
                       </Button>
-                      <Button  colorScheme="green" onClick={onClose} ml={3}>
+                      <Link to="/cart"><Button  colorScheme="green" onClick={onClose} ml={3}>
                         Confirm{" "}
-                      </Button>
+                      </Button></Link>
                     </AlertDialogFooter>
                   </AlertDialogContent>
                 </AlertDialogOverlay>
