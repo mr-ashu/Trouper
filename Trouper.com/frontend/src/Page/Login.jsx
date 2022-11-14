@@ -53,7 +53,6 @@ export default function Login() {
     dispatch(login(formData))
     onClose()
     setFormData(initialFormData)
-    alert("Login Success")
   };
   
 
@@ -217,6 +216,6 @@ const handleLogOut = () =>{
           </ModalBody>
         </ModalContent>
       </Modal>
-    </>
-  );
+</>
+);
 }

@@ -22,7 +22,7 @@ import { useSelector } from 'react-redux';
  
  export const Navbar = () => {
   const { user, isAuth }=useSelector((store)=>store.auth);
-  const [value,setValue]=useState("inr");
+ 
  
    return (
    <>

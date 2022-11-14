@@ -27,11 +27,6 @@ import {
 import axios from 'axios';
 import { LOGIN_ERROR } from '../Redux/auth/login.types';
 
- 
-import { signup } from "../Redux/auth/login.action";
- 
- 
-
 const initialFormData = {
   email: "",
   password: "",
@@ -98,8 +93,8 @@ export default function SignUp() {
         <ModalContent>
          
             <ModalHeader>
-              <Center> 
-                <Heading   as="h6" size="">
+              <Center>
+              <Heading as="h6" size="lg">
                 Join Trouper
               </Heading>
               </Center>
@@ -236,6 +231,6 @@ export default function SignUp() {
           </ModalBody>
         </ModalContent>
       </Modal>
-    </>
-  );
+    </>
+  );
 }

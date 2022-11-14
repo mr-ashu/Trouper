@@ -2,7 +2,7 @@ import { grey, red } from '@mui/material/colors'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import style from "../Components/navbar.module.css"
+import style from "./Product.module.css"
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 const getCart=()=>{
@@ -31,7 +31,7 @@ export const Cart = () => {
                
                    <div className={style.bagdiv}>
                    <div className={style.sdiv}>
-                        <img src={el.profilePic} alt="" />
+                        <img src= "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/223589188/original/fee4334636bb35d216f0924a7ea7fe50eb84455c.png"alt="" />
                         <div className={style.idbox}>
                               <p>{el.name}</p>
                               <span className={style.rating1}>{el.lavel}</span>

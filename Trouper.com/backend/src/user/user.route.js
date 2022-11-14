@@ -23,8 +23,8 @@ app.post("/login", async (req, res) => {
     }
 
     res.send({
-        token:`${u.id}:${u.email}:${u.password}`
-    })
+        token:`${u.id}:${u.email}:${u.password}`,user:u
+})
    } catch (e) {
       res.status(404).send(e.message)
    }
