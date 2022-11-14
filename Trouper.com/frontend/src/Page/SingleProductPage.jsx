@@ -27,13 +27,8 @@ const SingleProductPage = () => {
  
         <div style={{marginTop:"20px"}} >
           <OverviewSlid title={productData.title}  price={productData.price} rtig={productData.rating} occupation={productData.occupation} />
- 
-        <div style={{ marginTop: "20px" }}>
-          <OverviewSlid />
- 
         </div>
-        <div style={{ marginTop: "20px" }}>
-          <AboutTheSeller />
+       
         <div style={{marginTop:"20px"}} >
          <AboutTheSeller profilePic={productData.profilePic} name={productData.name} rating={productData.rating} description={productData.description} />
           {/* {p.title} */}
@@ -42,13 +37,13 @@ const SingleProductPage = () => {
         <div style={{marginTop:"20px"}} >
           <Reviews rat={productData.rating}  />
  
-        <div style={{ marginTop: "20px" }}>
-          <Reviews />
+        
  
         </div>
       </div>
-      </div>
-      
+     
+     
+     
     </>
  
  )

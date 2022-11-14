@@ -7,7 +7,7 @@ import { Input } from '@chakra-ui/input'
 import style from "./navbar.module.css"
  import {SearchIcon  } from '@chakra-ui/icons'
 import { Button } from '@chakra-ui/button'
-import { Text,Image } from "@chakra-ui/react"
+import { Text,Image, Avatar } from "@chakra-ui/react"
 import LanguageIcon from '@mui/icons-material/Language';
 import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu'
 import { useState } from 'react'
@@ -17,10 +17,12 @@ import SwipeableTemporaryDrawer, { Snavbar }  from './snavbar';
 import { SubNavbar } from './SubNavbar';
 import Login from '../Page/Login';
 import SignUp from '../Page/SignUp';
+import { useSelector } from 'react-redux';
  
  
  
  export const Navbar = () => {
+  const { user, isAuth }=useSelector((store)=>store.auth);
   const [value,setValue]=useState("inr");
  
    return (
@@ -83,7 +85,7 @@ import SignUp from '../Page/SignUp';
                  <Login/>
            </Text>
           
-               <SignUp />
+              {isAuth===true? <Avatar name={user.name}/>:<SignUp />}
             
             
  
@@ -91,8 +93,9 @@ import SignUp from '../Page/SignUp';
     
      </div>
      <hr />
- 
-       <SubNavbar/>
+      <div className={style.unique}>
+       <SubNavbar />
+      </div>
    <hr />
 
    </>

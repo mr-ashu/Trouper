@@ -5,7 +5,8 @@ const token = localStorage.getItem("token")
 
 const initialState = {
   isAuth: !!token,
-  token: "",
+  user:"",
+  token: token,
   loading: false,
   error: false,
 }
@@ -18,6 +19,7 @@ export const authReducer = (state = initialState, { type, payload }) => {
         ...state,
         isAuth: true,
         token: payload,
+        user:payload.user,
         loading: false,
         error: false
       }
@@ -34,6 +36,7 @@ export const authReducer = (state = initialState, { type, payload }) => {
         ...state,
         isAuth: false,
         loading: false,
+        user:"",
         error: false,
         token: ""
       }

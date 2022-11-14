@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link as ReactLink, useNavigate } from "react-router-dom";
+import { Link as ReactLink,} from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'
 import {
   Modal,
@@ -37,8 +37,7 @@ export default function Login() {
   const [formData, setFormData] = React.useState(initialFormData);
   const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const navigate= useNavigate()
-  const {isAuth, loading, error }=useSelector((store)=>store.auth);
+  const { isAuth }=useSelector((store)=>store.auth);
   const toast = useToast()
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
@@ -52,8 +51,10 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(login(formData))
+    onClose()
     setFormData(initialFormData)
   };
+  
 
 
 const handleLogOut = () =>{
@@ -79,13 +80,13 @@ const handleLogOut = () =>{
       >
         <ModalOverlay />
         <ModalContent>
-          <Center>
             <ModalHeader>
-              <Heading as="h6" size="md">
+            <Center>
+              <Heading as="h6" size="lg">
                 Sign In to Trouper
               </Heading>
-            </ModalHeader>
           </Center>
+            </ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <form onSubmit={handleSubmit}>
