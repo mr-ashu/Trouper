@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { Link as ReactLink, useNavigate } from "react-router-dom";
+import { Link as ReactLink } from "react-router-dom";
 import {
   Modal,
   ModalOverlay,
@@ -21,16 +21,16 @@ import {
   Text,
   Link,
   Flex,
- 
   FormLabel,
   useToast,
 } from '@chakra-ui/react'
 import axios from 'axios';
 import { LOGIN_ERROR } from '../Redux/auth/login.types';
+
  
 import { signup } from "../Redux/auth/login.action";
  
-  
+ 
 
 const initialFormData = {
   email: "",
@@ -40,8 +40,6 @@ const initialFormData = {
 
 export default function SignUp() {
   const [formData, setFormData] = React.useState(initialFormData);
- 
-  const navigate = useNavigate()
   const toast = useToast()
  
   const dispatch = useDispatch();
@@ -61,8 +59,9 @@ export default function SignUp() {
     event.preventDefault();
     try {
  
-      let response = await axios.post(`http://localhost:9500/users/signup`, formData)
-      navigate('/login')
+       await axios.post(`http://localhost:9500/users/signup`, formData)
+     
+      onClose()
       setFormData(initialFormData)
       toast({
         title: 'Account created successfully.',
@@ -71,13 +70,12 @@ export default function SignUp() {
         position:"top",
         isClosable: true,
       })
-      if (!!response.data) {
-        localStorage.removeItem("token")
-      }
+      localStorage.removeItem("token")
+     
     } catch (error) {
       toast({
-        title: 'User already exist.',
-        description:"Please use another email and user id",
+        title: 'Please provide all the details.',
+        description:"May user already exist OR provide all the details . Please use another email and user id",
         status: 'error',
         duration: 5000,
         position:"top",
@@ -89,11 +87,8 @@ export default function SignUp() {
 
   return (
     <>
-      <Button background="none" color="#22C35E" border="1px solid green" fontSize="18px"  padding="7px 20px" onClick={onOpen}>Join</Button>
+      <Button background="none" color="#22C35E"  _hover={{ bg: 'green.400', color:"white" }}  _active={{ bg: 'none',}} border="1px solid green" fontSize="18px"  padding="7px 20px" onClick={onOpen}>Join</Button>
       <Modal 
-  
- 
- 
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}
         isOpen={isOpen}
@@ -101,13 +96,14 @@ export default function SignUp() {
       >
         <ModalOverlay />
         <ModalContent>
-          <Center>
+         
             <ModalHeader>
-              <Heading   as="h6" size="">
+                <Heading   as="h6" size="">
                 Join Trouper
               </Heading>
+              </Center>
             </ModalHeader>
-          </Center>
+          
           <ModalCloseButton />
           <ModalBody pb={6}>
             <form onSubmit={handleSubmit}>
