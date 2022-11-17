@@ -3,12 +3,11 @@ const mongoose = require("mongoose");
 const productSchema = new mongoose.Schema({
     name:{
        type:String,
-       required:true
+       
     },
     profilePic:{
         type:String,
         data:Buffer
- 
     },
     about:{
       type:String,
@@ -22,20 +21,14 @@ const productSchema = new mongoose.Schema({
     occupation:{
         type:String
     },
-   
-  
-    title: {
-        type : String,
-        required: true
+   title: {
+        type : String
       
     },
     category: {
-        type : String,
-        required: true
-      
+        type : String
+     
     },
-  
-  
     price:{
         type:String
     },
@@ -53,12 +46,22 @@ const productSchema = new mongoose.Schema({
         type:String
     },
    email:{
+    type:String,
+    required:true
+   },
+   password:{
     type:String
+   },
+   address:{
+       type:String
+   },
+   contact:{
+    type:Number
+   },
+   isComplete:{
+      type:Boolean
    }
-   
-   
-   
-
+ 
 },
 { versionKey: false })
 

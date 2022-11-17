@@ -22,7 +22,9 @@ export const Cart = () => {
 
   return (
     <div>
-      
+      <div>
+        
+      </div>
       <div className={style.productdiv}>
            {
             data?.map((el)=>(

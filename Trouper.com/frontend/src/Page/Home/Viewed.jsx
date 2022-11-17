@@ -29,13 +29,14 @@ export const Viewed = () => {
            <div className={style.heading}>
            Recently Viewed & More
            </div>
-        <Carousel interval={2000}>
+        <Carousel  interval={5000}>
             <Carousel.Item className={style.Home_carousel_Third_container}>
                 <div className={style.Home_carousel_item_Third}>
-                 { 
+               
+                { 
                     data.map((ele) => (
 
-                 
+                       
                     <div className={style.Home_Featured_Brands_Item}>
                         <div>
                             <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/234797894/original/9ea978270661f57ea75ecf8999e51bced943b09d.jpg" alt="" />
@@ -67,11 +68,13 @@ export const Viewed = () => {
                             </div>
                         </div>
                         </div>
+                  
                     </div>
-
                     ))
                 }
-
+                 
+               
+             
 
                     {/*
 

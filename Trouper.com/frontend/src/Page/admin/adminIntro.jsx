@@ -6,6 +6,8 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import { red } from '@mui/material/colors';
+import AdminSignUp from './AdminSignUp';
+import AdminSignIn from './AdminLogin';
 
 
 export const AdminIntro = () => {
@@ -22,7 +24,8 @@ export const AdminIntro = () => {
            <div className='txtspan'>
            <h1>Work Your Way</h1>
            <p>Your bring the skill. We'll make earning easy.</p>
-           <Link to="/join">Become a Seller</Link>
+           <AdminSignIn/>
+           <AdminSignUp/>
            </div>
          </div>
         
@@ -39,8 +42,8 @@ export const AdminIntro = () => {
              <div><img src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/699482a05db770305ba6f2fc7139b98a-1614861401146/analyst.jpg" alt="" /></div>
              <span className='ltext'> 
                  <FavoriteIcon fontSize='large' sx={{color:red[500]}}/>
-                 <h3>What's Your Skill?</h3>
-                 <Link to="/join">Become a Seller</Link>
+                 <h3>What's Your Status?</h3>
+                 <Link to="/dashboard">Go To Dashboard</Link>
              </span>
         </div>
 

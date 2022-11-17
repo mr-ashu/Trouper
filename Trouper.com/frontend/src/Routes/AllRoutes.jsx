@@ -14,7 +14,13 @@ import ProductPage  from '../Page/ProductPage'
 import AdminForm from '../Page/admin/AdminForm'
 import Sucess from "../Page/Sucess";
 import { AdminDashoard } from '../Page/admin/AdminDashoard'
- 
+   
+
+
+
+
+
+
 export const AllRoutes = () => {
   return (
     <Routes>

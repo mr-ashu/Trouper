@@ -63,12 +63,13 @@
     font-weight: 700;
     color: #fff;
     border: 1px solid transparent;
-    padding: 17px 25px;
+    padding: 14px 22px;
     
     display: inline-block;
     border-radius: 3px;
     box-sizing: border-box;
     margin-top: 13px;
+    margin-left: 10px;
 }
 .videotext a:hover{
        border: none;
