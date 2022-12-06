@@ -36,7 +36,7 @@ const initialFormData = {
   email: "",
   password: "",
   name: "",
-  contect:"",
+  contact:"",
   address:""
 };
 
@@ -61,7 +61,7 @@ export default function AdminSignUp() {
     event.preventDefault();
     try {
  
-       await axios.post(`http://localhost:9500/products/signup`, formData)
+       await axios.post(`http://localhost:9500/admin/signup`, formData)
      
       onClose()
       setFormData(initialFormData)

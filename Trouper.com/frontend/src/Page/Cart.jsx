@@ -1,21 +1,42 @@
 import { grey, red } from '@mui/material/colors'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import style from "./Product.module.css"
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
-const getCart=()=>{
-  return axios.get("http://localhost:9500/carts")
- }
-export const Cart = () => {
-      const [data,setData]=useState([])
-  useEffect(()=>{
-      getCart().then((res)=>{
-        setData(res.data)
-      })
-  },[])
+import { useDispatch, useSelector } from 'react-redux'
 
+const getCart=(token)=>{
+  return axios.get(`http://localhost:9500/carts`,{
+    headers:token
+  })
+}
+export const Cart = () => {
+  const store=useSelector((store)=>store.auth)
+ 
+ 
+  const dispatch=useDispatch()
+  const [data,setData]=useState([])
+   console.log(store);
+
+   const navigate=useNavigate()
+   const token=store.token
+ 
+    console.log(token);
+ useEffect(()=>{
+    getCart(token).then((res)=>{
+     console.log(res);
+       setData(res.data)
+    })
+ },[])
+
+  
+if(!store.isAuth){
+  
+  navigate("/product")
+
+}
   if(data.length==0){
     return <h1>...Your Cart is Empty</h1>
   }
@@ -33,10 +54,10 @@ export const Cart = () => {
                
                    <div className={style.bagdiv}>
                    <div className={style.sdiv}>
-                        <img src= "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/223589188/original/fee4334636bb35d216f0924a7ea7fe50eb84455c.png"alt="" />
+                        
                         <div className={style.idbox}>
-                              <p>{el.name}</p>
-                              <span className={style.rating1}>{el.lavel}</span>
+                              <p>{}</p>
+                              <span className={style.rating1}>{}</span>
                         </div>
                   </div>
                   <Link>{el.title}</Link>

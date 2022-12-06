@@ -15,9 +15,10 @@ import {
   } from '@chakra-ui/react';
   import { SmallCloseIcon } from '@chakra-ui/icons';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
  
  
 const initialFormData = {
@@ -37,33 +38,61 @@ const initialFormData = {
 };
   export default function AdminForm() {
     const [formData, setFormData] = useState(initialFormData);
+    const [pid,setpId]=useState("")
+   
  
- 
-  const dispatch = useDispatch();
   const nevigate=useNavigate()
+
+  const store=useSelector((store)=>store.auth)
+ 
+   let t=store.token.token;
+ 
+   let id=store.user._id
   const handleFormData = (e) => {
     const { value, name } = e.target;
     setFormData({ ...formData, [name]: value });
   };
  
-  
+ 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
  
-       await axios.post(`http://localhost:9500/products`, formData)
+       await axios.post(`http://localhost:9500/products`, formData).then((res)=>{
+ 
+        setpId(res.data._id)
+       })
+      
       
       setFormData(initialFormData)
       alert("Form successfully added ")
-       nevigate("/dashboard")
+     
      
     } catch (error) {
       alert('Something Error.')
        
     }
-   console.log(formData);
+ 
   }
+
+  const payload={
+       "user":id,
+       "product":pid
+  }
+ 
+  let headers={token:t}
+ 
+
+  useEffect(()=>{
+ 
+      axios.post(`http://localhost:9500/admincart`,payload,{headers:headers})  
+      .then((res)=>{
+
+      console.log(res.data);
+     
+    })
+  },[])
     
 
   
@@ -254,21 +283,43 @@ const initialFormData = {
           </FormControl>
  
           {/* ---------------- */}
-          <Stack spacing={6} direction={['column', 'row']} margin="20px">
+          <Stack paddingTop="20px" alignItems="center" textAlign="center" justifyContent="center"  spacing={6} direction={['column', 'row']} >
              
             <Button
-              marginTop="20px"
+             
               type='submit'
               bg={'blue.400'}
               color={'white'}
-              w="full"
+             
               _hover={{
                 bg: 'blue.500'
                 
               }}>
               Submit
             </Button>
+                    
+                    <Link to="/dashboard">
+                    
+                    <Button
+              
+              alignSelf="center"
+             bg={'pink.400'}
+             color={'white'}
+             
+             _hover={{
+               bg: 'green.500'
+               
+             }}>
+             Go To DashBoard
+           </Button>
+                    </Link>
+         
           </Stack>
+
+          <Stack spacing={6} direction={['column', 'row']} margin="20px">
+             
+             
+           </Stack>
         </Stack>
       </form>
       </div>

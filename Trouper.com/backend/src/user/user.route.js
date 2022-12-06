@@ -23,7 +23,7 @@ app.post("/login", async (req, res) => {
     }
 
     res.send({
-        token:`${u.id}:${u.email}:${u.password}`,user:u
+        token:`${u.email}_#_${u.password}`,user:u
 })
    } catch (e) {
       res.status(404).send(e.message)
@@ -43,7 +43,7 @@ app.post("/signup", async (req, res) => {
     }
     else{ 
     let user=await User.create({...req.body})
-    res.send([{token:`${user.id}:${user.email}:${user.password}`},{user}])
+    res.send([{token:`${user.email}_#_${user.password}`},{user}])
     }
    } catch (e) {
       res.status(404).send(e.message)

@@ -5,8 +5,9 @@ const app = express.Router();
  
 
 app.get("/", async (req, res) => {
+    
     try {
-        let u = await Product.find()
+        let u = await Product.find() 
         res.send(u)
     } catch (er) {
         res.status(404).send(er.message)
@@ -64,43 +65,28 @@ app.get("/:id",async(req,res)=>{
      
    })
  
-   app.post("/login", async (req, res) => {
-    let {email,password}=req.body;
- 
-   try {
-    let u = await Product.findOne({email,password})
-   
-    if(!u){
-    return res.status(401).send("Authentication Failed")
-             }
+   app.post("/users/:id",async(req,res)=>{
+    let {id}=req.params;
+    let ap=await Product.findOne({_id:id})
+    if(!ap){
+        return res.status(404).send("not found")
+     }
+    try {
 
-    res.send({
-        token:`${u.id}:${u.email}:${u.password}`,user:u
-            })
-   } catch (e) {
-      res.status(404).send(e.message)
-   }
-})
- 
-app.post("/signup", async (req, res) => {
-    let {email}=req.body;
- 
-   try {
-    let u =await Product.findOne({email})
+        let u = await  Product.create({...req.body})
+    
+         res.send(u)
+       
+    } catch (e) {
+        res.status(500).send(e.message)
+    }
+     
+     
+   })
  
    
-    if(u){
-        return res.status(404).send("user already exist")
  
-           }
-    else{ 
-    let user=await Product.create({...req.body})
-    res.send([{token:`${user.id}:${user.email}:${user.password}`},{user}])
-    }
-   } catch (e) {
-      res.status(404).send(e.message)
-   }
-})
+ 
 
 
 

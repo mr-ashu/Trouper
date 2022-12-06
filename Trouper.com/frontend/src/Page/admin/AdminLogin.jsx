@@ -18,42 +18,42 @@ import {
   Stack,
   Divider,
   Text,
-  Link,
-  Flex,
-  Checkbox,
-  FormLabel,
+   Flex,
+   FormLabel,
   useToast
 } from "@chakra-ui/react";
  
+ 
+import { login } from '../../Redux/auth/login.action';
+import { SIGN_OUT } from '../../Redux/auth/login.types';
 import AdminSignUp from './AdminSignUp';
-import { SIGN_OUT } from '../../Redux/auth/admin.type';
-import { Adminlogin } from '../../Redux/auth/admin.action';
+ 
  
 
 const initialFormData = {
   email: "",
-  password: "",
-  remember: false
+  password: ""
+ 
 };
 
 export default function AdminSignIn() {
   const [formData, setFormData] = React.useState(initialFormData);
   const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isAuth }=useSelector((store)=>store.adminAuth);
+  const { isAuth }=useSelector((store)=>store.auth);
   const toast = useToast()
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
   const navigate=useNavigate()
   const handleChangeFormData = (e) => {
-    const { type, checked, value, name } = e.target;
-    const inputValue = type === "checkbox" ? checked : value;
-    setFormData({ ...formData, [name]: inputValue });
+    const {  value, name } = e.target;
+    
+    setFormData({ ...formData, [name]: value });
   };
    
   const handleSubmit = (e) => {
     e.preventDefault();
- dispatch(Adminlogin(formData))
+ dispatch(login(formData))
 
       onClose()
     setFormData(initialFormData)
@@ -79,16 +79,7 @@ if(isAuth){
 
   return (
     <>
-      {isAuth?( 
-      <Button 
-      border="none" 
-      background="red" 
-      color="white"  
-      _hover={{ bg: 'transparent', color:"red" ,border:"1px solid #22C35E"}} 
-       _active={{ bg: 'none',}}   
-       fontSize="16px"  
-       padding="12px 22px" 
-        onClick={handleLogOut}>Log Out</Button>):( 
+     
        <Button 
        border="none" 
        background="#22C35E" 
@@ -97,7 +88,7 @@ if(isAuth){
        _active={{ bg: 'none',}}   
        fontSize="16px"  
        padding="12px 22px" 
-       onClick={onOpen}>Sign In</Button>)}
+       onClick={onOpen}>Sign In</Button>
 
       <Modal
         initialFocusRef={initialRef}
@@ -213,23 +204,6 @@ if(isAuth){
                   >
                     Continue
                   </Button>
-                </FormControl>
-                <FormControl mt={4}>
-                  <Stack
-                    direction="row"
-                    align={"start"}
-                    justify={"space-between"}
-                  >
-                    <Checkbox
-                      type="checkbox"
-                      name="remember"
-                      onChange={handleChangeFormData}
-                      checked={formData.remember}
-                    >
-                      Remember me
-                    </Checkbox>
-                   
-                  </Stack>
                 </FormControl>
                 <Divider />
                 <Flex fontSize="sm" mt="20px" alignItems="center">

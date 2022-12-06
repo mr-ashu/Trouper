@@ -1,8 +1,8 @@
 const express =require("express");
-const Product = require("../product/product.model");
  
+const Product = require("../product/product.model");
 const User = require("../user/user.model");
-const Cart =require("./cart.model")
+const Admincart = require("./admincart.modal");
  
  
  
@@ -40,7 +40,7 @@ app.get("/",async(req,res)=>{
  
     try {
        
-        let carts=await Cart.find({user:req.userId}).populate([
+        let carts=await Admincart.find({user:req.userId}).populate([
             "user",
             "product",
             
@@ -58,7 +58,7 @@ app.post("/",async(req,res)=>{
 
      let product=await Product.findById(req.body.product);
     //  if(product.quantity>req.body.quantity){
-        let cart=await Cart.create({
+        let cart=await Admincart.create({
             ...req.body,
             user:req.userId,
         });
@@ -83,7 +83,7 @@ app.post("/",async(req,res)=>{
 app.delete("/:id", async (req, res) => {
     let {id}=req.params;
     try {
-        let u = await Cart.findByIdAndDelete({_id:id})
+        let u = await Admincart.findByIdAndDelete({_id:id})
         res.send(u)
     } catch (e) {
         res.status(404).send(e.message)
@@ -100,7 +100,7 @@ app.patch("/:id", async (req, res) => {
      }
     try {
 
-        let u = await  Cart.replaceOne({_id:id}, req.body)
+        let u = await  Admincart.replaceOne({_id:id}, req.body)
     
          res.send(u)
        
@@ -110,7 +110,7 @@ app.patch("/:id", async (req, res) => {
 });
 app.get("/:id",async(req,res)=>{
     let {id}=req.params;
-    let user=await Cart.findOne({_id:id})
+    let user=await Admincart.findOne({_id:id})
      res.send(user)
      
      

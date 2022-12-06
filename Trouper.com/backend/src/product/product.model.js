@@ -60,6 +60,11 @@ const productSchema = new mongoose.Schema({
    },
    isComplete:{
       type:Boolean
+   },
+   quantity:{
+    type:Number,
+    min:0,
+    
    }
  
 },

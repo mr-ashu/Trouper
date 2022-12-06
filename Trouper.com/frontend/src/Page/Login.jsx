@@ -29,8 +29,8 @@ import { SIGN_OUT } from '../Redux/auth/login.types';
 
 const initialFormData = {
   email: "",
-  password: "",
-  remember: false
+  password: ""
+  
 };
 
 export default function Login() {
@@ -43,9 +43,9 @@ export default function Login() {
   const finalRef = React.useRef(null);
 
   const handleChangeFormData = (e) => {
-    const { type, checked, value, name } = e.target;
-    const inputValue = type === "checkbox" ? checked : value;
-    setFormData({ ...formData, [name]: inputValue });
+    const {  value, name } = e.target;
+    
+    setFormData({ ...formData, [name]: value });
   };
   // console.log(formData);
   const handleSubmit = (e) => {
@@ -186,23 +186,6 @@ const handleLogOut = () =>{
                   >
                     Continue
                   </Button>
-                </FormControl>
-                <FormControl mt={4}>
-                  <Stack
-                    direction="row"
-                    align={"start"}
-                    justify={"space-between"}
-                  >
-                    <Checkbox
-                      type="checkbox"
-                      name="remember"
-                      onChange={handleChangeFormData}
-                      checked={formData.remember}
-                    >
-                      Remember me
-                    </Checkbox>
-                    <Link color={"green"}>Forgot password?</Link>
-                  </Stack>
                 </FormControl>
                 <Divider />
                 <Flex fontSize="sm" mt="50px">

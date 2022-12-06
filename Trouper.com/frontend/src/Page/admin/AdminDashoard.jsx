@@ -9,41 +9,38 @@ import { Link, useNavigate } from 'react-router-dom'
 import { SIGN_OUT } from '../../Redux/auth/admin.type'
 import style from "./dashboard.module.css"
 
-const getData=(id)=>{
-  return axios.get(`http://localhost:9500/products/${id}`)
+const getData=(token)=>{
+  return axios.get(`http://localhost:9500/admincart`,{
+    headers:token
+  })
 }
 export const AdminDashoard = () => {
- const store=useSelector((store)=>store.adminAuth)
+ const store=useSelector((store)=>store.auth)
  
-  const toast=useToast()
-  const dispatch=useDispatch()
+ 
   const [data,setData]=useState([])
-  let id= localStorage.getItem("userId")
-
-   localStorage.setItem("userId", store.user._id)
+ 
 
    const navigate=useNavigate()
+   const token=store.token
+ 
+  
  useEffect(()=>{
-    getData(id).then((res)=>{
+    
+    getData(token).then((res)=>{
+    console.log(res);
       setData(res.data)
     })
  },[])
- console.log(data);
+console.log(data);
+  
 if(!store.isAuth){
   
   navigate("/admin")
 
 }
- const handleLogOut = () =>{
-  dispatch({ type:SIGN_OUT })
-  toast({
-    title: 'Log out successful.',
-    status: 'success',
-    duration: 5000,
-    position:"top",
-    isClosable: true,
-  })
-}
+ 
+ 
   return (
     <div className={style.dashboard}>
         <Text fontSize="xl" fontWeight="bold" padding="20px" >DASHBOARD</Text>
@@ -53,19 +50,8 @@ if(!store.isAuth){
                        <div  style={{alignItems:"center",justifyContent:"center",textAlign:"center" }}>
                        <img   src="https://www.mecgale.com/wp-content/uploads/2017/08/dummy-profile.png" alt="" />
  
-                          <div style={{display:"flex" ,gap:"20px"}}>
-                                    <Button 
-                                      border="none" 
-                                      background="red" 
-                                      color="white"  
-                                      _hover={{ bg: 'transparent', color:"red" ,border:"1px solid red"}} 
-                                      _active={{ bg: 'none',}}   
-                                      fontSize="16px"  
-                                      padding="12px 22px" 
-                                      margin="auto"
-                                        onClick={handleLogOut}>Log Out
-                                      
-                                    </Button>
+                          <div style={{display:"flex" ,gap:"20px" ,width:"fit-content",margin:"auto"}}>
+                                   
                                     
                                     <Link to="/join">
                                     <Button 
@@ -76,7 +62,9 @@ if(!store.isAuth){
                                       _active={{ bg: 'none',}}   
                                       fontSize="16px"  
                                       padding="12px 22px" 
-                                      margin="auto"
+                                    
+                                       alignSelf="center"
+
                                         >Create Gig
                                         
                                     </Button>
@@ -86,10 +74,10 @@ if(!store.isAuth){
 
                        </div>
                    <div>
-                       <h3>Name: {data.name}</h3>
-                       <h3>Email: {data.email}</h3>
-                       <h3>Contact: {data.contact}</h3>
-                        <h3>Address: {data.address}</h3>
+                       <h3>Name: {store.user.name}</h3>
+                       <h3>Email: {store.user.email}</h3>
+                       <h3>Contact: {store.user.contact}</h3>
+                        <h3>Address: {store.user.address}</h3>
                    </div>
                     
              </div>
@@ -108,18 +96,23 @@ if(!store.isAuth){
         <Th>Earning</Th>
       </Tr>
     </Thead>
-    <Tbody>
-      <Tr>
-        <Td> </Td>
-        <Td>  </Td>
-        <Td> </Td>
-        <Td></Td>
-        <Td></Td>
-        <Td></Td>
-      </Tr>
-      
-     
-    </Tbody>
+     {
+
+      data?.map((el)=>( 
+        <Tbody>
+        <Tr>
+          <Td> </Td>
+          <Td> {el.product.title} </Td>
+          <Td> </Td>
+          <Td></Td>
+          <Td></Td>
+          <Td>{el.product.price}</Td>
+        </Tr>
+        
+       
+      </Tbody>
+      ))
+     }
     <Tfoot>
       <Tr>
         <Th>Total</Th>
