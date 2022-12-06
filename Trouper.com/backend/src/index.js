@@ -9,7 +9,7 @@ const cartRouter=require("./cart/cart.route")
  
 const adminCartRouter=require("./AdminCart/admincart.route")
 const connect = require("./config/db")
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000
 
 const app = express();
 app.use(express.json());
