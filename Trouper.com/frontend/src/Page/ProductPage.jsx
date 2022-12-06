@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import style from "./Product.module.css"
 import FavoriteIcon from "@material-ui/icons/Favorite"
 const getApiData = () =>{
-  return axios.get("http://localhost:9500/products") 
+  return axios.get("https://trouper-org.onrender.com/products") 
 }
  
 function ProductPage() {

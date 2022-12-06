@@ -10,7 +10,7 @@ import { SIGN_OUT } from '../../Redux/auth/admin.type'
 import style from "./dashboard.module.css"
 
 const getData=(token)=>{
-  return axios.get(`http://localhost:9500/admincart`,{
+  return axios.get(`https://trouper-org.onrender.com/admincart`,{
     headers:token
   })
 }

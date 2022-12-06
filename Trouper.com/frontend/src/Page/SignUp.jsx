@@ -54,7 +54,7 @@ export default function SignUp() {
     event.preventDefault();
     try {
  
-       await axios.post(`http://localhost:9500/users/signup`, formData)
+       await axios.post(`https://trouper-org.onrender.com/users/signup`, formData)
      
       onClose()
       setFormData(initialFormData)

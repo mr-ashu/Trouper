@@ -9,7 +9,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { Link } from "react-router-dom";
 
 const getData = () => {
-   return axios.get("http://localhost:9500/products")
+   return axios.get("https://trouper-org.onrender.com/products")
 
 }
 

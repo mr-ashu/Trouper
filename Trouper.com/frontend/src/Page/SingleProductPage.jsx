@@ -14,7 +14,7 @@ const SingleProductPage = () => {
   const [productData, setProductDetails] = React.useState([]);
 
   React.useEffect(() => {
-    getData(`http://localhost:9500/products/${id}`).then((res) =>
+    getData(`https://trouper-org.onrender.com/products/${id}`).then((res) =>
     setProductDetails(res)
     );
   }, [id]);

@@ -8,7 +8,7 @@ import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 import { useDispatch, useSelector } from 'react-redux'
 
 const getCart=(token)=>{
-  return axios.get(`http://localhost:9500/carts`,{
+  return axios.get(`https://trouper-org.onrender.com/carts`,{
     headers:token
   })
 }
