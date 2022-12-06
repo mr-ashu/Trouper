@@ -86,7 +86,7 @@ const initialFormData = {
 
   useEffect(()=>{
  
-      axios.post(`http://localhost:9500/admincart`,payload,{headers:headers})  
+      axios.post(`https://trouper-org.onrender.com/admincart`,payload,{headers:headers})  
       .then((res)=>{
 
       console.log(res.data);
