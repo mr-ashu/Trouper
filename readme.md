@@ -4,7 +4,7 @@
 ## Indroduction
 Trouper.com is a freelancing website where users and appoint freelancer for projects or can register as freelancer to provide service like graphics & design, digital marketing, writing & transition, video & animation, programming & tech, etc.
 
-- [Click here](https://trouper.netlify.app/) to see preview of my project.
+- [Click here](https://jazzy-lokum-73584a.netlify.app/) to see preview of my project.
 
 
 ## Credits
