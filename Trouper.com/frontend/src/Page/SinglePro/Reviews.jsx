@@ -39,7 +39,7 @@ function Reviews({rat}) {
         className={styles.rDiv}
       >
         <Box textAlign="start" mb={4}>
-          <Heading as="h5" size="lg">
+          <Heading as="h5" size="lg" ml="15px" >
             5,698 Reviews
           </Heading>
         </Box>

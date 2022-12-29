@@ -1,6 +1,7 @@
 .nav {
   display: flex;
-  /* border: 1px solid red;   */
+  width: 100%;
+ /* border: 1px solid red;   */
   justify-content: space-between;
 }
 
@@ -28,16 +29,25 @@
 }
 
 @media (min-width: 290px) and (max-width: 417px) {
-  .sec1 {
+  .nav {
+    display: flex;
     width: 100%;
-     /* border: 10px solid rgb(234, 156, 9);   */
+   /* border: 1px solid red;   */
+    justify-content: space-between;
+  }
+  .sec1 {
+    width: 270%;
+    margin: auto;
+    padding: 10px;
+      /* border: 10px solid rgb(234, 156, 9);     */
     font-size: small;
   }
 }
 
 @media (min-width: 290px) and (max-width: 417px) {
   .sec2 {
-    visibility: hidden;
+    display: none;
+    /* visibility: hidden; */
   }
 }
 
