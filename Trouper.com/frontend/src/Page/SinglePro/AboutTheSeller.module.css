@@ -32,21 +32,27 @@
 @media (min-width: 290px) and (max-width: 417px) {
   .AmainCont {
     width: 100%;
-    /* border: 2px solid rgb(237, 9, 9); */
+     /* border: 2px solid rgb(237, 9, 9);   */
   }
 
   .aboutMainCont {
     display: flex;
     justify-content: space-around;
-    /* border: 5px solid rgb(229, 71, 171); */
+      /* border: 5px solid rgb(229, 71, 171);   */
   }
 
   .head {
     text-align: center;
-    /* border: 5px solid rgb(224, 235, 16); */
+     /* border: 5px solid rgb(224, 235, 16);   */
     width: 200px;
     margin: auto;
   }
+
+  /* .inboxAbout{
+    margin: auto;
+    border: 5px solid rgb(224, 235, 16);
+  } */
+
 }
 
 /* 417-820 */

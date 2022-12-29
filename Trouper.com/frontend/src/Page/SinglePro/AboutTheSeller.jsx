@@ -7,10 +7,12 @@ function AboutTheSeller({profilePic , name , rating , description}) {
   return (
     <>
       <Box
-       // border="2px solid red"
+        // border="3px solid red"
        className={styles.AmainCont}
         w={{   md: "50%", lg: "55%", xl: "61%" }}
-        ml={{md:"25px" , lg:"25px" ,xl: "25px" }}
+        // margin="auto"
+        width="100%"
+         ml={{md:"25px" , lg:"25px" ,xl: "25px" }}
         id="about"
       >
         <Box textAlign="start" className={styles.head} mb={4} >
@@ -42,7 +44,7 @@ function AboutTheSeller({profilePic , name , rating , description}) {
         </Box>
 
         {/* //////////////////// */}
-        <Box>
+        <Box className={styles.inboxAbout} >
           <Box className={styles.serviceInfo} mt={[2, 4, 6, 8]} display="flex">
             {/* 1st two */}
             <Box gap="20px">
@@ -67,13 +69,13 @@ function AboutTheSeller({profilePic , name , rating , description}) {
               </Box>
             </Box>
           </Box>
-          <Text fontSize="lg" textAlign="start" mt={[2, 4, 6, 8]} mb={[2, 4, 6, 8]} fontWeight="bold">
+          <Text fontSize="lg" textAlign="start" mt={[2, 4, 6, 8]} mb={[2, 4, 6, 8]} fontWeight="bold" ml="12px" >
             Hello!
           </Text>
-          <Text noOfLines={[4, 3, 3, 2]} textAlign="start"   >
+          <Text noOfLines={[4, 3, 3, 2]} textAlign="start" ml="12px"  >
              {`I Am ${name} , ${description}`}
           </Text>
-          <Text fontSize="lg" textAlign="start" mt={[2, 4, 6, 8]}  >
+          <Text fontSize="lg" textAlign="start" mt={[2, 4, 6, 8]} ml="12px"  >
             Thank You.
           </Text>
         </Box>
