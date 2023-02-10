@@ -105,7 +105,7 @@ import { useSelector } from 'react-redux';
                  <Login/>
            </Text>
           
-              {isAuth===true? <Avatar name={""}/>:<SignUp />}
+              {isAuth===true? <Avatar name={user.name}/>:<SignUp />}
             
             
  
