@@ -31,7 +31,7 @@ export const AllRoutes = () => {
       <Route path="/cart" element={<Cart/>}/>
       <Route path="/admin" element={<AdminPage/>}/>
       <Route path="/product/:id" element={<SingleProductPage/>}/>
-      <Route path="/payment" element={<Payment/>}/>
+      <Route path="/payment/:id" element={<Payment/>}/>
       <Route path='/product' element={<ProductPage/>}/>
       <Route path="/join" element={<AdminForm/>}/>
       <Route path="/sucess" element={<Sucess />} />

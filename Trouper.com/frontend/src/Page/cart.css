@@ -1,0 +1,24 @@
+.userbox{
+    height: 100px;
+ 
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    font-weight: 500;
+    align-items: center;
+}
+
+.userbox div{
+    text-align: left;
+}
+.userbox span{
+    color :teal;
+    font-weight: bold;
+    text-transform: uppercase;
+}

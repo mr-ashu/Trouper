@@ -10,7 +10,7 @@ const getData = (url) => {
 
 const SingleProductPage = () => {
   const {id} = useParams();
-  console.log(id)
+  
   const [productData, setProductDetails] = React.useState([]);
 
   React.useEffect(() => {
@@ -26,7 +26,7 @@ const SingleProductPage = () => {
       <div>
  
         <div style={{marginTop:"20px"}} >
-          <OverviewSlid title={productData.title}  price={productData.price} rtig={productData.rating} occupation={productData.occupation} />
+          <OverviewSlid title={productData.title}  price={productData.price} rtig={productData.rating} occupation={productData.occupation} id={id} />
         </div>
 
         <div style={{marginTop:"20px"}} >

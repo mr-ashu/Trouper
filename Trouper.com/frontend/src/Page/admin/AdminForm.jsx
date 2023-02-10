@@ -59,7 +59,7 @@ const initialFormData = {
     event.preventDefault();
     try {
  
-       await axios.post(`http://localhost:9500/products`, formData).then((res)=>{
+       await axios.post(`https://trouper-org.onrender.com/products`, formData).then((res)=>{
  
         setpId(res.data._id)
        })

@@ -8,7 +8,7 @@ import { Tabs,
   Box,} from"@chakra-ui/react"
   import styles from "../../Page/SinglePro/TypeOfServiceTable.module.css";
 import { Link, Navigate } from 'react-router-dom';
-function TypeOfServiceTable({p , rtig ,occupation}) {
+function TypeOfServiceTable({p , rtig ,occupation,id}) {
   return (
     <>
      <Tabs>
@@ -47,14 +47,18 @@ function TypeOfServiceTable({p , rtig ,occupation}) {
                     <li>Social Media Design</li>
                     <li>Commercial Use</li>
                   </Box>
-                   <Link to="/payment">
-                  <Button
+                  <Link 
+                   to={`/payment/${id}`}
+                  
+                  >
+                    <Button   
                     colorScheme="whatsapp"
                     w={[90, 140, 200, 280]}
-                    mt={[2, 4, 6, 8]}
-                  >
-                    Continue
-                  </Button></Link>
+                    mt={[2, 4, 6, 8]}>
+                        Continue
+                    </Button>
+                  
+                  </Link>
                 </div>
               </TabPanel>
               <TabPanel>
@@ -85,13 +89,18 @@ function TypeOfServiceTable({p , rtig ,occupation}) {
                     <li>Commercial Use</li>
                   </Box>
 
-                  <Button
+                  <Link 
+                   to={`/payment/${id}`}
+                  
+                  >
+                    <Button   
                     colorScheme="whatsapp"
                     w={[90, 140, 200, 280]}
-                    mt={[2, 4, 6, 8]}
-                  >
-                    Continue
-                  </Button>
+                    mt={[2, 4, 6, 8]}>
+                        Continue
+                    </Button>
+                  
+                  </Link>
                 </div>
               </TabPanel>
               <TabPanel>
@@ -122,13 +131,18 @@ function TypeOfServiceTable({p , rtig ,occupation}) {
                     <li>Commercial Use</li>
                   </Box>
 
-                  <Button onClick={<Navigate to="/payment" />}
+                  <Link 
+                   to={`/payment/${id}`}
+                  
+                  >
+                    <Button   
                     colorScheme="whatsapp"
                     w={[90, 140, 200, 280]}
-                    mt={[2, 4, 6, 8]}
-                  >
-                    Continue
-                  </Button>
+                    mt={[2, 4, 6, 8]}>
+                        Continue
+                    </Button>
+                  
+                  </Link>
                 </div>
               </TabPanel>
             </TabPanels>
