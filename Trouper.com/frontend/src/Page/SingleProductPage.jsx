@@ -25,7 +25,7 @@ const SingleProductPage = () => {
       <Nav />
       <div>
  
-        <div style={{marginTop:"20px"}} >
+        <div style={{marginTop:"20px"}} p={10}>
           <OverviewSlid title={productData.title}  price={productData.price} rtig={productData.rating} occupation={productData.occupation} id={id} />
         </div>
 

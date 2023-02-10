@@ -2,13 +2,11 @@ import React from "react";
 import {
   Table,
   Thead,
-  Tbody,
-  Tfoot,
+ 
   Tr,
   Th,
   Td,
-  TableCaption,
-  TableContainer,
+ 
 } from "@chakra-ui/react";
 import {
   Box,
@@ -22,8 +20,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import styles from "../SinglePro/Reviews.module.css";
-function Reviews({rat}) {
-
+function Reviews({ rat }) {
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -31,23 +28,29 @@ function Reviews({rat}) {
   return (
     <>
       <Box
-        // border="2px solid red"
-        w={{ md: "50%", lg: "55%", xl: "61%" }}
-        // ml="25px"
-        ml={{ md: "25px", lg: "25px", xl: "25px" }}
+        //  border="2px solid red"
+        boxShadow="base"
         id="reviews"
         className={styles.rDiv}
+        p={10}
+        margin="auto"
       >
-        <Box textAlign="start" mb={4}>
-          <Heading as="h5" size="lg" ml="15px" >
+        <Box
+          textAlign="start"
+          mb={4}
+          //  border="2px solid purple"
+          p={2}
+          boxShadow="outline"
+        >
+          <Heading as="h5" size="lg" ml="15px">
             5,698 Reviews
           </Heading>
         </Box>
 
-        <Table className={styles.mainContReview}>
+        <Table className={styles.mainContReview} boxShadow="lg" gap={10}>
           <Thead>
             <Tr>
-              <Th>Stars</Th>
+              <Th textAlign="center">Stars</Th>
               <Th>Range</Th>
               <Th>Crowd</Th>
             </Tr>
