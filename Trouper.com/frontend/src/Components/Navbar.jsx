@@ -22,7 +22,7 @@ import { useSelector } from 'react-redux';
  
  export const Navbar = () => {
   const { user, isAuth }=useSelector((store)=>store.auth);
- 
+ console.log(user)
  
    return (
    <>
@@ -105,7 +105,7 @@ import { useSelector } from 'react-redux';
                  <Login/>
            </Text>
           
-              {isAuth===true? <Avatar name={user.name}/>:<SignUp />}
+              {isAuth===true? <Avatar name={""}/>:<SignUp />}
             
             
  

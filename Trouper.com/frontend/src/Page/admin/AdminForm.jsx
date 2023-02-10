@@ -19,7 +19,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import style from "./dashboard.module.css"
+import style from "./dashboard.module.css";
 const initialFormData = {
   name: "",
 
@@ -41,13 +41,12 @@ export default function AdminForm() {
   const navigate = useNavigate();
 
   const { token, user } = useSelector((store) => store.auth);
- 
- 
+  const [loading, setloading] = useState(false);
+
   const handleFormData = (e) => {
     const { value, name } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -55,51 +54,48 @@ export default function AdminForm() {
         .post(`https://trouper-org.onrender.com/products`, formData)
         .then((res) => {
           setpId(res.data._id);
-          alert("sucess")
+          alert("sucess");
         });
 
       setFormData(initialFormData);
-
-
-
-      
     } catch (error) {
       alert("Something Error.");
     }
+
+   
   };
+
 
   useEffect(() => {
     const payload = {
       product: pid,
     };
-    console.log(payload)
+
+    setloading(true);
     axios
       .post(`https://trouper-org.onrender.com/admincart`, payload, {
         headers: {
-          token: token.token,
+          token: token,
         },
       })
       .then((res) => {
+        setloading(false);
         alert("Data added sucessfully");
         navigate("/dashboard");
-        console.log(res.data);
       });
   }, []);
 
+  
+ 
   return (
-    <div
-      className={style.frmdata}
-    
-    >
+    <div className={style.frmdata}>
       <form
         onSubmit={handleSubmit}
         style={{
-         
           margin: "auto",
         }}
       >
         <Stack
-        
           style={{
             spacing: "20px",
             padding: "6px",

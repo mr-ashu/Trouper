@@ -57,7 +57,7 @@ const Payment = () => {
     }
     axios.post(`https://trouper-org.onrender.com/carts`,payload, {
       headers: {
-        token: token.token,
+        token: token,
       }
     })
     .then((res)=>{

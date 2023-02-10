@@ -23,7 +23,7 @@ export const Snavbar=()=> {
         <DrawerOverlay />
         <DrawerContent >
           <DrawerHeader borderBottomWidth='1px'>
-          {isAuth===true? <Avatar name={user.name}/>:<SignUp />}
+          {isAuth===true? <Avatar name={""}/>:<SignUp />}
           </DrawerHeader>
           <DrawerBody>
             <Text fontWeight="bold">GENERAL</Text>

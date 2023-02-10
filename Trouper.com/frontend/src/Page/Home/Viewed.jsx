@@ -19,7 +19,7 @@ export const Viewed = () => {
    useEffect(() => {
      getData().then((res) =>{
         setData(res.data)
-        console.log(res.data)
+      
      })
      
    },[])

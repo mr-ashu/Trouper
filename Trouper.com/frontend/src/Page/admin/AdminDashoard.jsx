@@ -22,16 +22,17 @@ export const AdminDashoard = () => {
  
   
  useEffect(()=>{
+  
       getCart()
  },[])
 
  const getCart=()=>{
   axios.get(`https://trouper-org.onrender.com/admincart`, {
     headers: {
-      token: token.token,
+      token: token,
     },
   }).then((res)=>{
-    console.log(res);
+ 
       setData(res.data)
       setloading(false)
     })
@@ -40,7 +41,7 @@ export const AdminDashoard = () => {
  const remove=(id)=>{
   axios.delete(`https://trouper-org.onrender.com/admincart/${id}`,{
     headers: {
-      token: token.token,
+      token: token,
     }
   })
   .then((res)=>{

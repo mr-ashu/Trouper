@@ -9,8 +9,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import "./cart.css"
  
 export const Cart = () => {
-  const   {user,token,isAuth}=useSelector((store)=>store.auth)
-  
+  const   {user, isAuth,token}=useSelector((store)=>store.auth)
+   
   const [loading,setloading]=useState(true)
  
   const [data,setData]=useState([])
@@ -29,10 +29,11 @@ export const Cart = () => {
  const getCart=()=>{
   axios.get(`https://trouper-org.onrender.com/carts`,{
     headers: {
-      token: token.token,
+      token: token,
     }
   })
   .then((res)=>{
+ 
      setData(res.data)
      setloading(false)
   })
