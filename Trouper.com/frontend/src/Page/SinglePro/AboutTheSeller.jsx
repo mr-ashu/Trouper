@@ -28,6 +28,10 @@ function AboutTheSeller({ profilePic, name, rating, description }) {
         fontSize={20}
         textTransform={"uppercase"}
         color={"purple.400"}
+        w="fit-content"
+        m="auto"
+        marginBottom="15px"
+         
       >
         About The Seller
       </chakra.h3>

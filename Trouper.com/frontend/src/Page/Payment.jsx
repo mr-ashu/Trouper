@@ -42,7 +42,7 @@ import { useSelector } from "react-redux";
 const Payment = () => {
   const [data, setdata] = useState([]);
   let { id } = useParams();
-  const  {user,token} =useSelector((store)=>store.auth)
+  const  {user,token,isAuth} =useSelector((store)=>store.auth)
  const navigate=useNavigate()
  
   useEffect(() => {
@@ -65,6 +65,15 @@ const Payment = () => {
       navigate("/cart")
     })
   }
+
+  if(!isAuth){
+   
+    navigate(`/product/${id}`)
+   
+  
+
+  }
+
   return (
     <>
   <SimpleGrid width={"90%"} margin="auto" 
