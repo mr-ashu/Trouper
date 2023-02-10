@@ -9,32 +9,51 @@ import { Link, useNavigate } from 'react-router-dom'
 import { SIGN_OUT } from '../../Redux/auth/admin.type'
 import style from "./dashboard.module.css"
 
-const getData=(token)=>{
-  return axios.get(`https://trouper-org.onrender.com/admincart`,{
-    headers:token
-  })
-}
-export const AdminDashoard = () => {
- const store=useSelector((store)=>store.auth)
  
+export const AdminDashoard = () => {
+ const  {token,isAuth,user}=useSelector((store)=>store.auth)
+ const [loading ,setloading]=useState(true)
  
   const [data,setData]=useState([])
  
 
    const navigate=useNavigate()
-   const token=store.token
+ 
  
   
  useEffect(()=>{
-    
-    getData(token).then((res)=>{
+      getCart()
+ },[])
+
+ const getCart=()=>{
+  axios.get(`https://trouper-org.onrender.com/admincart`, {
+    headers: {
+      token: token.token,
+    },
+  }).then((res)=>{
     console.log(res);
       setData(res.data)
+      setloading(false)
     })
- },[])
-console.log(data);
+ }
+ 
+ const remove=(id)=>{
+  axios.delete(`https://trouper-org.onrender.com/admincart/${id}`,{
+    headers: {
+      token: token.token,
+    }
+  })
+  .then((res)=>{
+    
+    getCart()
+     alert("Remove sucess")
+  })
+  .catch((e)=>{
+    alert("Error")
+  })
+ }
   
-if(!store.isAuth){
+if(!isAuth){
   
   navigate("/admin")
 
@@ -73,11 +92,11 @@ if(!store.isAuth){
                          
 
                        </div>
-                   <div>
-                       <h3>Name: {store.user.name}</h3>
-                       <h3>Email: {store.user.email}</h3>
-                       <h3>Contact: {store.user.contact}</h3>
-                        <h3>Address: {store.user.address}</h3>
+                   <div className='ainfo'>
+                       <h3><Text color={"teal"} fontWeight="bold">Name:</Text> {user.name}</h3>
+                       <h3> <Text color={"teal"} fontWeight="bold">Email:</Text> {user.email}</h3>
+                       <h3><Text color={"teal"} fontWeight="bold">Contact:</Text> {user.contact}</h3>
+                        <h3><Text color={"teal"} fontWeight="bold">Address:</Text> {user.address}</h3>
                    </div>
                     
              </div>
@@ -91,35 +110,41 @@ if(!store.isAuth){
         <Th >Sr. no.</Th>
         <Th>Product</Th>
         <Th>order</Th>
-        <Th>Like</Th>
         <Th>Dispach date</Th>
         <Th>Earning</Th>
+        <Th>Remove</Th>
       </Tr>
     </Thead>
-     {
-
-      data?.map((el)=>( 
+     
+      
+      
+      {
+      loading?<div  style={{margin:"auto"}}>Loading...</div>:
+      
+      data?.map((el,i)=>( 
         <Tbody>
+          
         <Tr>
-          <Td> </Td>
+          <Td>{i+1}</Td>
           <Td> {el.product.title} </Td>
-          <Td> </Td>
-          <Td></Td>
+      
+          <Td>0</Td>
           <Td></Td>
           <Td>{el.product.price}</Td>
+          <Td><Button onClick={()=>remove(el._id)}  _hover={{bg:"tomato" ,color:"white"}}>Remove</Button></Td>
         </Tr>
         
        
       </Tbody>
       ))
+      
      }
+
+     
     <Tfoot>
       <Tr>
-        <Th>Total</Th>
-        <Th></Th>
-        <Th ></Th>
-        <Th></Th>
-        <Th></Th>
+        <Th color="tomato">Total={data.length}</Th>
+         
       </Tr>
     </Tfoot>
   </Table>

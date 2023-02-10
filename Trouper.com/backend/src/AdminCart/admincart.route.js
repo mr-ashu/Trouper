@@ -57,20 +57,14 @@ app.post("/",async(req,res)=>{
     try {
 
      let product=await Product.findById(req.body.product);
-    //  if(product.quantity>req.body.quantity){
+ 
         let cart=await Admincart.create({
             ...req.body,
             user:req.userId,
         });
         res.send(cart)
 
-        // await Product.findByIdAndUpdate(product.id,{
-        //     quantity:product.quantity-cart.quantity,
-        // })
-    //  }
-    //  else{
-    //     res.send("fronted only:product.quantity ammount left")
-    //  }
+  
         
     } 
     catch (error) {
