@@ -77,12 +77,14 @@ const Payment = () => {
   return (
     <>
   <SimpleGrid width={"90%"} margin="auto" 
-  columns={[1, 1, 2]} 
+  columns={[1,1, 1, 2]} 
+  justifyContent="center"
   >
-  <Box
+      <Box
        w="100%"
+     
         borderRadius="lg"
-        m={{ base: 5, md: 16, lg: 10 }}
+ 
         p={{ base: 5, lg: 16 }}>
         <Box>
           <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
@@ -95,8 +97,7 @@ const Payment = () => {
             </Heading>
 
             <Stack
-              spacing={{ base: 4, md: 8, lg: 20 }}
-              direction={{ base: 'column', md: 'row' }}>
+              >
              
 
               <Box

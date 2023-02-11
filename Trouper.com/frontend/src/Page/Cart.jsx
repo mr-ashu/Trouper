@@ -94,7 +94,7 @@ if(!isAuth){
                  <hr />
                   <div className={style.pricediv}>
 
-                  <DeleteSweepIcon onClick={()=>remove(el._id)} />
+                  <DeleteSweepIcon  style={{cursor:"pointer"}} onClick={()=>remove(el._id)} />
                   
                    
                      <span className={style.price}>

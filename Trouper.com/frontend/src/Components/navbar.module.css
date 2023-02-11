@@ -92,8 +92,9 @@ a{
         display: none;
         
     }
+   
     .signin{
-        display: none;
+        display: block;
     }
     .snav{
         display: block;

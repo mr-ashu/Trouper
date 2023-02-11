@@ -22,3 +22,20 @@
     font-weight: bold;
     text-transform: uppercase;
 }
+
+@media only screen and (max-width: 650px){
+
+    .userbox{
+        height: auto;
+     
+ 
+        width: 90%;
+        
+        display: grid;
+        gap: 10px;
+    }
+    .userbox>div{
+        display: grid;
+        gap: 10px;
+    }
+}
