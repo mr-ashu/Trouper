@@ -30,6 +30,7 @@ import {
   useClipboard,
   InputLeftElement,
   SimpleGrid,
+  useToast,
  
  
 } from "@chakra-ui/react";
@@ -44,7 +45,7 @@ const Payment = () => {
   let { id } = useParams();
   const  {user,token,isAuth} =useSelector((store)=>store.auth)
  const navigate=useNavigate()
- 
+ const toast = useToast()
   useEffect(() => {
     axios.get(`https://trouper-org.onrender.com/products/${id}`).then((res) => {
       setdata(res.data);
@@ -52,27 +53,32 @@ const Payment = () => {
   }, []);
  
   const payment=()=>{
-    const payload={
-       product:id
-    }
-    axios.post(`https://trouper-org.onrender.com/carts`,payload, {
-      headers: {
-        token: token,
-      }
+    if(!isAuth){
+      toast({
+      title: 'User is not Authenticated',
+      description: "pease login first",
+      status: 'warning',
+      isClosable: true,
     })
-    .then((res)=>{
-      alert("order sucess")
-      navigate("/cart")
-    })
-  }
-
-  if(!isAuth){
-   
     navigate(`/product/${id}`)
-   
-  
-
+}else{
+  const payload={
+    product:id
+ }
+ axios.post(`https://trouper-org.onrender.com/carts`,payload, {
+   headers: {
+     token: token,
+   }
+ })
+ .then((res)=>{
+   alert("order sucess")
+   navigate("/cart")
+ })
+}
+ 
   }
+
+  
 
   return (
     <>
