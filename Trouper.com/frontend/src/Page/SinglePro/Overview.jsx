@@ -1,31 +1,6 @@
 import React from "react";
 import styles from "../../Page/SinglePro/Overview.module.css";
-import {
-  Tabs,
-  TabList,
-  TabPanels,
-  Tab,
-  TabPanel,
-  Button,
-  Box,
-  List,
-  ListItem,
-  ListIcon,
-  OrderedList,
-  UnorderedList,
-  Heading,
-  Container,
-  Link,
-  Image,
-  Divider,
-  Wrap,
-  WrapItem,
-  VStack,
-  Text,
-  useColorModeValue,
-  HStack,
-  Tag,
-} from "@chakra-ui/react";
+import { Box, Heading, Container, useColorModeValue } from "@chakra-ui/react";
 
 import TypeOfServiceTable from "./TypeOfServiceTable";
 const colors = [

@@ -3,7 +3,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import {
   Box,
-  Center,
   Text,
   Stack,
   List,
@@ -14,145 +13,125 @@ import {
   Flex,
   VStack,
   Heading,
- 
- 
   FormControl,
   FormLabel,
- 
-  IconButton,
   Input,
   InputGroup,
- 
- 
- 
-  Textarea,
- 
-  useClipboard,
   InputLeftElement,
   SimpleGrid,
   useToast,
- 
- 
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Tooltip } from "react-bootstrap";
 import { useSelector } from "react-redux";
- 
 
 const Payment = () => {
   const [data, setdata] = useState([]);
   let { id } = useParams();
-  const  {user,token,isAuth} =useSelector((store)=>store.auth)
- const navigate=useNavigate()
- const toast = useToast()
+  const { user, token, isAuth } = useSelector((store) => store.auth);
+  const navigate = useNavigate();
+  const toast = useToast();
   useEffect(() => {
     axios.get(`https://trouper-org.onrender.com/products/${id}`).then((res) => {
       setdata(res.data);
     });
   }, []);
- 
-  const payment=()=>{
-    if(!isAuth){
-      toast({
-      title: 'User is not Authenticated',
-      description: "pease login first",
-      status: 'warning',
-      isClosable: true,
-    })
-    navigate(`/product/${id}`)
-}else{
-  const payload={
-    product:id
- }
- axios.post(`https://trouper-org.onrender.com/carts`,payload, {
-   headers: {
-     token: token,
-   }
- })
- .then((res)=>{
-   alert("order sucess")
-   navigate("/cart")
- })
-}
- 
-  }
 
-  
+  const payment = () => {
+    if (!isAuth) {
+      toast({
+        title: "User is not Authenticated",
+        description: "pease login first",
+        status: "warning",
+        isClosable: true,
+      });
+      navigate(`/product/${id}`);
+    } else {
+      const payload = {
+        product: id,
+      };
+      axios
+        .post(`https://trouper-org.onrender.com/carts`, payload, {
+          headers: {
+            token: token,
+          },
+        })
+        .then((res) => {
+          alert("order sucess");
+          navigate("/cart");
+        });
+    }
+  };
 
   return (
     <>
-  <SimpleGrid width={"90%"} margin="auto" 
-  columns={[1,1, 1, 2]} 
-  justifyContent="center"
-  >
-      <Box
-       w="100%"
-     
-        borderRadius="lg"
- 
-        p={{ base: 5, lg: 16 }}>
-        <Box>
-          <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
-            <Heading
-              fontSize={{
-                base: '4xl',
-                md: '5xl',
-              }}>
-              Payment Details
-            </Heading>
-
-            <Stack
+      <SimpleGrid
+        width={"90%"}
+        margin="auto"
+        columns={[1, 1, 1, 2]}
+        justifyContent="center"
+      >
+        <Box w="100%" borderRadius="lg" p={{ base: 5, lg: 16 }}>
+          <Box>
+            <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
+              <Heading
+                fontSize={{
+                  base: "4xl",
+                  md: "5xl",
+                }}
               >
-             
+                Payment Details
+              </Heading>
 
-              <Box
-                bg={useColorModeValue('white', 'gray.700')}
-                borderRadius="lg"
-                p={8}
-                color={useColorModeValue('gray.700', 'whiteAlpha.900')}
-                shadow="base">
-                <VStack spacing={5}>
-                  <FormControl isRequired>
-                    <FormLabel>Card Number</FormLabel>
+              <Stack>
+                <Box
+                  bg={useColorModeValue("white", "gray.700")}
+                  borderRadius="lg"
+                  p={8}
+                  color={useColorModeValue("gray.700", "whiteAlpha.900")}
+                  shadow="base"
+                >
+                  <VStack spacing={5}>
+                    <FormControl isRequired>
+                      <FormLabel>Card Number</FormLabel>
 
-                    <InputGroup>
-                      <InputLeftElement   />
-                      <Input type="number" name="name" placeholder="Card Number" />
-                    </InputGroup>
-                  </FormControl>
+                      <InputGroup>
+                        <InputLeftElement />
+                        <Input
+                          type="number"
+                          name="name"
+                          placeholder="Card Number"
+                        />
+                      </InputGroup>
+                    </FormControl>
 
-                  <FormControl isRequired>
-                    <FormLabel>Card Holder Name</FormLabel>
+                    <FormControl isRequired>
+                      <FormLabel>Card Holder Name</FormLabel>
 
-                    <InputGroup>
-                      <InputLeftElement  />
-                      <Input
-                        type="email"
-                        name="email"
-                        placeholder="Card Holder Name "
-                      />
-                    </InputGroup>
-                  </FormControl>
-                
-                <Flex gap={"20px"} justifyContent="space-between">
-                  <Input type="date" />
-                  <Input placeholder="CVV"/>
-                </Flex>
-           
+                      <InputGroup>
+                        <InputLeftElement />
+                        <Input
+                          type="email"
+                          name="email"
+                          placeholder="Card Holder Name "
+                        />
+                      </InputGroup>
+                    </FormControl>
 
-               
-                </VStack>
-              </Box>
-            </Stack>
-          </VStack>
+                    <Flex gap={"20px"} justifyContent="space-between">
+                      <Input type="date" />
+                      <Input placeholder="CVV" />
+                    </Flex>
+                  </VStack>
+                </Box>
+              </Stack>
+            </VStack>
+          </Box>
         </Box>
-      </Box>
- 
-      
+
         <Box
-         
-         w="100%"
+          w="100%"
           bg={useColorModeValue("white", "gray.800")}
           boxShadow={"2xl"}
           rounded={"md"}
@@ -173,14 +152,13 @@ const Payment = () => {
               color={"green.500"}
               rounded={"full"}
             >
-            Id:  {user.userId}
+              Id: {user.userId}
             </Text>
             <Stack direction={"row"} align={"center"} justify={"center"}>
               <Text fontSize={"3xl"}>$</Text>
               <Text fontSize={"6xl"} fontWeight={800}>
-               {data.price}
+                {data.price}
               </Text>
-              
             </Stack>
           </Stack>
 
@@ -188,15 +166,15 @@ const Payment = () => {
             <List spacing={3}>
               <ListItem>
                 <ListIcon as={CheckIcon} color="green.400" />
-               {data.category}
+                {data.category}
               </ListItem>
               <ListItem>
                 <ListIcon as={CheckIcon} color="green.400" />
-                 {data.rating}
+                {data.rating}
               </ListItem>
               <ListItem>
                 <ListIcon as={CheckIcon} color="green.400" />
-              {data.lavel}
+                {data.lavel}
               </ListItem>
               <ListItem>
                 <ListIcon as={CheckIcon} color="green.400" />
@@ -223,7 +201,7 @@ const Payment = () => {
             </Button>
           </Box>
         </Box>
- </SimpleGrid>
+      </SimpleGrid>
     </>
   );
 };
