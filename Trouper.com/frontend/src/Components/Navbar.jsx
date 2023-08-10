@@ -56,7 +56,7 @@ import { useSelector } from 'react-redux';
                 font="400 16px Macan,Helvetica Neue,Helvetica,Arial,sans-serif"
                 fontWeight="600"
               >
-                <LanguageIcon fontSize="" /> English
+                <LanguageIcon   /> English
               </MenuButton>
               <MenuList>
                 <MenuItem>English</MenuItem>
@@ -78,13 +78,13 @@ import { useSelector } from 'react-redux';
               </MenuButton>
               <MenuList>
                 <MenuItem>
-                  <CurrencyRupeeIcon /> INR
+                  <CurrencyRupeeIcon /> INR.
                 </MenuItem>
                 <MenuItem>
                   <AttachMoneyIcon /> Dollar
                 </MenuItem>
                 <MenuItem>
-                  <EuroIcon /> Euro
+                  <EuroIcon /> Euro.
                 </MenuItem>
                 <MenuItem>
                   <CurrencyPoundIcon /> Pound
